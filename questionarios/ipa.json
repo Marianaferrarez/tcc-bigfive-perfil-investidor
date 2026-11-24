@@ -1,0 +1,101 @@
+{
+  "titulo": "Questionário de Análise do Perfil do Investidor (API/IPA)",
+  "fonte": "De Bortoli, D., Da Costa Jr., N., Goulart, M., & Campara, J. (2019). Personality traits and investor profile analysis: A behavioral finance study. PLoS ONE, 14(3), e0214062. Anexo 5 (S2 Questionnaire - versão em português, material suplementar).",
+  "origem_instrumento": "Adaptado do questionário de Análise de Perfil do Investidor (API) do Banco do Brasil, alinhado às diretrizes da ANBIMA e da IOSCO (suitability).",
+  "observacoes": [
+    "A questão 2 foi adaptada pelos autores do artigo (texto adicional indicado no enunciado original).",
+    "O artigo não publica os pesos/escores oficiais de cada alternativa nem os cortes de classificação de perfil. A pontuação e os cortes abaixo são uma proposta própria do TCC, definida da forma mais simples possível para facilitar a explicação na metodologia."
+  ],
+  "pontuacao_perfil": {
+    "descricao": "Cada alternativa (a-d) de cada uma das 8 perguntas recebe uma pontuação de 1 a 4, em que 1 = alternativa mais associada a um perfil conservador e 4 = alternativa mais associada a um perfil arrojado. O escore do respondente é a SOMA das pontuações das 8 respostas (mínimo 8, máximo 32).",
+    "regra_geral": "Em 7 das 8 perguntas, a pontuação segue a ordem das alternativas: a=4, b=3, c=2, d=1.",
+    "excecao": "Na pergunta 2 (percentual do patrimônio que aplicaria em investimentos), a ordem é invertida (a=1, b=2, c=3, d=4), pois aplicar uma fração maior do patrimônio em investimentos indica maior tolerância ao risco.",
+    "classificacao": [
+      { "perfil": "Conservador", "faixa_soma": "8 a 15", "faixa_media": "1.0 a 1.9" },
+      { "perfil": "Moderado", "faixa_soma": "16 a 23", "faixa_media": "2.0 a 2.9" },
+      { "perfil": "Arrojado", "faixa_soma": "24 a 32", "faixa_media": "3.0 a 4.0" }
+    ]
+  },
+  "perguntas": [
+    {
+      "id": 1,
+      "texto": "Indique sua faixa etária.",
+      "opcoes": {
+        "a": { "texto": "Abaixo de 25 anos", "pontos": 4 },
+        "b": { "texto": "De 25 a 40 anos", "pontos": 3 },
+        "c": { "texto": "De 41 a 55 anos", "pontos": 2 },
+        "d": { "texto": "Acima de 56 anos", "pontos": 1 }
+      }
+    },
+    {
+      "id": 2,
+      "texto": "Se você realizasse um investimento financeiro hoje (ex: fundos de investimento, poupança, CDI), qual o percentual do total de seu patrimônio que você aplicaria em investimentos?",
+      "opcoes": {
+        "a": { "texto": "Até 25%", "pontos": 1 },
+        "b": { "texto": "Entre 26% e 50%", "pontos": 2 },
+        "c": { "texto": "Entre 51% e 75%", "pontos": 3 },
+        "d": { "texto": "Mais de 75%", "pontos": 4 }
+      }
+    },
+    {
+      "id": 3,
+      "texto": "Quando você realiza alguma aplicação (investimento financeiro), qual o prazo médio dos investimentos?",
+      "opcoes": {
+        "a": { "texto": "Indefinidamente, pois não tenho planos para utilização", "pontos": 4 },
+        "b": { "texto": "No máximo 5 anos", "pontos": 3 },
+        "c": { "texto": "No máximo 2 anos", "pontos": 2 },
+        "d": { "texto": "No máximo 1 ano", "pontos": 1 }
+      }
+    },
+    {
+      "id": 4,
+      "texto": "Qual o principal objetivo de seus investimentos?",
+      "opcoes": {
+        "a": { "texto": "Obter rentabilidade superior à proporcionada por investimentos tradicionais de renda fixa, mesmo assumindo risco de possíveis perdas", "pontos": 4 },
+        "b": { "texto": "Diversificar os investimentos", "pontos": 3 },
+        "c": { "texto": "Formar uma reserva financeira para utilização futura", "pontos": 2 },
+        "d": { "texto": "Preservar o patrimônio", "pontos": 1 }
+      }
+    },
+    {
+      "id": 5,
+      "texto": "Qual a sua melhor referência de rentabilidade?",
+      "opcoes": {
+        "a": { "texto": "Índices das Bolsas de Valores", "pontos": 4 },
+        "b": { "texto": "Dólar", "pontos": 3 },
+        "c": { "texto": "CDI", "pontos": 2 },
+        "d": { "texto": "Poupança", "pontos": 1 }
+      }
+    },
+    {
+      "id": 6,
+      "texto": "Quais são as aplicações financeiras em que você tem maior conhecimento?",
+      "opcoes": {
+        "a": { "texto": "Fundo de Ações, Ações ou Derivativos", "pontos": 4 },
+        "b": { "texto": "Fundos Multimercados, Cambiais, Dívida Externa ou Renda Fixa", "pontos": 3 },
+        "c": { "texto": "CDB, Poupança ou Fundos Referenciados DI e Curto Prazo", "pontos": 2 },
+        "d": { "texto": "Não tenho conhecimento", "pontos": 1 }
+      }
+    },
+    {
+      "id": 7,
+      "texto": "Você já investiu em ações ou Fundo de Ações?",
+      "opcoes": {
+        "a": { "texto": "Sim, pois a possibilidade de maiores rentabilidades me atraem muito", "pontos": 4 },
+        "b": { "texto": "Sim, mas com receio", "pontos": 3 },
+        "c": { "texto": "Não, mas poderia investir num momento oportuno", "pontos": 2 },
+        "d": { "texto": "Não e não pretendo investir, pois não me agrada a idéia de estar sujeito a rentabilidade negativa", "pontos": 1 }
+      }
+    },
+    {
+      "id": 8,
+      "texto": "Caso a sua aplicação tivesse uma perda no curto prazo, qual seria o percentual aceitável?",
+      "opcoes": {
+        "a": { "texto": "Acima de 15%", "pontos": 4 },
+        "b": { "texto": "Até 15%", "pontos": 3 },
+        "c": { "texto": "Até 5%", "pontos": 2 },
+        "d": { "texto": "Não aceitaria perda", "pontos": 1 }
+      }
+    }
+  ]
+}

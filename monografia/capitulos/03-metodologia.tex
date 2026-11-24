@@ -1,0 +1,791 @@
+% ============================================================================
+% CAPÍTULO 3 — METODOLOGIA
+% ============================================================================
+\chapter{Metodologia}
+\label{cap:metodologia}
+
+\section{Delineamento geral}
+
+Este trabalho utiliza uma abordagem de simulação: agentes de inteligência
+artificial baseados em modelos de linguagem de grande escala (LLM) recebem,
+via instrução de sistema (\textit{system prompt}), uma personalidade
+induzida segundo o modelo Big Five, e em seguida respondem a dois
+instrumentos: um de autorrelato de personalidade (checagem de manipulação)
+e o Índice de Perfil do Investidor (IPA, variável dependente).
+
+Trata-se de uma pesquisa \textbf{quantitativa}, pois a relação entre
+personalidade induzida e escore do IPA é testada por meios estatísticos
+(correlação de Spearman e regressão OLS, seção \ref{sec:analise-estatistica}),
+não por análise qualitativa das respostas dos agentes, e
+\textbf{exploratória}, no sentido de que não foi encontrado um estudo
+anterior que relacione personalidade induzida em agentes de IA a um
+questionário de perfil de investidor (\textit{suitability}): os estudos
+mais próximos com LLMs \cite{borman2024,hartley2025} medem o risco por
+tarefas de escolha, e as hipóteses de referência deste trabalho
+(Capítulo \ref{cap:referencial}) vêm de estudos com sujeitos humanos,
+adaptadas por analogia. O método é o de
+\textbf{simulação computacional controlada}: diferentemente de um
+levantamento ou experimento com sujeitos humanos, o "nível verdadeiro" de
+personalidade de cada agente é conhecido por construção (definido pelo
+sorteio que gera o \textit{prompt}), o que elimina o erro de medida da
+variável independente presente em estudos com autorrelato humano, ao
+custo de uma validade externa que depende de o LLM realmente incorporar,
+em sua geração de texto, a personalidade descrita no \textit{prompt}
+(daí a necessidade da checagem de manipulação, seção
+\ref{sec:selecao-modelo}, e do teste de robustez do Experimento B, seção
+\ref{sec:exp-a-b}).
+
+\section{Instrumentos}
+
+\subsection{Indução de personalidade (Baixo/Médio/Alto)}
+
+Para cada um dos cinco traços do Big Five foram escritas três descrições
+curtas (Baixo, Médio, Alto), baseadas no conteúdo dos itens do BFI-10
+(arquivo \texttt{questionarios/perfis\_personalidade.json}). Essas
+descrições são inseridas no \textit{system prompt} de cada agente para
+induzir a personalidade (seção \ref{sec:prompts}). O Quadro
+\ref{quadro:perfis-nivel} reproduz as 15 descrições.
+
+\begin{quadro}[htbp]
+    \caption{Descrições usadas para induzir cada nível de cada traço}
+    \label{quadro:perfis-nivel}
+    \centering
+    \small
+    \begin{tabular}{lp{12cm}}
+        \toprule
+        Nível & Descrição inserida no \textit{prompt} \\
+        \midrule
+        \multicolumn{2}{l}{\textbf{Extroversão}} \\
+        Baixo & É uma pessoa reservada, prefere ambientes tranquilos e evita ser o centro das atenções. \\
+        Médio & É uma pessoa equilibrada entre momentos sociais e momentos sozinha, nem muito reservada nem muito extrovertida. \\
+        Alto & É uma pessoa sociável e extrovertida, gosta de estar com outras pessoas e de ambientes movimentados. \\
+        \addlinespace
+        \multicolumn{2}{l}{\textbf{Amabilidade}} \\
+        Baixo & Tende a ser crítica com os outros, aponta defeitos com facilidade e confia pouco nas pessoas. \\
+        Médio & Confia nas pessoas moderadamente: às vezes é crítica, às vezes é tolerante. \\
+        Alto & Geralmente confia nas pessoas, é gentil e raramente é crítica ou aponta defeitos nos outros. \\
+        \addlinespace
+        \multicolumn{2}{l}{\textbf{Consciência}} \\
+        Baixo & Tende a ser preguiçosa, desorganizada e costuma deixar tarefas inacabadas. \\
+        Médio & É razoavelmente organizada, mas às vezes deixa tarefas para depois. \\
+        Alto & É organizada e disciplinada, insiste até concluir qualquer tarefa ou trabalho. \\
+        \addlinespace
+        \multicolumn{2}{l}{\textbf{Neuroticismo}} \\
+        Baixo & É uma pessoa relaxada, que controla bem o estresse e raramente fica nervosa. \\
+        Médio & Mantém o equilíbrio emocional na maior parte do tempo, mas ocasionalmente fica ansiosa diante de problemas. \\
+        Alto & Fica nervosa com facilidade e tem dificuldade para controlar o estresse e a ansiedade. \\
+        \addlinespace
+        \multicolumn{2}{l}{\textbf{Abertura à Experiência}} \\
+        Baixo & Tem poucos interesses artísticos e pouca imaginação, prefere o familiar e o convencional. \\
+        Médio & Tem alguns interesses artísticos e está moderadamente aberta a novas ideias e experiências. \\
+        Alto & Tem uma imaginação fértil, muitos interesses artísticos e intelectuais, e gosta de experimentar coisas novas. \\
+        \bottomrule
+    \end{tabular}
+    \legend{Fonte: elaborado pela autora (\texttt{perfis\_personalidade.json}).}
+\end{quadro}
+
+\subsection{Questionário de autorrelato: checagem de manipulação}
+
+O instrumento utilizado como checagem de manipulação na análise principal
+deste trabalho é o \textbf{BFI-44} \cite{johndonahuekentle1991}, versão
+completa de 44 itens do \textit{Big Five Inventory}, em uma versão em
+português que segue a ordem e o conteúdo dos 44 itens do instrumento
+original, com a mesma escala de concordância de 1
+(discordo totalmente) a 5 (concordo totalmente) usada no BFI-10 (seção
+\ref{sec:bfi10-piloto}). A validação psicométrica do BFI-44 para o
+Brasil foi conduzida por \citeonline{andrade2008}, com uma adaptação cuja
+ordem e redação dos itens diferem em parte das usadas aqui; por isso, as
+propriedades psicométricas relatadas por esse autor servem como
+referência geral para o instrumento, e não como validação da versão
+exata aplicada aos agentes. Cada um dos cinco traços é medido por um número
+diferente de itens: Extroversão e Neuroticismo com 8 cada, Abertura à
+Experiência com 10, e Amabilidade e Consciência com 9 cada, com itens
+diretos e reversos em proporção variável por traço (arquivo
+\texttt{questionarios/bfi44.json}); a pontuação de cada traço é a média
+dos seus itens, já com a reversão aplicada quando necessário (itens
+reversos: escore final = 6 menos a resposta, mesma regra do BFI-10).
+Implementação em \texttt{gerar\_agentes.py}, função
+\texttt{calcular\_bfi44}.
+
+A Tabela \ref{tab:bfi44-resumo} resume o número de itens por traço, e o
+Quadro \ref{quadro:bfi44-itens} reproduz as 44 afirmações, na forma em
+que foram apresentadas aos agentes. As instruções e a escala de resposta
+são as mesmas do BFI-10:
+
+\begin{itemize}
+    \item \textbf{Instruções}: ``As declarações a seguir dizem respeito à
+    sua percepção sobre si mesmo em uma variedade de situações. Indique o
+    número que melhor expressa sua opinião sobre você mesmo em cada
+    afirmação.'' Frase-base: ``Eu me vejo como alguém que...'';
+    \item \textbf{Escala de resposta}: 1 = Discordo totalmente; 2 =
+    Discordo em parte; 3 = Nem concordo nem discordo; 4 = Concordo em
+    parte; 5 = Concordo totalmente.
+\end{itemize}
+
+\begin{quadro}[htbp]
+    \caption{Itens do BFI-44}
+    \label{quadro:bfi44-itens}
+    \centering
+    \footnotesize
+    \begin{tabular}{rp{7.6cm}lc}
+        \toprule
+        Item & Afirmação (``Eu me vejo como alguém que...'') & Traço & Escore \\
+        \midrule
+        1 & Gosta de conversar, é comunicativa. & Extroversão & D \\
+        2 & Tende a criticar os outros. & Amabilidade & R \\
+        3 & É minuciosa e detalhista no trabalho. & Consciência & D \\
+        4 & Depressiva, triste. & Neuroticismo & D \\
+        5 & É original, tem ideias novas. & Abertura à Experiência & D \\
+        6 & É reservada. & Extroversão & R \\
+        7 & É generosa e não é egoísta com outras pessoas. & Amabilidade & D \\
+        8 & Pode ser desleixada para fazer as coisas. & Consciência & R \\
+        9 & É tranquila, lida bem com estresse. & Neuroticismo & R \\
+        10 & Se interessa por áreas diferentes do conhecimento. & Abertura à Experiência & D \\
+        11 & É cheia de energia. & Extroversão & D \\
+        12 & Inicia bate-boca com outros. & Amabilidade & R \\
+        13 & É confiável no trabalho. & Consciência & D \\
+        14 & Pode ser tensa. & Neuroticismo & D \\
+        15 & É inovadora, pensa profundamente nas coisas. & Abertura à Experiência & D \\
+        16 & Gera muito entusiasmo. & Extroversão & D \\
+        17 & Desculpa, perdoa os outros. & Amabilidade & D \\
+        18 & Tende a ser desorganizada. & Consciência & R \\
+        19 & Se preocupa muito, em excesso. & Neuroticismo & D \\
+        20 & Tem uma imaginação fértil. & Abertura à Experiência & D \\
+        21 & Tende a ser quieta. & Extroversão & R \\
+        22 & Geralmente confia, acredita nos outros. & Amabilidade & D \\
+        23 & Tende a ser preguiçosa. & Consciência & R \\
+        24 & É emocionalmente estável, não se perturba facilmente. & Neuroticismo & R \\
+        25 & É inventiva. & Abertura à Experiência & D \\
+        26 & É assertiva, não tem medo de expressar o que sente. & Extroversão & D \\
+        27 & Às vezes é indiferente com os outros. & Amabilidade & R \\
+        28 & Persevera até concluir as tarefas. & Consciência & D \\
+        29 & É temperamental e instável emocionalmente. & Neuroticismo & D \\
+        30 & Valoriza experiências artísticas e estéticas. & Abertura à Experiência & D \\
+        31 & Às vezes é tímida, inibida. & Extroversão & R \\
+        32 & É boa e atenciosa com quase todo mundo. & Amabilidade & D \\
+        33 & Faz as coisas com eficiência. & Consciência & D \\
+        34 & Se mantém calma em situações tensas. & Neuroticismo & R \\
+        35 & Gosta de rotina. & Abertura à Experiência & R \\
+        36 & É extrovertida e sociável. & Extroversão & D \\
+        37 & Às vezes é grosseira com outras pessoas. & Amabilidade & R \\
+        38 & Cumpre, finaliza os planos que faz. & Consciência & D \\
+        39 & Fica nervosa facilmente. & Neuroticismo & D \\
+        40 & Gosta de refletir, jogar com as ideias. & Abertura à Experiência & D \\
+        41 & Tem poucos interesses artísticos. & Abertura à Experiência & R \\
+        42 & Gosta de cooperar com outros. & Amabilidade & D \\
+        43 & Se distrai facilmente. & Consciência & R \\
+        44 & É sofisticada em arte, música ou literatura. & Abertura à Experiência & D \\
+        \bottomrule
+    \end{tabular}
+    \legend{Fonte: itens conforme aplicados neste trabalho (\texttt{questionarios/bfi44.json}), versão em português do instrumento de \citeonline{johndonahuekentle1991}. D = escore direto; R = escore reverso.}
+\end{quadro}
+
+\begin{table}[htb]
+    \caption{Número de itens do BFI-44, por traço}
+    \label{tab:bfi44-resumo}
+    \centering
+    \begin{tabular}{lccc}
+        \toprule
+        Traço & Itens (total) & Diretos & Reversos \\
+        \midrule
+        Abertura à Experiência & 10 & 8 & 2 \\
+        Amabilidade             & 9  & 5 & 4 \\
+        Consciência             & 9  & 5 & 4 \\
+        Extroversão             & 8  & 5 & 3 \\
+        Neuroticismo            & 8  & 5 & 3 \\
+        \bottomrule
+    \end{tabular}
+    \legend{Fonte: elaborado pela autora a partir de \texttt{questionarios/bfi44.json}.}
+\end{table}
+
+Por ter mais itens por traço que o BFI-10 (2 por traço), o BFI-44 produz
+uma média menos sensível ao ruído de um único item. Foi esse o principal
+motivo para migrar o estudo piloto (BFI-10) para o BFI-44 como instrumento
+da análise principal: uma checagem de manipulação mais granular permite
+distinguir com mais confiança entre "o traço não foi incorporado pelo
+agente" e "o traço foi incorporado, mas 1-2 itens específicos tiveram
+resposta ruidosa" (ver seção \ref{sec:limitacoes-pipeline} sobre o viés de
+itens com formulação invertida, que afeta mais um instrumento curto do que
+um longo).
+
+\subsection{Estudo piloto: BFI-10}
+\label{sec:bfi10-piloto}
+
+Antes da análise principal (BFI-44) descrita acima, foi conduzido um
+estudo piloto com o \textbf{BFI-10} \cite{rammstedtjohn2007}, versão
+reduzida de 10 itens do \textit{Big Five Inventory}, na tradução em
+português reproduzida no Anexo 3 (material suplementar S2 Questionnaire)
+de \cite{debortoli2019}, arquivo \texttt{questionarios/bfi10.json}. Cada
+um dos cinco traços do Big Five é medido por 2 itens, um com escore
+direto e outro com escore reverso, e a pontuação da dimensão é a média
+dos seus 2 itens (mesma regra de reversão do BFI-44). Implementação em
+\texttt{gerar\_agentes.py}, função \texttt{calcular\_bfi10}.
+
+O Quadro \ref{quadro:bfi10-itens} reproduz os 10 itens, com o traço
+medido por cada um. As instruções e a escala de resposta são as mesmas
+do BFI-44, já descritas acima.
+
+\begin{quadro}[htbp]
+    \caption{Itens do BFI-10}
+    \label{quadro:bfi10-itens}
+    \centering
+    \small
+    \begin{tabular}{rp{7.2cm}lc}
+        \toprule
+        Item & Afirmação (``Eu me vejo como alguém que...'') & Traço & Escore \\
+        \midrule
+        1  & É reservado. & Extroversão & R \\
+        2  & Geralmente confia nas pessoas. & Amabilidade & D \\
+        3  & Tende a ser preguiçoso. & Consciência & R \\
+        4  & É relaxado, controla bem o estresse. & Neuroticismo & R \\
+        5  & Tem poucos interesses artísticos. & Abertura à Experiência & R \\
+        6  & É sociável, extrovertido. & Extroversão & D \\
+        7  & Tende a ser crítico com os outros (encontrar defeitos). & Amabilidade & R \\
+        8  & Insiste até concluir a tarefa ou o trabalho. & Consciência & D \\
+        9  & Fica nervoso facilmente. & Neuroticismo & D \\
+        10 & Tem uma imaginação fértil. & Abertura à Experiência & D \\
+        \bottomrule
+    \end{tabular}
+    \legend{Fonte: adaptado de \citeonline{debortoli2019}, Anexo 3, que traduz \citeonline{rammstedtjohn2007}. D = escore direto; R = escore reverso.}
+\end{quadro}
+
+O BFI-10 foi mantido como instrumento fixo ao longo de todos os
+experimentos de comparação entre modelos de linguagem (seção
+\ref{sec:selecao-modelo}): llama3.2:1b, llama3.2:3b, gemma3:4b e
+llama3.1:8b, de forma deliberada. Manter o mesmo instrumento de checagem
+de manipulação em todos os modelos testados é o que torna válida a
+comparação entre eles; usar instrumentos diferentes para modelos diferentes
+confundiria efeito do modelo com efeito do instrumento. Os resultados do
+estudo piloto (dataset \texttt{dataset\_llama31\_8b.csv}, N=300) são
+reportados na seção \ref{sec:resultados-piloto}, e permanecem relevantes
+mesmo após a migração para o BFI-44: foram eles que motivaram a escolha do
+\texttt{llama3.1:8b} como modelo principal (seção
+\ref{sec:selecao-modelo}) e produziram o primeiro indício do achado
+central deste trabalho (Abertura à Experiência), posteriormente
+confirmado com o instrumento mais granular.
+
+\subsection{Experimentos A e B: indução simultânea vs. isolada de traços}
+\label{sec:exp-a-b}
+
+Além da migração de instrumento (BFI-10 → BFI-44), dois desenhos de
+indução foram testados com o BFI-44, mantendo o mesmo modelo
+(\texttt{llama3.1:8b}) e N=300 em cada um:
+
+\begin{itemize}
+    \item \textbf{Experimento A (multi-traço)}: mesmo desenho do estudo
+    piloto, em que os 5 traços variam Baixo/Médio/Alto de forma independente e
+    simultânea em cada agente (seção \ref{sec:desenho-fatorial}). É o
+    dataset da \textbf{análise principal} deste trabalho, reportado no
+    Capítulo \ref{cap:resultados};
+    \item \textbf{Experimento B (traço dominante)}: cada agente tem
+    apenas 1 dos 5 traços sorteado para variar Baixo/Médio/Alto; os
+    outros 4 permanecem fixos em "Médio" no \textit{system prompt}.
+\end{itemize}
+
+O Experimento B não substitui o A: é um teste de robustez metodológica,
+motivado por uma questão levantada durante a orientação deste trabalho:
+induzir os 5 traços simultaneamente no mesmo \textit{prompt} poderia
+diluir ou confundir o sinal de cada traço individual, em comparação a
+manipular apenas 1 por vez? Se as correlações entre nível induzido e
+autorrelato (checagem de manipulação) forem comparáveis nos dois desenhos,
+isso é evidência de que a indução simultânea, que é também o desenho
+mais próximo da personalidade humana real, onde os 5 traços coexistem
+sempre em algum nível, e é o desenho adotado por
+\citeonline{debortoli2019} e \citeonline{jiangpengyan2024}, não
+compromete a qualidade da manipulação. Os resultados dessa comparação
+estão na seção \ref{sec:resultados-exp-b} e são interpretados no Capítulo
+\ref{cap:discussao}.
+
+\subsection{IPA: perfil de investidor (variável dependente)}
+
+Instrumento de 8 perguntas objetivas (alternativas a-d), adaptado do
+questionário de Análise de Perfil do Investidor do Banco do Brasil,
+alinhado às diretrizes da ANBIMA e da IOSCO (\textit{suitability}),
+conforme reproduzido no Anexo 5 de \citeonline{debortoli2019}. O Quadro
+\ref{quadro:ipa-perguntas} reproduz as perguntas e as alternativas.
+
+\begin{quadro}[htbp]
+    \caption{Perguntas do IPA e alternativas}
+    \label{quadro:ipa-perguntas}
+    \centering
+    \small
+    \begin{tabular}{cp{13.4cm}}
+        \toprule
+        \multicolumn{2}{p{14.4cm}}{\textbf{1. Indique sua faixa etária.}} \\
+        & a) Abaixo de 25 anos \quad b) De 25 a 40 anos \quad c) De 41 a 55 anos \quad d) Acima de 56 anos \\
+        \addlinespace
+        \multicolumn{2}{p{14.4cm}}{\textbf{2. Se você realizasse um investimento financeiro hoje (ex: fundos de investimento, poupança, CDI), qual o percentual do total de seu patrimônio que você aplicaria em investimentos?}} \\
+        & a) Até 25\% \quad b) Entre 26\% e 50\% \quad c) Entre 51\% e 75\% \quad d) Mais de 75\% \\
+        \addlinespace
+        \multicolumn{2}{p{14.4cm}}{\textbf{3. Quando você realiza alguma aplicação (investimento financeiro), qual o prazo médio dos investimentos?}} \\
+        & a) Indefinidamente, pois não tenho planos para utilização \quad b) No máximo 5 anos \quad c) No máximo 2 anos \quad d) No máximo 1 ano \\
+        \addlinespace
+        \multicolumn{2}{p{14.4cm}}{\textbf{4. Qual o principal objetivo de seus investimentos?}} \\
+        & a) Obter rentabilidade superior à proporcionada por investimentos tradicionais de renda fixa, mesmo assumindo risco de possíveis perdas \quad b) Diversificar os investimentos \quad c) Formar uma reserva financeira para utilização futura \quad d) Preservar o patrimônio \\
+        \addlinespace
+        \multicolumn{2}{p{14.4cm}}{\textbf{5. Qual a sua melhor referência de rentabilidade?}} \\
+        & a) Índices das Bolsas de Valores \quad b) Dólar \quad c) CDI \quad d) Poupança \\
+        \addlinespace
+        \multicolumn{2}{p{14.4cm}}{\textbf{6. Quais são as aplicações financeiras em que você tem maior conhecimento?}} \\
+        & a) Fundo de Ações, Ações ou Derivativos \quad b) Fundos Multimercados, Cambiais, Dívida Externa ou Renda Fixa \quad c) CDB, Poupança ou Fundos Referenciados DI e Curto Prazo \quad d) Não tenho conhecimento \\
+        \addlinespace
+        \multicolumn{2}{p{14.4cm}}{\textbf{7. Você já investiu em ações ou Fundo de Ações?}} \\
+        & a) Sim, pois a possibilidade de maiores rentabilidades me atraem muito \quad b) Sim, mas com receio \quad c) Não, mas poderia investir num momento oportuno \quad d) Não e não pretendo investir, pois não me agrada a ideia de estar sujeito a rentabilidade negativa \\
+        \addlinespace
+        \multicolumn{2}{p{14.4cm}}{\textbf{8. Caso a sua aplicação tivesse uma perda no curto prazo, qual seria o percentual aceitável?}} \\
+        & a) Acima de 15\% \quad b) Até 15\% \quad c) Até 5\% \quad d) Não aceitaria perda \\
+        \bottomrule
+    \end{tabular}
+    \legend{Fonte: adaptado de \citeonline{debortoli2019}, Anexo 5 (questionário API do Banco do Brasil / ANBIMA / IOSCO).}
+\end{quadro}
+
+A pergunta 1 (faixa etária) foi atribuída aleatoriamente a cada agente, e
+não respondida pelo modelo, por ser um dado demográfico inaplicável a
+agentes de IA (ver seção \ref{sec:limitacoes-pipeline}).
+
+\subsubsection{Regra de pontuação do IPA}
+\label{sec:ipa-pontuacao}
+
+O artigo de \citeonline{debortoli2019} não publica os pesos atribuídos a
+cada alternativa nem os cortes de classificação de perfil
+(conservador/moderado/arrojado) usados pelos autores. A regra de
+pontuação abaixo é, portanto, uma \textbf{definição própria deste
+trabalho}, criada da forma mais simples possível para viabilizar o cálculo
+automático do perfil de cada agente (arquivo
+\texttt{questionarios/\allowbreak ipa.json}, campo
+\texttt{pontuacao\_perfil}).
+
+Cada alternativa recebe de 1 a 4 pontos, em que 1 corresponde à
+alternativa mais associada a um perfil conservador e 4 à mais associada a
+um perfil arrojado. Em 7 das 8 perguntas, a pontuação segue a ordem das
+alternativas (a = 4, b = 3, c = 2, d = 1). A exceção é a pergunta 2, em
+que a ordem é invertida, pois aplicar uma fração maior do patrimônio em
+investimentos indica maior tolerância ao risco, não menor (Tabela
+\ref{tab:ipa-pontuacao-alternativas}).
+
+\begin{table}[htb]
+    \caption{Pontuação de cada alternativa do IPA, por pergunta}
+    \label{tab:ipa-pontuacao-alternativas}
+    \centering
+    \begin{tabular}{cccccc}
+        \toprule
+        Pergunta & a & b & c & d & Regra \\
+        \midrule
+        1, 3, 4, 5, 6, 7, 8 & 4 & 3 & 2 & 1 & Geral \\
+        2 & 1 & 2 & 3 & 4 & Invertida \\
+        \bottomrule
+    \end{tabular}
+    \legend{Fonte: elaborado pela autora (\texttt{questionarios/ipa.json}).}
+\end{table}
+
+O escore total é a soma das 8 respostas, de 8 a 32 pontos, e define o
+perfil de investidor conforme a Tabela \ref{tab:ipa-classificacao}. Como
+a pergunta 1 é sorteada, a análise estatística do Capítulo
+\ref{cap:resultados} usa também um escore restrito às perguntas 2 a 8 (de
+7 a 28 pontos), que reflete apenas o que o agente efetivamente respondeu.
+
+\begin{table}[htb]
+    \caption{Classificação do perfil de investidor por faixa de escore}
+    \label{tab:ipa-classificacao}
+    \centering
+    \begin{tabular}{lcc}
+        \toprule
+        Perfil & Faixa (soma, 8 perguntas) & Faixa (média por pergunta) \\
+        \midrule
+        Conservador & 8 a 15  & 1,0 a 1,9 \\
+        Moderado    & 16 a 23 & 2,0 a 2,9 \\
+        Arrojado    & 24 a 32 & 3,0 a 4,0 \\
+        \bottomrule
+    \end{tabular}
+    \legend{Fonte: elaborado pela autora (\texttt{questionarios/ipa.json}).}
+\end{table}
+
+\subsection{Justificativa da escolha dos instrumentos}
+
+A escolha dos instrumentos deste trabalho, e não de outras versões do
+Big Five ou de outros questionários de perfil de investidor, foi
+motivada por três razões principais, sendo a terceira delas responsável
+pela evolução do instrumento de autorrelato entre o estudo piloto e a
+análise principal (seção \ref{sec:exp-a-b}).
+
+Em primeiro lugar, e mais importante, \textbf{o IPA e a categorização dos
+traços do Big Five em três níveis são os mesmos de De Bortoli et al.
+\cite{debortoli2019}}, o artigo-base cujo desenho experimental é adotado
+diretamente neste trabalho (seção \ref{cap:metodologia}). Isso vale tanto
+para o estudo piloto quanto para a análise principal: migrar o
+instrumento de \textit{autorrelato} de personalidade (BFI-10 → BFI-44) não
+alterou essa base comum, já que o IPA e a categorização Baixo/Médio/Alto
+permaneceram idênticos nos dois. Usar o mesmo IPA que o artigo de
+referência permite uma comparação metodologicamente mais direta entre os
+achados deste TCC e os daquele estudo (Capítulo \ref{cap:discussao}).
+
+Em segundo lugar, o IPA é um instrumento de \textit{suitability}
+efetivamente utilizado no mercado financeiro brasileiro (adaptado do
+questionário do Banco do Brasil/ANBIMA), o que dá ao instrumento,
+independentemente dos resultados deste trabalho, relevância prática para
+além do contexto acadêmico (seção \ref{sec:trabalho-realizado-intro}).
+
+Em terceiro lugar, a escolha do instrumento de \textit{autorrelato} de
+personalidade (o que muda entre piloto e análise principal) refletiu um
+equilíbrio diferente em cada fase entre custo computacional e granularidade
+da checagem de manipulação. O BFI-10 (10 itens, o mesmo de De Bortoli et
+al.) foi usado como instrumento fixo durante a fase de \textbf{comparação
+entre 4 modelos de linguagem} (seção \ref{sec:selecao-modelo}): com 4
+modelos a testar, um instrumento mais curto reduzia o custo computacional
+de gerar respostas e simplificava o \textit{parsing} automático necessário
+para calcular os escores em escala (seção \ref{sec:pipeline}). Uma vez concluída essa
+comparação e definido o \texttt{llama3.1:8b} como modelo único da análise
+principal, esse motivo para preferir um instrumento curto deixou de se
+aplicar, já que restava rodar o pipeline uma única vez, não repeti-lo por
+modelo, e a granularidade adicional do BFI-44 (mais itens por traço,
+seção \ref{sec:exp-a-b}) passou a valer o custo computacional extra,
+motivando a migração do instrumento de autorrelato para a análise
+principal.
+
+\section{Pipeline de geração dos agentes}
+\label{sec:pipeline}
+
+Script principal: \texttt{src/geracao/gerar\_agentes.py}. Para cada agente,
+o pipeline executa:
+
+\begin{enumerate}
+    \item Sorteia um nível (Baixo/Médio/Alto) para cada um dos 5 traços do
+    Big Five, de forma independente e com igual probabilidade;
+    \item Monta o \textit{system prompt} combinando as descrições
+    correspondentes (seção \ref{sec:prompts});
+    \item O agente responde ao questionário de autorrelato de personalidade;
+    \item O agente responde ao IPA (perguntas 2 a 8; a pergunta 1 é
+    atribuída aleatoriamente);
+    \item Os escores de ambos os questionários são calculados e a linha
+    correspondente é salva em um arquivo CSV.
+\end{enumerate}
+
+\subsection{Prompts enviados ao modelo}
+\label{sec:prompts}
+
+Cada agente corresponde a duas chamadas independentes ao modelo, feitas
+pela API do Ollama: uma com o questionário de autorrelato e outra com o
+IPA. As duas chamadas usam o mesmo \textit{system prompt}, que define a
+personalidade do agente, e não compartilham histórico de conversa entre
+si. Em ambas, a temperatura é 0,7 e a resposta é limitada a 512
+\textit{tokens}; quando a resposta não pode ser interpretada
+automaticamente, a chamada é repetida até 3 vezes.
+
+O Quadro \ref{quadro:prompt-sistema} mostra o modelo do \textit{system
+prompt}. Os trechos entre chaves são preenchidos pelo código com o nível
+sorteado de cada traço e a descrição correspondente do Quadro
+\ref{quadro:perfis-nivel}. O Quadro \ref{quadro:prompt-exemplo} mostra o
+\textit{system prompt} efetivamente enviado a um dos agentes do
+Experimento A. Os nomes dos traços aparecem no \textit{prompt} exatamente
+como no código; nele, Amabilidade está escrita como ``Afabilidade'',
+sinônimo usado nos arquivos do projeto.
+
+\begin{quadro}[htbp]
+    \caption{Modelo do \textit{system prompt} que induz a personalidade}
+    \label{quadro:prompt-sistema}
+    \begin{promptbox}
+    Você deve responder como uma pessoa com o seguinte perfil de personalidade:\\
+    - Extroversão (\campo{nível}): \campo{descrição do nível}\\
+    - Afabilidade (\campo{nível}): \campo{descrição do nível}\\
+    - Consciência (\campo{nível}): \campo{descrição do nível}\\
+    - Neuroticismo (\campo{nível}): \campo{descrição do nível}\\
+    - Abertura à Experiência (\campo{nível}): \campo{descrição do nível}
+
+    Responda TODAS as perguntas a seguir como essa pessoa responderia, de forma consistente com esse perfil. Não explique, não justifique, apenas dê as respostas no formato pedido.
+    \end{promptbox}
+    \legend{Fonte: elaborado pela autora (\texttt{gerar\_agentes.py}, função \texttt{montar\_system\_prompt}). \campo{nível}: Baixo, Médio ou Alto, conforme o sorteio.}
+\end{quadro}
+
+\begin{quadro}[htbp]
+    \caption{Exemplo de \textit{system prompt} enviado a um agente do Experimento A}
+    \label{quadro:prompt-exemplo}
+    \begin{promptbox}
+    Você deve responder como uma pessoa com o seguinte perfil de personalidade:\\
+    - Extroversão (Baixo): É uma pessoa reservada, prefere ambientes tranquilos e evita ser o centro das atenções.\\
+    - Afabilidade (Médio): Confia nas pessoas moderadamente: às vezes é crítica, às vezes é tolerante.\\
+    - Consciência (Baixo): Tende a ser preguiçosa, desorganizada e costuma deixar tarefas inacabadas.\\
+    - Neuroticismo (Médio): Mantém o equilíbrio emocional na maior parte do tempo, mas ocasionalmente fica ansiosa diante de problemas.\\
+    - Abertura à Experiência (Médio): Tem alguns interesses artísticos e está moderadamente aberta a novas ideias e experiências.
+
+    Responda TODAS as perguntas a seguir como essa pessoa responderia, de forma consistente com esse perfil. Não explique, não justifique, apenas dê as respostas no formato pedido.
+    \end{promptbox}
+    \legend{Fonte: dados da pesquisa (primeiro agente do Experimento A).}
+\end{quadro}
+
+Os Quadros \ref{quadro:prompt-bfi44} e \ref{quadro:prompt-ipa} mostram as
+instruções enviadas em cada chamada, logo após o \textit{system prompt}.
+Os dois pedem que o agente escreva o texto exato da alternativa
+escolhida, em um formato fixo de uma resposta por linha, que o código
+então converte em pontuação. Os itens do BFI-44 e as perguntas
+do IPA, abreviados nos quadros, são os dos Quadros
+\ref{quadro:bfi44-itens} e \ref{quadro:ipa-perguntas}; a pergunta 1 do
+IPA não é enviada ao modelo. No estudo piloto, o \textit{system prompt}
+foi o mesmo; mudaram apenas as instruções dos questionários, adaptadas ao
+BFI-10.
+
+\begin{quadro}[htbp]
+    \caption{Instrução enviada ao modelo para o BFI-44}
+    \label{quadro:prompt-bfi44}
+    \begin{promptbox}
+    Para cada afirmação abaixo, escreva o texto exato da opção escolhida logo após o símbolo $\rightarrow$.\\
+    Opções: \textquotedbl Discordo totalmente\textquotedbl{} | \textquotedbl Discordo em parte\textquotedbl{} | \textquotedbl Nem concordo nem discordo\textquotedbl{} | \textquotedbl Concordo em parte\textquotedbl{} | \textquotedbl Concordo totalmente\textquotedbl
+
+    1. Eu me vejo como alguém que Gosta de conversar, é comunicativa. $\rightarrow$\\
+    2. Eu me vejo como alguém que Tende a criticar os outros. $\rightarrow$\\
+    {[\dots]} \campo{itens 3 a 43, no mesmo formato}\\
+    44. Eu me vejo como alguém que É sofisticada em arte, música ou literatura. $\rightarrow$
+    \end{promptbox}
+    \legend{Fonte: elaborado pela autora (\texttt{gerar\_agentes.py}, função \texttt{montar\_prompt\_bfi44}).}
+\end{quadro}
+
+\begin{quadro}[htbp]
+    \caption{Instrução enviada ao modelo para o IPA}
+    \label{quadro:prompt-ipa}
+    \begin{promptbox}
+    Para cada pergunta abaixo, escolha a opção que melhor representa você.\\
+    Escreva o texto exato da opção escolhida, sem alterar nada.
+
+    2. Se você realizasse um investimento financeiro hoje (ex: fundos de investimento, poupança, CDI), qual o percentual do total de seu patrimônio que você aplicaria em investimentos?\\
+    \hspace*{1.5em}- Até 25\%\\
+    \hspace*{1.5em}- Entre 26\% e 50\%\\
+    \hspace*{1.5em}- Entre 51\% e 75\%\\
+    \hspace*{1.5em}- Mais de 75\%
+
+    {[\dots]} \campo{perguntas 3 a 8, no mesmo formato}
+
+    Responda com exatamente 7 linhas (uma por pergunta, na ordem acima, perguntas 2 a 8). Em cada linha, escreva APENAS o texto exato da opção escolhida, sem letras, sem números, sem qualquer outro texto.\\
+    Exemplo (primeiras 2 linhas):\\
+    Entre 26\% e 50\%\\
+    No máximo 5 anos
+
+    Resposta:
+    \end{promptbox}
+    \legend{Fonte: elaborado pela autora (\texttt{gerar\_agentes.py}, função \texttt{montar\_prompt\_ipa}).}
+\end{quadro}
+
+\subsection{Desenho experimental: sorteio aleatório em vez de fatorial}
+\label{sec:desenho-fatorial}
+
+Com 5 dimensões x 3 níveis, um desenho fatorial completo teria $3^5 = 243$
+combinações, inviável de repetir um número razoável de vezes dentro do
+tempo disponível. Optou-se por sortear cada traço de forma independente por
+agente, permitindo tratar o nível induzido como variável ordinal (1/2/3) e
+usar todos os N agentes em uma única análise de correlação/regressão sobre
+os 5 traços simultaneamente. Esse é o desenho do estudo piloto e do
+Experimento A (seção \ref{sec:exp-a-b}); o Experimento B usa uma variação
+desse sorteio em que apenas 1 traço, também escolhido por sorteio, varia
+por agente. A seção \ref{sec:resultados-sorteio} verifica que o sorteio
+ficou equilibrado entre os níveis e independente entre os traços (maior
+correlação entre pares de traços: $|\rho|$ = \aleatRhoMax), de modo que o
+efeito de um traço não se confunde com o de outro.
+
+\subsection{Variáveis do estudo}
+
+\begin{itemize}
+    \item \textbf{Variável independente principal}: nível de personalidade
+    induzido (Baixo=1, Médio=2, Alto=3) em cada um dos 5 traços, conhecida
+    por construção (definida pelo sorteio, sem erro de medida);
+    \item \textbf{Variável de checagem de manipulação}: escore do
+    autorrelato de personalidade respondido pelo próprio agente;
+    \item \textbf{Variável dependente}: escore (8--32) e perfil
+    (Conservador/\allowbreak Moderado/\allowbreak Arrojado) do IPA.
+\end{itemize}
+
+O nível induzido, e não o autorrelato, foi escolhido como variável
+independente principal porque o autorrelato de um LLM pode ser ruidoso ou
+inconsistente com a personalidade pedida no \textit{prompt}; usar o nível
+induzido evita que esse ruído mascare uma eventual relação real entre
+personalidade e perfil de investidor.
+
+\section{Seleção do modelo de linguagem}
+\label{sec:selecao-modelo}
+
+Antes de fixar o modelo para a análise principal, quatro modelos de
+linguagem foram testados quanto à qualidade da indução de personalidade,
+todos com o mesmo instrumento de checagem (BFI-10) e o mesmo
+\textit{system prompt}: \texttt{llama3.2:1b} (1,2B parâmetros),
+\texttt{llama3.2:3b} (3,2B), \texttt{gemma3:4b} (4,3B) e
+\texttt{llama3.1:8b} (8,0B). Os três primeiros foram executados
+localmente via CPU; o \texttt{llama3.1:8b}, por exigir mais capacidade
+computacional, foi executado no Google Colab com GPU NVIDIA T4 (seção
+\ref{sec:pipeline}).
+
+A Tabela \ref{tab:comparacao-modelos} resume os critérios de comparação.
+O critério decisivo foi a checagem de manipulação: o \texttt{llama3.2:1b}
+não incorporou nenhum dos 5 traços de forma estatisticamente detectável e
+foi descartado; o \texttt{llama3.2:3b} incorporou parcialmente (3 dos 5
+traços, com Abertura à Experiência e Extroversão especialmente fracos,
+$\rho$=0,077 e $\rho$=0,185 respectivamente); o \texttt{gemma3:4b}, testado apenas
+em piloto reduzido (N=30) por apresentar viés de conservadorismo
+acentuado (60\% dos agentes classificados como Conservador, 0\% como
+Arrojado), incorporou os 5 traços mas com uma distribuição de perfil IPA
+pouco variável para fins de análise estatística; e o \texttt{llama3.1:8b}
+foi o único modelo com manipulação forte e significativa nos 5 traços
+simultaneamente, além do maior poder explicativo (R²) e da maior
+variância no escore do IPA, pré-requisitos para que os efeitos de
+personalidade sobre o IPA, se existentes, tenham chance de ser detectados
+com significância estatística.
+
+\begin{table}[htb]
+    \caption{Comparação entre os 4 modelos de linguagem testados}
+    \label{tab:comparacao-modelos}
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lcccc}
+        \toprule
+        Critério & \texttt{llama3.2:1b} & \texttt{llama3.2:3b} & \texttt{gemma3:4b} & \texttt{llama3.1:8b} \\
+        \midrule
+        Manipulação (5 traços)     & Falha total    & Parcial (3/5)  & Boa (5/5, N=30) & \textbf{Forte (5/5)} \\
+        Manipulação (Abertura)     & $\sim$0,09 n.s. & 0,077 n.s.    & 0,629***        & \textbf{0,739***} \\
+        \% Arrojado no IPA         & 2\%            & 9\%            & 0\%             & \textbf{17\%} \\
+        Desvio padrão IPA (Q2--Q8) & $\sim$1,5      & 1,99           & 1,64            & \textbf{2,74} \\
+        R² do modelo (OLS)         & --             & 0,067          & -- (N=30)       & \textbf{0,169} \\
+        Traços significativos      & Nenhum         & Abertura       & Extroversão (N=30) & \textbf{Abertura + Extroversão} \\
+        Viés de resposta           & Centralidade   & Centralidade   & Conservadorismo & \textbf{Centralidade (atenuado)} \\
+        Velocidade                 & $\sim$45s/CPU  & $\sim$45s/CPU  & $\sim$55s/CPU   & \textbf{$\sim$3,6s/GPU} \\
+        N gerado                   & 316            & 299            & 30 (piloto)     & \textbf{300} \\
+        \bottomrule
+    \end{tabular}%
+    }
+    \legend{Fonte: dados da pesquisa. Todos os valores de manipulação e R² referem-se ao estudo piloto (BFI-10, seção \ref{sec:bfi10-piloto}), etapa em que a comparação entre modelos foi conduzida.}
+\end{table}
+
+A progressão 1b → 3b → 8b mostra melhora sistemática e consistente dentro
+da própria família Llama em todos os critérios (manipulação,
+variância do IPA e poder explicativo), o que reforça a interpretação de
+que o tamanho do modelo, e não apenas a família, é determinante para a
+validade deste tipo de simulação (discutido em maior profundidade no
+Capítulo \ref{cap:discussao}). O \texttt{llama3.1:8b} foi portanto adotado
+como modelo único tanto para o estudo piloto (BFI-10) quanto para os
+Experimentos A e B (BFI-44, seção \ref{sec:exp-a-b}).
+
+\section{Limitações conhecidas do pipeline}
+\label{sec:limitacoes-pipeline}
+
+\begin{itemize}
+    \item \textbf{Pergunta 1 do IPA (faixa etária)}: em testes iniciais,
+    100\% dos agentes respondiam a mesma alternativa (viés sistemático);
+    por isso, essa pergunta passou a ser atribuída aleatoriamente em vez de
+    respondida pelo modelo;
+    \item \textbf{Itens de pontuação invertida}: o modelo tende a discordar
+    de itens com formulação negativa (ex.: "é reservado(a)") independentemente
+    da personalidade induzida, atenuando a manipulação de Extroversão e
+    Abertura à Experiência em modelos menores (ver seção
+    \ref{sec:selecao-modelo});
+    \item \textbf{Temperatura de 0,7 na análise principal}: introduz
+    variabilidade entre execuções, ou seja, dois agentes com o mesmo nível
+    de personalidade induzido podem gerar respostas diferentes aos
+    questionários. O parâmetro \texttt{--seed} do
+    \texttt{gerar\_agentes.py} controla apenas o sorteio dos níveis de
+    personalidade de cada agente (tornando reprodutível \textit{quais}
+    combinações de traços foram geradas), não a geração de texto do LLM
+    em si. O efeito dessa variabilidade sobre os resultados foi avaliado
+    repetindo a análise principal com outras temperaturas (seção
+    \ref{sec:metodo-robustez}).
+\end{itemize}
+
+\section{Análise de robustez e generalização}
+\label{sec:metodo-robustez}
+
+Para avaliar se as associações encontradas no Experimento A dependem de
+condições específicas da sua geração, o Experimento A foi repetido
+variando um fator de cada vez e mantendo todo o restante do desenho
+(indução simultânea dos cinco traços, BFI-44, IPA e mesmos
+\textit{prompts}). Foram três frentes:
+
+\begin{enumerate}
+    \item \textbf{Sensibilidade à temperatura}: o Experimento A, gerado com
+    temperatura 0,7, foi repetido com temperaturas 0,0, 0,3 e 1,0, com o
+    mesmo modelo (\texttt{llama3.1:8b}) e N=300 em cada rodada. Todas as
+    rodadas usaram a mesma semente do sorteio (\texttt{--seed} 123), de
+    modo que os 300 perfis de personalidade e a pergunta 1 do IPA sorteada
+    são idênticos aos do Experimento A, agente a agente; a única diferença
+    entre as rodadas é a temperatura;
+    \item \textbf{Novo sorteio de perfis}: o Experimento A foi repetido com
+    outra semente (\texttt{--seed} 456), mesmo modelo, temperatura 0,7 e
+    N=300, o que produz 300 perfis de personalidade sorteados de novo. Esse
+    teste avalia se os resultados dependem do sorteio específico usado na
+    análise principal. O novo sorteio passou pelas mesmas verificações de
+    equilíbrio e independência da seção \ref{sec:resultados-sorteio};
+    \item \textbf{Outros modelos de linguagem}: o Experimento A foi
+    repetido com outros modelos, mantendo temperatura 0,7 e a semente 123
+    (mesmos perfis do Experimento A, agente a agente). Três modelos
+    abertos, executados via Ollama no Google Colab com GPU T4, foram
+    rodados com N=300: \texttt{qwen2.5:7b}, \texttt{mistral:7b} e
+    \texttt{gemma3:12b}. Para esses modelos, o limite de resposta foi
+    ampliado de 512 para 1.536 \textit{tokens}, porque alguns deles
+    repetem o texto de cada item do BFI-44 antes da resposta. Dois modelos
+    maiores, da família Nemotron (NVIDIA), foram acessados pela API do
+    OpenRouter em sua cota gratuita, que limita o número de chamadas por
+    dia; por isso, foram rodados apenas como piloto exploratório, com N=30
+    (os mesmos perfis dos 30 primeiros agentes do Experimento A), com o
+    raciocínio interno do modelo desligado e limite de resposta de 4.096
+    \textit{tokens}: Nemotron 3.5 Super e Nemotron 3 Ultra. Um terceiro
+    modelo previsto para essa etapa, o Gemma 4 31B, não pôde ser incluído:
+    o provedor que o disponibiliza na cota gratuita recusou quase todas as
+    chamadas por congestionamento ao longo de vários dias de tentativas,
+    e apenas 2 dos 30 agentes foram gerados, número insuficiente para
+    qualquer análise.
+\end{enumerate}
+
+Como as rodadas de temperatura e de outros modelos usam os mesmos perfis
+do Experimento A, além das mesmas análises da seção
+\ref{sec:analise-estatistica}, elas permitem uma comparação pareada,
+agente a agente: a correlação de Spearman entre o escore IPA obtido na
+rodada e o obtido no Experimento A, e a porcentagem de agentes que
+receberam o mesmo perfil de investidor nas duas rodadas.
+
+Complementarmente, a qualidade da indução no Experimento A foi avaliada
+também pela \textbf{correlação entre os traços autorrelatados}: como os
+níveis induzidos são sorteados de forma independente (seção
+\ref{sec:resultados-sorteio}), qualquer correlação entre os escores de
+autorrelato de dois traços é produzida pelo próprio modelo. Foram
+calculadas a correlação de Spearman entre os escores autorrelatados dos
+10 pares de traços e a correlação entre o nível induzido de cada traço e
+o autorrelato de cada um dos outros quatro, que indica o quanto a
+indução de um traço ``vaza'' para outro.
+
+\section{Análise estatística}
+\label{sec:analise-estatistica}
+
+Dois métodos estatísticos foram aplicados a cada um dos três datasets
+deste trabalho (estudo piloto, Experimento A e Experimento B), sempre
+sobre os agentes com perfil IPA válido (Conservador, Moderado ou
+Arrojado):
+
+\begin{enumerate}
+    \item \textbf{Correlação de Spearman} ($\rho$) entre o nível de
+    personalidade induzido (1/2/3) e o escore do IPA (soma das perguntas
+    2 a 8, variando de 7 a 28), calculada separadamente para cada um dos
+    5 traços. A correlação de Spearman, não paramétrica, foi preferida à
+    de Pearson por não assumir relação linear nem distribuição normal
+    dos resíduos, adequada a uma variável independente ordinal de apenas
+    3 níveis;
+    \item \textbf{Regressão linear múltipla (OLS)}, com o escore do IPA
+    como variável dependente e os 5 níveis de personalidade induzidos
+    (como variáveis numéricas 1/2/3) como regressores simultâneos,
+    replicando a abordagem adotada por \citeonline{jiangpengyan2024}. Ao
+    contrário da correlação de Spearman por traço, a regressão OLS
+    estima o efeito de cada traço \textit{controlando} pelos demais,
+    permitindo distinguir um efeito próprio de um traço de um efeito
+    decorrente apenas de sua correlação com outro traço mais relevante.
+\end{enumerate}
+
+Os dois métodos foram aplicados adicionalmente ao par (nível induzido,
+escore do autorrelato de personalidade) de cada traço, para a checagem de
+manipulação (seção \ref{sec:selecao-modelo}). No Experimento B, a mesma
+correlação de Spearman foi calculada também de forma estratificada,
+apenas entre os agentes em que aquele traço específico era o "traço
+dominante" (seção \ref{sec:exp-a-b}), já que a maioria dos agentes tem
+cada traço individual fixo em "Médio" e portanto sem variância a
+correlacionar.
+
+O nível de significância adotado em todo o trabalho é $\alpha=0,05$;
+resultados são reportados com três níveis de significância convencionais
+(* $p<0,05$; ** $p<0,01$; *** $p<0,001$; "n.s." para $p \geq 0,05$). As
+análises foram implementadas em Python, com as bibliotecas
+\texttt{pandas} (manipulação dos dados), \texttt{scipy.stats}
+(\texttt{spearmanr}) e \texttt{statsmodels} (\texttt{OLS}). As mesmas
+análises foram aplicadas, sem nenhuma alteração, a cada rodada da análise
+de robustez e generalização (seção \ref{sec:metodo-robustez}), sempre
+sobre o escore IPA das perguntas 2 a 8.

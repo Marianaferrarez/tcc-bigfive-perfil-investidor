@@ -1,0 +1,242 @@
+% ============================================================================
+% CAPÍTULO 1 — INTRODUÇÃO
+% ============================================================================
+\chapter{Introdução}
+\label{cap:introducao}
+
+A teoria financeira tradicional parte do pressuposto de que investidores
+tomam decisões de forma racional, buscando maximizar sua utilidade
+esperada a partir das informações disponíveis. As finanças comportamentais
+questionam esse pressuposto ao mostrar que fatores psicológicos, como
+heurísticas, vieses cognitivos e diferenças individuais de personalidade,
+influenciam sistematicamente as decisões financeiras, afastando-as do
+ideal puramente racional \cite{jiangpengyan2024}. Dentro dessa perspectiva,
+um instrumento amplamente utilizado pelo mercado financeiro para orientar
+recomendações de investimento é o \textbf{perfil de investidor}: um
+levantamento do quanto um indivíduo está disposto e é capaz de tolerar
+risco, tipicamente classificado em categorias como conservador, moderado e
+arrojado. No Brasil, a verificação desse perfil (\textit{suitability}) é
+inclusive uma exigência regulatória para instituições que prestam serviços
+de investimento \cite{cvm30_2021}.
+
+Ainda que o perfil de investidor seja operacionalizado, em geral, por meio
+de questionários padronizados sobre horizonte de tempo, patrimônio e
+tolerância declarada ao risco, uma linha de pesquisa em finanças
+comportamentais busca relacionar esse perfil a características de
+personalidade mais estáveis do indivíduo, em particular ao modelo
+\textbf{Big Five} de personalidade (Capítulo \ref{cap:referencial}).
+Jiang, Peng e Yan \cite{jiangpengyan2024}, em uma pesquisa com 3.325
+investidores reais, encontraram evidências de que traços de
+personalidade, destacadamente Abertura à Experiência e Neuroticismo,
+se relacionam com crenças sobre o mercado, aversão ao risco e alocação de
+carteira, com poder explicativo comparável ao de variáveis demográficas
+tradicionais. De Bortoli et al. \cite{debortoli2019}, em um estudo com
+124 estudantes universitários, verificaram que, entre os cinco traços,
+apenas Abertura à Experiência se associou ao perfil de risco observado em
+uma simulação de investimento. Esses dois estudos servem de base teórica e metodológica
+para o presente trabalho e são discutidos em detalhe no Capítulo
+\ref{cap:referencial}.
+
+Paralelamente, o avanço recente de modelos de linguagem de grande escala
+(\textit{Large Language Models}, doravante LLMs) tem aberto uma nova possibilidade
+metodológica para as ciências comportamentais: usar agentes de
+inteligência artificial como respondentes simulados em pesquisas que, com
+sujeitos humanos, demandariam tempo e recursos consideráveis. Um LLM pode
+ser instruído, por meio de um \textit{prompt} de sistema, a responder como
+se tivesse determinadas características, como um perfil de
+personalidade específico, o que permite gerar, em escala e a baixo
+custo, um número arbitrariamente grande de "agentes" com personalidade
+controlada experimentalmente. Essa abordagem carrega limitações de
+validade externa evidentes (um agente de IA não é um investidor real, e
+seu comportamento reflete os dados e vieses do modelo que o gera), mas
+oferece, em contrapartida, um ambiente de simulação totalmente controlado:
+o nível de personalidade "verdadeiro" de cada agente é conhecido por
+construção, sem o erro de medida inerente a autorrelatos humanos.
+
+É nesse cruzamento entre a literatura de personalidade e perfil de
+investidor, de um lado, e o uso de LLMs como sujeitos simulados, de outro,
+que se insere este trabalho: agentes de IA recebem uma personalidade
+Big Five induzida por instrução, respondem a um questionário de
+autorrelato de personalidade (para verificar se a personalidade induzida
+foi de fato "incorporada" pelo agente) e a um questionário de perfil de
+investidor, e a relação entre o nível de personalidade induzido e o perfil
+de investidor obtido é analisada estatisticamente, em busca de padrões
+comparáveis aos encontrados por Jiang, Peng e Yan \cite{jiangpengyan2024} e
+De Bortoli et al. \cite{debortoli2019}.
+
+\section{Problema de pesquisa}
+
+A pergunta de pesquisa que orienta este trabalho é: \textbf{níveis
+induzidos de personalidade Big Five em agentes de inteligência artificial
+predizem o escore do questionário de perfil de investidor?}
+
+Essa pergunta geral é desdobrada em três questões de pesquisa (RQ, do
+inglês \textit{research questions}), respondidas ao longo do trabalho e
+retomadas de forma explícita no Capítulo \ref{cap:conclusao}:
+
+\begin{description}
+    \item[RQ1:] Os LLMs conseguem simular consistentemente os traços de
+    personalidade solicitados?
+    \item[RQ2:] Quais associações entre personalidade induzida e perfil de
+    investidor são robustas?
+    \item[RQ3:] Quanto essas associações e os perfis financeiros dependem
+    do modelo e dos parâmetros de geração?
+\end{description}
+
+A RQ1 trata da validade da própria simulação: sem uma indução de
+personalidade verificada, nenhuma associação com o perfil de investidor
+pode ser interpretada. A RQ2 separa, entre as associações observadas na
+análise principal, as que se repetem sob diferentes condições das que
+dependem de uma condição específica. A RQ3 avalia em que medida os
+resultados são uma propriedade do modelo de linguagem e da configuração
+de geração usados, e não da relação entre personalidade e risco em si.
+
+Investigar essas questões contribui, por um lado, para avaliar se relações
+já documentadas entre personalidade e comportamento de risco financeiro em
+seres humanos se reproduzem em um ambiente de simulação com agentes de IA,
+o que teria implicações tanto para a validade desse tipo de simulação
+em pesquisas comportamentais quanto para a compreensão de possíveis vieses
+desses modelos ao lidar com temas financeiros. Por outro lado, o desenho
+experimental adotado (indução controlada de personalidade, seguida de
+checagem de manipulação) oferece um paralelo metodológico direto ao
+desenho de De Bortoli et al. \cite{debortoli2019}, permitindo comparação
+relativamente direta entre os achados deste trabalho e os da literatura de
+referência.
+
+\section{Justificativa}
+
+Este trabalho se justifica em três frentes complementares. Em primeiro
+lugar, do ponto de vista teórico, ele testa, em um ambiente controlado e de
+baixo custo, se relações já estabelecidas na literatura de finanças
+comportamentais entre personalidade e comportamento de investimento se
+replicam em um contexto de simulação com agentes de IA: gerar 300
+respondentes simulados como os deste trabalho seria inviável em tempo e
+custo com sujeitos humanos reais.
+
+Em segundo lugar, do ponto de vista metodológico, o trabalho contribui
+para a discussão, ainda incipiente, sobre o uso de LLMs como sujeitos
+simulados em pesquisa comportamental: ao comparar explicitamente diferentes
+modelos de linguagem quanto à qualidade da indução de personalidade (seção
+\ref{sec:selecao-modelo}), o trabalho evidencia que essa qualidade não é
+uniforme entre modelos e que a checagem de manipulação (verificar se o
+agente de fato incorporou a personalidade pedida antes de interpretar
+qualquer efeito sobre a variável dependente) é uma etapa metodológica
+necessária, não apenas desejável, nesse tipo de simulação.
+
+Em terceiro lugar, do ponto de vista prático, entender melhor os
+determinantes psicológicos do perfil de investidor é relevante para a
+adequação de produtos financeiros ao perfil do cliente (\textit{suitability})
+e para iniciativas de educação financeira, ainda que as conclusões deste
+trabalho, por partirem de agentes simulados, devam ser interpretadas como
+exploratórias em relação a esse uso prático (ver limitações, seção
+\ref{sec:limitacoes-pipeline}).
+
+\section{Objetivos}
+
+\subsection{Objetivo geral}
+
+Investigar se traços de personalidade do modelo Big Five, induzidos por
+instrução em agentes de inteligência artificial baseados em modelos de
+linguagem de grande escala, predizem o perfil de investidor desses
+agentes, medido por um questionário de perfil de investidor (IPA).
+
+\subsection{Objetivos específicos}
+
+\begin{enumerate}
+    \item Induzir, por meio de instrução de sistema (\textit{prompt}),
+    níveis (Baixo/Médio/Alto) dos cinco traços do Big Five em agentes
+    baseados em LLM, e verificar a fidelidade dessa indução por meio de um
+    questionário de autorrelato de personalidade (checagem de
+    manipulação);
+    \item Aplicar um questionário de perfil de investidor (IPA) aos
+    mesmos agentes e obter, para cada um, um escore contínuo e uma
+    classificação categórica (conservador, moderado ou arrojado);
+    \item Testar a associação estatística (correlação de Spearman e
+    regressão OLS) entre o nível de personalidade induzido e o escore do
+    IPA, para cada um dos cinco traços do Big Five;
+    \item Comparar os achados obtidos com os resultados relatados por
+    De Bortoli et al. \cite{debortoli2019} e por Jiang, Peng e Yan
+    \cite{jiangpengyan2024}, identificando convergências e divergências;
+    \item Comparar o comportamento de diferentes modelos de linguagem
+    (\texttt{llama3.2:1b}, \texttt{llama3.2:3b}, \texttt{gemma3:4b} e
+    \texttt{llama3.1:8b}) quanto à qualidade da indução de personalidade,
+    de modo a identificar em que medida o tamanho/família do modelo afeta a
+    validade da simulação;
+    \item Testar se induzir os 5 traços do Big Five simultaneamente no
+    mesmo agente, em comparação a induzir apenas 1 traço por vez, afeta a
+    qualidade da indução de personalidade ou a força da associação com o
+    escore do IPA;
+    \item Avaliar a robustez e a generalização das associações encontradas,
+    repetindo a análise principal com outras temperaturas de geração, com
+    um novo sorteio de perfis de personalidade e com outros modelos de
+    linguagem.
+\end{enumerate}
+
+\section{Etapas do trabalho: seleção de modelo, piloto e análise principal}
+\label{sec:trabalho-realizado-intro}
+
+Como etapa preliminar à análise apresentada neste trabalho, foram testados
+quatro modelos de linguagem distintos (\texttt{llama3.2:1b},
+\texttt{llama3.2:3b}, \texttt{gemma3:4b} e \texttt{llama3.1:8b}) quanto à
+sua capacidade de incorporar de forma consistente a personalidade induzida
+por instrução (seção \ref{sec:selecao-modelo}). Esse levantamento mostrou
+que a qualidade da indução de personalidade varia substancialmente entre
+modelos: o modelo mais leve testado (\texttt{llama3.2:1b}) não incorporou
+nenhum dos cinco traços de forma estatisticamente detectável, ao passo que
+o modelo finalmente adotado como base para a análise principal deste
+trabalho (\texttt{llama3.1:8b}) apresentou manipulação forte e
+significativa em todos os cinco traços. Esse resultado é, em si, um
+achado metodológico relevante: ele indica que o tamanho e a família do
+modelo de linguagem são pré-requisitos para a validade desse tipo de
+simulação, e que a checagem de manipulação não pode ser tratada como uma
+formalidade dispensável.
+
+O dataset descrito acima, baseado no instrumento de autorrelato BFI-10,
+constitui o \textbf{estudo piloto} deste trabalho (seção
+\ref{sec:bfi10-piloto}). Foi esse piloto que motivou tanto a escolha do
+\texttt{llama3.1:8b} quanto o primeiro indício do achado central deste
+trabalho, a associação entre Abertura à Experiência e o escore do IPA.
+
+A partir desse piloto, a \textbf{análise principal} deste trabalho migrou
+para um instrumento de autorrelato mais granular, o BFI-44 (44 itens,
+seção \ref{sec:exp-a-b}), com dois desenhos de indução testados: o
+\textbf{Experimento A}, que repete o desenho do piloto (os 5 traços
+induzidos simultaneamente em cada agente) e constitui os resultados
+principais reportados neste trabalho (Capítulo \ref{cap:resultados}); e
+o \textbf{Experimento B}, um teste de robustez metodológica em que cada
+agente tem apenas 1 traço induzido por vez, motivado pela pergunta de se
+a indução simultânea de personalidade dilui o sinal de cada traço
+individual. Os resultados do Experimento A confirmam e fortalecem o
+achado de Abertura à Experiência observado no piloto, e revelam efeitos
+adicionais de Extroversão, Consciência e Neuroticismo.
+
+Por fim, uma \textbf{análise de robustez e generalização} repete o
+Experimento A variando, uma de cada vez, a temperatura de geração do
+modelo, o sorteio dos perfis de personalidade e o próprio modelo de
+linguagem (três modelos abertos adicionais com N=300 e dois modelos
+maiores, acessados por API, em caráter exploratório). Essa análise
+mostra que os efeitos de Abertura à Experiência e de Extroversão se
+mantêm em todas as condições testadas, ao passo que os de Consciência e
+Neuroticismo mudam de significância e até de sinal conforme a condição,
+e por isso são tratados neste trabalho como \textbf{resultados
+instáveis} (Capítulos \ref{cap:resultados} e \ref{cap:discussao}).
+
+\section{Estrutura do trabalho}
+
+Além desta introdução, este trabalho está organizado em mais cinco
+capítulos. O Capítulo \ref{cap:referencial} apresenta o referencial
+teórico, cobrindo o conceito de personalidade e o modelo Big Five, o
+conceito de perfil de investidor em finanças comportamentais, uma
+revisão detalhada dos dois artigos-base que fundamentam as hipóteses deste
+trabalho e os estudos recentes sobre personalidade induzida e risco em
+LLMs. O Capítulo \ref{cap:metodologia} descreve o desenho experimental,
+os instrumentos utilizados, o pipeline de geração dos agentes, o processo
+de seleção do modelo de linguagem e os métodos de análise estatística. O
+Capítulo \ref{cap:resultados} apresenta os resultados obtidos: checagem
+de manipulação, distribuição do perfil de investidor, associações entre
+personalidade induzida e escore do IPA e a análise de robustez e
+generalização. O Capítulo \ref{cap:discussao}
+interpreta esses resultados à luz da literatura de referência e discute as
+limitações do estudo. Por fim, o Capítulo \ref{cap:conclusao} responde às
+três questões de pesquisa, retoma os objetivos específicos, sintetiza as contribuições
+do trabalho e aponta direções para pesquisas futuras.

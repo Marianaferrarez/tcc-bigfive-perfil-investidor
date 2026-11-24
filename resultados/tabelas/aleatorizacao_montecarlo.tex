@@ -1,0 +1,18 @@
+% Gerado por analise_aleatorizacao.py -- não editar à mão; rode o script de novo.
+\begin{table}[htb]
+    \caption{Sorteio obtido vs. 10.000 sorteios simulados}
+    \label{tab:aleat-montecarlo}
+    \centering
+    \footnotesize
+    \begin{tabular}{lcc}
+        \toprule
+        Indicador & Obtido & Simulação \\
+        \midrule
+        Combinações distintas (de 243 possíveis) & 174 & média 172,4; IC 95\% 163 a 182 \\
+        Máximo de agentes com a mesma combinação & 5 & IC 95\% 4 a 7 \\
+        Maior $|\rho|$ entre pares de traços & 0,103 & 54,2\% das simulações $\geq$ obtido \\
+        Maior desvio de uma contagem em relação a 100 & 12 & 86,9\% das simulações $\geq$ obtido \\
+        \bottomrule
+    \end{tabular}
+    \legend{Fonte: dados da pesquisa. Simulação: 300 agentes, 5 traços, 3 níveis equiprováveis e independentes.}
+\end{table}

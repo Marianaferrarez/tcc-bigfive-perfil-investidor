@@ -1,0 +1,218 @@
+﻿
+===== 2026-11-04 10:00:07 execuÃ§Ã£o agendada
+
+######## Passada 1: nemotron3_ultra, gemma4_31b
+
+===== nvidia/nemotron-3-ultra-550b-a55b:free: faltam 9
+[2026-11-04 10:00:10] IN├ìCIO resultados\modelos\nemotron3_ultra.csv | backend=openrouter modelo=nvidia/nemotron-3-ultra-550b-a55b:free temperatura=0.7 modo=multi seed=123 intervalo=8.0s | j├í existentes=21, novos pedidos=9
+[2026-11-04 10:00:55] [1/9] agente_id=21 perfil_ipa='Conservador' score=13 tentativas bfi/ipa=1/1 (45.1s)
+[2026-11-04 10:01:39] [2/9] agente_id=22 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (43.7s)
+[2026-11-04 10:02:25] [3/9] agente_id=23 perfil_ipa='Conservador' score=15 tentativas bfi/ipa=1/1 (45.7s)
+[2026-11-04 10:03:08] [4/9] agente_id=24 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (43.7s)
+[2026-11-04 10:03:48] [5/9] agente_id=25 perfil_ipa='Conservador' score=14 tentativas bfi/ipa=1/1 (39.4s)
+[2026-11-04 10:04:02] PARCIAL N=26 | BFI v├ílido=26/26 | IPA v├ílido=26/26 | perfis=Arrojado 10, Conservador 11, Moderado 5 | IPA m├®dia=19.12 | manipula├º├úo ¤ü: Extr +0.93, Afab +0.93, Cons +0.96, Neur +0.95, Aber +0.94
+[2026-11-04 10:04:42] [6/9] agente_id=26 perfil_ipa='Arrojado' score=31 tentativas bfi/ipa=1/1 (40.7s)
+[2026-11-04 10:05:23] [7/9] agente_id=27 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (40.8s)
+[2026-11-04 10:06:06] [8/9] agente_id=28 perfil_ipa='Conservador' score=13 tentativas bfi/ipa=1/1 (42.7s)
+[2026-11-04 10:06:46] [9/9] agente_id=29 perfil_ipa='Arrojado' score=24 tentativas bfi/ipa=1/1 (40.0s)
+[2026-11-04 10:06:46] FIM: 9 agentes novos em 395.9s (44.0s/agente)
+[2026-11-04 10:06:46] RESUMO N=30 | BFI v├ílido=30/30 | IPA v├ílido=30/30 | perfis=Arrojado 12, Conservador 12, Moderado 6 | IPA m├®dia=19.43 | manipula├º├úo ¤ü: Extr +0.95, Afab +0.92, Cons +0.97, Neur +0.96, Aber +0.94
+Resultados salvos em: resultados\modelos\nemotron3_ultra.csv
+
+===== google/gemma-4-31b-it:free: faltam 30
+[2026-11-04 10:06:50] IN├ìCIO resultados\modelos\gemma4_31b.csv | backend=openrouter modelo=google/gemma-4-31b-it:free temperatura=0.7 modo=multi seed=123 intervalo=8.0s | j├í existentes=0, novos pedidos=30
+[2026-11-04 10:06:52] HTTP 429; esperando 20s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-04 10:07:20] HTTP 429; esperando 40s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-04 10:08:02] HTTP 429; esperando 80s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-04 10:09:24] HTTP 429; esperando 160s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-04 10:12:07] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-04 10:17:12] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-04 10:22:14] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-04 10:27:16] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-04 10:32:16] PARADA: provedor indispon├¡vel (google/gemma-4-31b-it:free n├úo respondeu ap├│s 8 esperas). Agente 0 descartado; rode o mesmo comando depois para retomar.
+[2026-11-04 10:32:17] FIM: 0 agentes novos em 1526.7s
+[2026-11-04 10:32:17] RESUMO nenhum agente ainda
+Resultados salvos em: resultados\modelos\gemma4_31b.csv
+
+######## Passada 2: gemma4_31b
+
+===== google/gemma-4-31b-it:free: faltam 30
+[2026-11-04 10:32:19] IN├ìCIO resultados\modelos\gemma4_31b.csv | backend=openrouter modelo=google/gemma-4-31b-it:free temperatura=0.7 mod
+===== 2026-11-05 10:00:06 execuÃ§Ã£o agendada
+
+######## Passada 1: gemma4_31b
+
+===== google/gemma-4-31b-it:free: faltam 30
+
+===== 2026-11-05 10:13:25 execuÃ§Ã£o agendada
+
+######## Passada 1: gemma4_31b
+
+===== google/gemma-4-31b-it:free: faltam 29
+[2026-11-05 10:13:26] IN├ìCIO resultados\modelos\gemma4_31b.csv | backend=openrouter modelo=google/gemma-4-31b-it:free temperatura=0.7 modo=multi seed=123 intervalo=8.0s | j├í existentes=1, novos pedidos=29
+[2026-11-05 10:13:28] HTTP 429; esperando 20s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 10:13:50] HTTP 429; esperando 40s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 10:14:31] HTTP 429; esperando 80s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 10:15:53] HTTP 429; esperando 160s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 10:18:34] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 10:23:35] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 10:28:36] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 10:33:38] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 10:38:38] PARADA: provedor indispon├¡vel (google/gemma-4-31b-it:free n├úo respondeu ap├│s 8 esperas). Agente 1 descartado; rode o mesmo comando depois para retomar.
+[2026-11-05 10:38:38] FIM: 0 agentes novos em 1511.2s
+[2026-11-05 10:38:38] RESUMO N=1 | BFI v├ílido=1/1 | IPA v├ílido=1/1 | perfis=Moderado 1 | IPA m├®dia=16.00
+Resultados salvos em: resultados\modelos\gemma4_31b.csv
+
+######## Passada 2: gemma4_31b
+
+===== google/gemma-4-31b-it:free: faltam 29
+[2026-11-05 10:38:40] IN├ìCIO resultados\modelos\gemma4_31b.csv | backend=openrouter modelo=google/gemma-4-31b-it:free temperatura=0.7 modo=multi seed=123 intervalo=8.0s | j├í existentes=1, novos pedidos=29
+[2026-11-05 10:39:19] HTTP 429; esperando 20s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 10:39:52] [1/29] agente_id=1 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (71.7s)
+[2026-11-05 10:39:53] HTTP 429; esperando 20s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 10:40:13] HTTP 429; esperando 40s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 10:40:55] HTTP 429; esperando 80s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 10:42:16] HTTP 429; esperando 160s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 10:44:57] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 10:50:00] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 10:55:02] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 11:00:04] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 11:05:04] PARADA: provedor indispon├¡vel (google/gemma-4-31b-it:free n├úo respondeu ap├│s 8 esperas). Agente 2 descartado; rode o mesmo comando depois para retomar.
+[2026-11-05 11:05:04] FIM: 1 agentes novos em 1583.9s (1583.9s/agente)
+[2026-11-05 11:05:04] RESUMO N=2 | BFI v├ílido=2/2 | IPA v├ílido=2/2 | perfis=Moderado 2 | IPA m├®dia=17.00
+Resultados salvos em: resultados\modelos\gemma4_31b.csv
+
+######## Passada 3: gemma4_31b
+
+===== google/gemma-4-31b-it:free: faltam 28
+[2026-11-05 11:05:06] IN├ìCIO resultados\modelos\gemma4_31b.csv | backend=openrouter modelo=google/gemma-4-31b-it:free temperatura=0.7 modo=multi seed=123 intervalo=8.0s | j├í existentes=2, novos pedidos=28
+[2026-11-05 11:05:07] HTTP 429; esperando 20s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 11:05:28] HTTP 429; esperando 40s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 11:06:09] HTTP 429; esperando 80s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 11:07:30] HTTP 429; esperando 160s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 11:10:12] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 11:15:14] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 11:20:15] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 11:25:16] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 11:30:16] PARADA: provedor indispon├¡vel (google/gemma-4-31b-it:free n├úo respondeu ap├│s 8 esperas). Agente 2 descartado; rode o mesmo comando depois para retomar.
+[2026-11-05 11:30:17] FIM: 0 agentes novos em 1510.8s
+[2026-11-05 11:30:17] RESUMO N=2 | BFI v├ílido=2/2 | IPA v├ílido=2/2 | perfis=Moderado 2 | IPA m├®dia=17.00
+Resultados salvos em: resultados\modelos\gemma4_31b.csv
+nemotron35_super: 30/30
+nemotron3_ultra: 30/30
+gemma4_31b: 2/30
+
+===== 2026-11-05 12:00:04 execuÃ§Ã£o agendada
+
+######## Passada 1: gemma4_31b
+
+===== google/gemma-4-31b-it:free: faltam 28
+[2026-11-05 12:00:09] IN├ìCIO resultados\modelos\gemma4_31b.csv | backend=openrouter modelo=google/gemma-4-31b-it:free temperatura=0.7 modo=multi seed=123 intervalo=8.0s | j├í existentes=2, novos pedidos=28
+[2026-11-05 12:00:11] HTTP 429; esperando 20s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:00:32] HTTP 429; esperando 40s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:01:13] HTTP 429; esperando 80s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:02:34] HTTP 429; esperando 160s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:05:16] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:10:18] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:15:19] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:20:20] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:25:20] PARADA: provedor indispon├¡vel (google/gemma-4-31b-it:free n├úo respondeu ap├│s 8 esperas). Agente 2 descartado; rode o mesmo comando depois para retomar.
+[2026-11-05 12:25:20] FIM: 0 agentes novos em 1510.9s
+[2026-11-05 12:25:20] RESUMO N=2 | BFI v├ílido=2/2 | IPA v├ílido=2/2 | perfis=Moderado 2 | IPA m├®dia=17.00
+Resultados salvos em: resultados\modelos\gemma4_31b.csv
+
+######## Passada 2: gemma4_31b
+
+===== google/gemma-4-31b-it:free: faltam 28
+[2026-11-05 12:25:21] IN├ìCIO resultados\modelos\gemma4_31b.csv | backend=openrouter modelo=google/gemma-4-31b-it:free temperatura=0.7 modo=multi seed=123 intervalo=8.0s | j├í existentes=2, novos pedidos=28
+[2026-11-05 12:25:22] HTTP 429; esperando 20s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:26:21] HTTP 429; esperando 20s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:26:42] HTTP 429; esperando 40s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:27:23] HTTP 429; esperando 80s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:28:44] HTTP 429; esperando 160s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:31:25] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:36:28] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:41:29] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:46:30] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:51:30] PARADA: provedor indispon├¡vel (google/gemma-4-31b-it:free n├úo respondeu ap├│s 8 esperas). Agente 2 descartado; rode o mesmo comando depois para retomar.
+[2026-11-05 12:51:30] FIM: 0 agentes novos em 1569.2s
+[2026-11-05 12:51:30] RESUMO N=2 | BFI v├ílido=2/2 | IPA v├ílido=2/2 | perfis=Moderado 2 | IPA m├®dia=17.00
+Resultados salvos em: resultados\modelos\gemma4_31b.csv
+
+######## Passada 3: gemma4_31b
+
+===== google/gemma-4-31b-it:free: faltam 28
+[2026-11-05 12:51:31] IN├ìCIO resultados\modelos\gemma4_31b.csv | backend=openrouter modelo=google/gemma-4-31b-it:free temperatura=0.7 modo=multi seed=123 intervalo=8.0s | j├í existentes=2, novos pedidos=28
+[2026-11-05 12:51:33] HTTP 429; esperando 20s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:51:54] HTTP 429; esperando 40s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:52:35] HTTP 429; esperando 80s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:53:56] HTTP 429; esperando 160s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 12:56:38] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 13:01:39] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 13:06:41] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 13:11:42] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 13:16:42] PARADA: provedor indispon├¡vel (google/gemma-4-31b-it:free n├úo respondeu ap├│s 8 esperas). Agente 2 descartado; rode o mesmo comando depois para retomar.
+[2026-11-05 13:16:43] FIM: 0 agentes novos em 1511.7s
+[2026-11-05 13:16:43] RESUMO N=2 | BFI v├ílido=2/2 | IPA v├ílido=2/2 | perfis=Moderado 2 | IPA m├®dia=17.00
+Resultados salvos em: resultados\modelos\gemma4_31b.csv
+nemotron35_super: 30/30
+nemotron3_ultra: 30/30
+gemma4_31b: 2/30
+
+===== 2026-11-05 14:00:03 execuÃ§Ã£o agendada
+
+######## Passada 1: gemma4_31b
+
+===== google/gemma-4-31b-it:free: faltam 28
+[2026-11-05 14:00:04] IN├ìCIO resultados\modelos\gemma4_31b.csv | backend=openrouter modelo=google/gemma-4-31b-it:free temperatura=0.7 modo=multi seed=123 intervalo=8.0s | j├í existentes=2, novos pedidos=28
+[2026-11-05 14:00:05] HTTP 429; esperando 20s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:00:26] HTTP 429; esperando 40s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:01:08] HTTP 429; esperando 80s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:02:29] HTTP 429; esperando 160s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:05:11] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:10:12] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:15:14] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:20:15] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:25:15] PARADA: provedor indispon├¡vel (google/gemma-4-31b-it:free n├úo respondeu ap├│s 8 esperas). Agente 2 descartado; rode o mesmo comando depois para retomar.
+[2026-11-05 14:25:15] FIM: 0 agentes novos em 1510.5s
+[2026-11-05 14:25:15] RESUMO N=2 | BFI v├ílido=2/2 | IPA v├ílido=2/2 | perfis=Moderado 2 | IPA m├®dia=17.00
+Resultados salvos em: resultados\modelos\gemma4_31b.csv
+
+######## Passada 2: gemma4_31b
+
+===== google/gemma-4-31b-it:free: faltam 28
+[2026-11-05 14:25:16] IN├ìCIO resultados\modelos\gemma4_31b.csv | backend=openrouter modelo=google/gemma-4-31b-it:free temperatura=0.7 modo=multi seed=123 intervalo=8.0s | j├í existentes=2, novos pedidos=28
+[2026-11-05 14:25:17] HTTP 429; esperando 20s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:25:38] HTTP 429; esperando 40s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:26:19] HTTP 429; esperando 80s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:27:40] HTTP 429; esperando 160s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:30:22] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:35:23] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:40:24] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:45:26] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:50:26] PARADA: provedor indispon├¡vel (google/gemma-4-31b-it:free n├úo respondeu ap├│s 8 esperas). Agente 2 descartado; rode o mesmo comando depois para retomar.
+[2026-11-05 14:50:26] FIM: 0 agentes novos em 1509.6s
+[2026-11-05 14:50:26] RESUMO N=2 | BFI v├ílido=2/2 | IPA v├ílido=2/2 | perfis=Moderado 2 | IPA m├®dia=17.00
+Resultados salvos em: resultados\modelos\gemma4_31b.csv
+
+######## Passada 3: gemma4_31b
+
+===== google/gemma-4-31b-it:free: faltam 28
+[2026-11-05 14:50:27] IN├ìCIO resultados\modelos\gemma4_31b.csv | backend=openrouter modelo=google/gemma-4-31b-it:free temperatura=0.7 modo=multi seed=123 intervalo=8.0s | j├í existentes=2, novos pedidos=28
+[2026-11-05 14:50:28] HTTP 429; esperando 20s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:50:49] HTTP 429; esperando 40s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:51:30] HTTP 429; esperando 80s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:52:51] HTTP 429; esperando 160s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 14:55:33] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 15:00:34] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 15:05:36] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 15:10:38] HTTP 429; esperando 300s ({"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"google/gemma-4-31b-it:free is temporarily ra)
+[2026-11-05 15:15:38] PARADA: provedor indispon├¡vel (google/gemma-4-31b-it:free n├úo respondeu ap├│s 8 esperas). Agente 2 descartado; rode o mesmo comando depois para retomar.
+[2026-11-05 15:15:38] FIM: 0 agentes novos em 1511.1s
+[2026-11-05 15:15:38] RESUMO N=2 | BFI v├ílido=2/2 | IPA v├ílido=2/2 | perfis=Moderado 2 | IPA m├®dia=17.00
+Resultados salvos em: resultados\modelos\gemma4_31b.csv
+nemotron35_super: 30/30
+nemotron3_ultra: 30/30
+gemma4_31b: 2/30
+
+===== 2026-11-05 18:00:05 execuÃ§Ã£o agendada

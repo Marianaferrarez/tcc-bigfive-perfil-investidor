@@ -1,0 +1,35 @@
+    Este trabalho investiga se traços de personalidade do modelo Big Five,
+    induzidos por instrução (\textit{prompt}) em agentes de inteligência
+    artificial baseados em modelos de linguagem de grande escala (LLM),
+    predizem o perfil de investidor desses agentes, medido pelo instrumento
+    IPA (Índice de Perfil do Investidor). A pergunta é desdobrada em três
+    questões: se os LLMs simulam consistentemente os traços solicitados,
+    quais associações entre personalidade e perfil de investidor são
+    robustas e quanto elas dependem do modelo e dos parâmetros de geração.
+    Na análise principal, foram gerados 300 agentes com o modelo
+    \texttt{llama3.1:8b}, cada um com níveis (Baixo/Médio/Alto) sorteados
+    aleatoriamente para os cinco traços, que responderam ao BFI-44
+    (autorrelato de personalidade, usado como checagem de manipulação) e ao
+    IPA. A análise foi repetida com outras temperaturas de geração, com um
+    novo sorteio de perfis e com outros modelos de linguagem. A indução de
+    personalidade foi fiel nos cinco traços ($\rho$ entre 0,813 e 0,929).
+    Na análise principal, Abertura à Experiência, Extroversão, Consciência
+    e Neuroticismo predisseram significativamente o escore do IPA
+    (regressão OLS, R² = 0,459; p < 0,001), mas apenas Abertura à
+    Experiência e Extroversão se mantiveram significativas em todas as
+    temperaturas, sorteios e modelos testados; os efeitos de Consciência e
+    Neuroticismo mostraram-se instáveis, e Amabilidade não teve efeito
+    consistente. O perfil de investidor absoluto atribuído a uma mesma
+    personalidade variou fortemente entre modelos. O achado de Abertura à
+    Experiência converge com De Bortoli et al. (2019), Jiang, Peng e Yan
+    (2024) e estudos recentes com LLMs. Conclui-se que agentes de IA
+    baseados em LLM, quando adequadamente induzidos e com a manipulação
+    verificada, reproduzem a direção de parte das relações conhecidas entre
+    personalidade e tolerância ao risco, mas que o nível de risco que
+    declaram é, em grande parte, uma característica do modelo usado.
+
+    \vspace{\baselineskip}
+
+    \noindent
+    \textbf{Palavras-chave}: Big Five. Perfil de investidor. Inteligência
+    artificial. Modelos de linguagem. Finanças comportamentais.

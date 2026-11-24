@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# LaTeX build artifacts (monografia/)
+monografia/*.aux
+monografia/*.bbl
+monografia/*.bcf
+monografia/*.blg
+monografia/*.fdb_latexmk
+monografia/*.fls
+monografia/*.lof
+monografia/*.log
+monografia/*.lot
+monografia/*.loq
+monografia/*.out
+monografia/*.run.xml
+monografia/*.synctex.gz
+monografia/*.toc
+monografia/*.pdf
+monografia/capitulos/*.aux
+monografia/pretextual/*.aux
+
+# Chave de API (OpenRouter): nunca versionar
+.env
+
+# Downloads temporários
+*.zip

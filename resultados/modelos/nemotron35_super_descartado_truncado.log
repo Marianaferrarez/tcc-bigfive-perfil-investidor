@@ -1,0 +1,17 @@
+[2026-10-27 11:57:36] INÍCIO resultados\modelos\nemotron35_super.csv | backend=openrouter modelo=nvidia/nemotron-3.5-super-vl:free temperatura=0.7 modo=multi seed=123 intervalo=8.0s | já existentes=0, novos pedidos=30
+[2026-10-27 11:58:49] [1/30] agente_id=0 perfil_ipa='Conservador' score=12 tentativas bfi/ipa=3/1 (73.0s) [ERRO DE PARSING]
+[2026-10-27 11:59:55] [2/30] agente_id=1 perfil_ipa='Conservador' score=10 tentativas bfi/ipa=3/1 (66.1s) [ERRO DE PARSING]
+[2026-10-27 12:01:13] [3/30] agente_id=2 perfil_ipa='Conservador' score=13 tentativas bfi/ipa=3/2 (78.0s) [ERRO DE PARSING]
+[2026-10-27 12:02:11] [4/30] agente_id=3 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=3/1 (58.1s) [ERRO DE PARSING]
+[2026-10-27 12:03:43] [5/30] agente_id=4 perfil_ipa='Conservador' score=9 tentativas bfi/ipa=3/1 (91.8s) [ERRO DE PARSING]
+[2026-10-27 12:03:43] PARCIAL N=5 | BFI válido=0/5 | IPA válido=5/5 | perfis=Arrojado 1, Conservador 4 | IPA média=14.40
+[2026-10-27 12:04:36] [6/30] agente_id=5 perfil_ipa='Conservador' score=11 tentativas bfi/ipa=3/1 (53.6s) [ERRO DE PARSING]
+[2026-10-27 12:05:35] [7/30] agente_id=6 perfil_ipa='Conservador' score=14 tentativas bfi/ipa=3/1 (58.1s) [ERRO DE PARSING]
+[2026-10-27 12:06:29] [8/30] agente_id=7 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=3/1 (54.9s) [ERRO DE PARSING]
+[2026-10-27 12:07:37] [9/30] agente_id=8 perfil_ipa='Conservador' score=10 tentativas bfi/ipa=3/1 (67.4s) [ERRO DE PARSING]
+[2026-10-27 12:08:44] [10/30] agente_id=9 perfil_ipa='Conservador' score=9 tentativas bfi/ipa=3/1 (67.4s) [ERRO DE PARSING]
+[2026-10-27 12:08:44] PARCIAL N=10 | BFI válido=0/10 | IPA válido=10/10 | perfis=Arrojado 2, Conservador 8 | IPA média=14.40
+[2026-10-27 12:09:38] [11/30] agente_id=10 perfil_ipa='Moderado' score=20 tentativas bfi/ipa=3/1 (53.6s) [ERRO DE PARSING]
+[2026-10-27 12:10:52] PARADA: limite diário do OpenRouter atingido ({"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"head). Agente 11 descartado; rode o mesmo comando depois para retomar.
+[2026-10-27 12:10:52] FIM: 11 agentes novos em 795.7s (72.3s/agente)
+[2026-10-27 12:10:52] RESUMO N=11 | BFI válido=0/11 | IPA válido=11/11 | perfis=Arrojado 2, Conservador 8, Moderado 1 | IPA média=14.91

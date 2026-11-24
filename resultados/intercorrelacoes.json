@@ -1,0 +1,560 @@
+{
+  "exp_a": {
+    "n": 300,
+    "pares": [
+      {
+        "a": "Extroversão",
+        "b": "Afabilidade",
+        "rho_autorrelato": 0.281,
+        "p": 0.0,
+        "rho_induzido": 0.015
+      },
+      {
+        "a": "Extroversão",
+        "b": "Consciência",
+        "rho_autorrelato": 0.019,
+        "p": 0.7378,
+        "rho_induzido": -0.049
+      },
+      {
+        "a": "Extroversão",
+        "b": "Neuroticismo",
+        "rho_autorrelato": -0.015,
+        "p": 0.7975,
+        "rho_induzido": -0.021
+      },
+      {
+        "a": "Extroversão",
+        "b": "Abertura à Experiência",
+        "rho_autorrelato": 0.202,
+        "p": 0.0004,
+        "rho_induzido": 0.011
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Consciência",
+        "rho_autorrelato": 0.218,
+        "p": 0.0001,
+        "rho_induzido": 0.04
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Neuroticismo",
+        "rho_autorrelato": -0.209,
+        "p": 0.0003,
+        "rho_induzido": 0.103
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Abertura à Experiência",
+        "rho_autorrelato": 0.085,
+        "p": 0.1418,
+        "rho_induzido": -0.011
+      },
+      {
+        "a": "Consciência",
+        "b": "Neuroticismo",
+        "rho_autorrelato": -0.005,
+        "p": 0.9334,
+        "rho_induzido": 0.053
+      },
+      {
+        "a": "Consciência",
+        "b": "Abertura à Experiência",
+        "rho_autorrelato": 0.021,
+        "p": 0.7198,
+        "rho_induzido": -0.006
+      },
+      {
+        "a": "Neuroticismo",
+        "b": "Abertura à Experiência",
+        "rho_autorrelato": -0.05,
+        "p": 0.3851,
+        "rho_induzido": -0.003
+      }
+    ],
+    "vazamento": {
+      "Extroversão": {
+        "Extroversão": {
+          "rho": 0.929,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.214,
+          "p": 0.0002
+        },
+        "Consciência": {
+          "rho": -0.054,
+          "p": 0.3555
+        },
+        "Neuroticismo": {
+          "rho": 0.027,
+          "p": 0.6461
+        },
+        "Abertura à Experiência": {
+          "rho": 0.107,
+          "p": 0.0632
+        }
+      },
+      "Afabilidade": {
+        "Extroversão": {
+          "rho": 0.068,
+          "p": 0.2383
+        },
+        "Afabilidade": {
+          "rho": 0.813,
+          "p": 0.0
+        },
+        "Consciência": {
+          "rho": 0.231,
+          "p": 0.0001
+        },
+        "Neuroticismo": {
+          "rho": -0.031,
+          "p": 0.5933
+        },
+        "Abertura à Experiência": {
+          "rho": 0.019,
+          "p": 0.7432
+        }
+      },
+      "Consciência": {
+        "Extroversão": {
+          "rho": 0.018,
+          "p": 0.7583
+        },
+        "Afabilidade": {
+          "rho": 0.014,
+          "p": 0.8045
+        },
+        "Consciência": {
+          "rho": 0.879,
+          "p": 0.0
+        },
+        "Neuroticismo": {
+          "rho": 0.022,
+          "p": 0.7056
+        },
+        "Abertura à Experiência": {
+          "rho": 0.025,
+          "p": 0.6697
+        }
+      },
+      "Neuroticismo": {
+        "Extroversão": {
+          "rho": -0.031,
+          "p": 0.5974
+        },
+        "Afabilidade": {
+          "rho": -0.055,
+          "p": 0.3419
+        },
+        "Consciência": {
+          "rho": 0.066,
+          "p": 0.2528
+        },
+        "Neuroticismo": {
+          "rho": 0.835,
+          "p": 0.0
+        },
+        "Abertura à Experiência": {
+          "rho": -0.042,
+          "p": 0.4735
+        }
+      },
+      "Abertura à Experiência": {
+        "Extroversão": {
+          "rho": 0.103,
+          "p": 0.0736
+        },
+        "Afabilidade": {
+          "rho": 0.032,
+          "p": 0.579
+        },
+        "Consciência": {
+          "rho": -0.01,
+          "p": 0.866
+        },
+        "Neuroticismo": {
+          "rho": -0.029,
+          "p": 0.6128
+        },
+        "Abertura à Experiência": {
+          "rho": 0.913,
+          "p": 0.0
+        }
+      }
+    },
+    "residuos": [
+      {
+        "a": "Extroversão",
+        "b": "Afabilidade",
+        "r": 0.257,
+        "p": 0.0
+      },
+      {
+        "a": "Extroversão",
+        "b": "Consciência",
+        "r": 0.126,
+        "p": 0.0293
+      },
+      {
+        "a": "Extroversão",
+        "b": "Neuroticismo",
+        "r": -0.276,
+        "p": 0.0
+      },
+      {
+        "a": "Extroversão",
+        "b": "Abertura à Experiência",
+        "r": 0.132,
+        "p": 0.0221
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Consciência",
+        "r": 0.319,
+        "p": 0.0
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Neuroticismo",
+        "r": -0.319,
+        "p": 0.0
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Abertura à Experiência",
+        "r": 0.104,
+        "p": 0.0721
+      },
+      {
+        "a": "Consciência",
+        "b": "Neuroticismo",
+        "r": -0.256,
+        "p": 0.0
+      },
+      {
+        "a": "Consciência",
+        "b": "Abertura à Experiência",
+        "r": 0.001,
+        "p": 0.9899
+      },
+      {
+        "a": "Neuroticismo",
+        "b": "Abertura à Experiência",
+        "r": -0.043,
+        "p": 0.4593
+      }
+    ],
+    "r2": {
+      "Extroversão": {
+        "proprio": 0.818,
+        "todos": 0.836,
+        "ganho": 0.018
+      },
+      "Afabilidade": {
+        "proprio": 0.597,
+        "todos": 0.655,
+        "ganho": 0.058
+      },
+      "Consciência": {
+        "proprio": 0.662,
+        "todos": 0.699,
+        "ganho": 0.037
+      },
+      "Neuroticismo": {
+        "proprio": 0.61,
+        "todos": 0.642,
+        "ganho": 0.031
+      },
+      "Abertura à Experiência": {
+        "proprio": 0.755,
+        "todos": 0.765,
+        "ganho": 0.011
+      }
+    },
+    "rho_medio_abs": 0.11,
+    "rho_max_abs": 0.281,
+    "pares_significativos": 4
+  },
+  "piloto": {
+    "n": 300,
+    "pares": [
+      {
+        "a": "Extroversão",
+        "b": "Afabilidade",
+        "rho_autorrelato": -0.02,
+        "p": 0.7317,
+        "rho_induzido": 0.015
+      },
+      {
+        "a": "Extroversão",
+        "b": "Consciência",
+        "rho_autorrelato": -0.034,
+        "p": 0.5614,
+        "rho_induzido": -0.049
+      },
+      {
+        "a": "Extroversão",
+        "b": "Neuroticismo",
+        "rho_autorrelato": 0.044,
+        "p": 0.4464,
+        "rho_induzido": -0.021
+      },
+      {
+        "a": "Extroversão",
+        "b": "Abertura à Experiência",
+        "rho_autorrelato": 0.076,
+        "p": 0.1878,
+        "rho_induzido": 0.011
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Consciência",
+        "rho_autorrelato": 0.444,
+        "p": 0.0,
+        "rho_induzido": 0.04
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Neuroticismo",
+        "rho_autorrelato": -0.137,
+        "p": 0.0178,
+        "rho_induzido": 0.103
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Abertura à Experiência",
+        "rho_autorrelato": -0.02,
+        "p": 0.7331,
+        "rho_induzido": -0.011
+      },
+      {
+        "a": "Consciência",
+        "b": "Neuroticismo",
+        "rho_autorrelato": -0.131,
+        "p": 0.0231,
+        "rho_induzido": 0.053
+      },
+      {
+        "a": "Consciência",
+        "b": "Abertura à Experiência",
+        "rho_autorrelato": -0.022,
+        "p": 0.7028,
+        "rho_induzido": -0.006
+      },
+      {
+        "a": "Neuroticismo",
+        "b": "Abertura à Experiência",
+        "rho_autorrelato": -0.327,
+        "p": 0.0,
+        "rho_induzido": -0.003
+      }
+    ],
+    "vazamento": {
+      "Extroversão": {
+        "Extroversão": {
+          "rho": 0.41,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": -0.007,
+          "p": 0.9067
+        },
+        "Consciência": {
+          "rho": 0.084,
+          "p": 0.1478
+        },
+        "Neuroticismo": {
+          "rho": 0.028,
+          "p": 0.6331
+        },
+        "Abertura à Experiência": {
+          "rho": 0.109,
+          "p": 0.0603
+        }
+      },
+      "Afabilidade": {
+        "Extroversão": {
+          "rho": -0.024,
+          "p": 0.6739
+        },
+        "Afabilidade": {
+          "rho": 0.812,
+          "p": 0.0
+        },
+        "Consciência": {
+          "rho": 0.338,
+          "p": 0.0
+        },
+        "Neuroticismo": {
+          "rho": -0.023,
+          "p": 0.6913
+        },
+        "Abertura à Experiência": {
+          "rho": -0.022,
+          "p": 0.7034
+        }
+      },
+      "Consciência": {
+        "Extroversão": {
+          "rho": 0.015,
+          "p": 0.79
+        },
+        "Afabilidade": {
+          "rho": 0.08,
+          "p": 0.1669
+        },
+        "Consciência": {
+          "rho": 0.507,
+          "p": 0.0
+        },
+        "Neuroticismo": {
+          "rho": 0.043,
+          "p": 0.4613
+        },
+        "Abertura à Experiência": {
+          "rho": -0.087,
+          "p": 0.1323
+        }
+      },
+      "Neuroticismo": {
+        "Extroversão": {
+          "rho": 0.025,
+          "p": 0.6609
+        },
+        "Afabilidade": {
+          "rho": -0.077,
+          "p": 0.1852
+        },
+        "Consciência": {
+          "rho": -0.073,
+          "p": 0.2065
+        },
+        "Neuroticismo": {
+          "rho": 0.838,
+          "p": 0.0
+        },
+        "Abertura à Experiência": {
+          "rho": -0.274,
+          "p": 0.0
+        }
+      },
+      "Abertura à Experiência": {
+        "Extroversão": {
+          "rho": -0.013,
+          "p": 0.8242
+        },
+        "Afabilidade": {
+          "rho": -0.01,
+          "p": 0.8626
+        },
+        "Consciência": {
+          "rho": 0.029,
+          "p": 0.6116
+        },
+        "Neuroticismo": {
+          "rho": -0.105,
+          "p": 0.0704
+        },
+        "Abertura à Experiência": {
+          "rho": 0.739,
+          "p": 0.0
+        }
+      }
+    },
+    "residuos": [
+      {
+        "a": "Extroversão",
+        "b": "Afabilidade",
+        "r": 0.025,
+        "p": 0.6641
+      },
+      {
+        "a": "Extroversão",
+        "b": "Consciência",
+        "r": -0.098,
+        "p": 0.0894
+      },
+      {
+        "a": "Extroversão",
+        "b": "Neuroticismo",
+        "r": 0.002,
+        "p": 0.9768
+      },
+      {
+        "a": "Extroversão",
+        "b": "Abertura à Experiência",
+        "r": 0.102,
+        "p": 0.0774
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Consciência",
+        "r": 0.266,
+        "p": 0.0
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Neuroticismo",
+        "r": 0.077,
+        "p": 0.1835
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Abertura à Experiência",
+        "r": -0.013,
+        "p": 0.8286
+      },
+      {
+        "a": "Consciência",
+        "b": "Neuroticismo",
+        "r": -0.086,
+        "p": 0.1351
+      },
+      {
+        "a": "Consciência",
+        "b": "Abertura à Experiência",
+        "r": 0.021,
+        "p": 0.7164
+      },
+      {
+        "a": "Neuroticismo",
+        "b": "Abertura à Experiência",
+        "r": -0.031,
+        "p": 0.5924
+      }
+    ],
+    "r2": {
+      "Extroversão": {
+        "proprio": 0.177,
+        "todos": 0.183,
+        "ganho": 0.006
+      },
+      "Afabilidade": {
+        "proprio": 0.661,
+        "todos": 0.688,
+        "ganho": 0.028
+      },
+      "Consciência": {
+        "proprio": 0.269,
+        "todos": 0.402,
+        "ganho": 0.134
+      },
+      "Neuroticismo": {
+        "proprio": 0.66,
+        "todos": 0.686,
+        "ganho": 0.026
+      },
+      "Abertura à Experiência": {
+        "proprio": 0.524,
+        "todos": 0.62,
+        "ganho": 0.096
+      }
+    },
+    "rho_medio_abs": 0.125,
+    "rho_max_abs": 0.444,
+    "pares_significativos": 4
+  }
+}

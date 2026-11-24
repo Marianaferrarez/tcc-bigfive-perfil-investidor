@@ -1,0 +1,1337 @@
+{
+  "temperatura": {
+    "0,0": {
+      "n": 300,
+      "n_validos": 299,
+      "pct_bfi_valido": 100.0,
+      "pct_ipa_valido": 99.7,
+      "tentativas_media_bfi44": 1.0,
+      "tentativas_media_ipa": 1.01,
+      "perfis": {
+        "Conservador": 6,
+        "Moderado": 259,
+        "Arrojado": 34
+      },
+      "perfis_pct": {
+        "Conservador": 2.0,
+        "Moderado": 86.6,
+        "Arrojado": 11.4
+      },
+      "ipa_sem_q1_media": 17.05,
+      "ipa_sem_q1_dp": 2.41,
+      "manipulacao": {
+        "Extroversão": {
+          "rho": 0.946,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.88,
+          "p": 0.0
+        },
+        "Consciência": {
+          "rho": 0.929,
+          "p": 0.0
+        },
+        "Neuroticismo": {
+          "rho": 0.873,
+          "p": 0.0
+        },
+        "Abertura à Experiência": {
+          "rho": 0.929,
+          "p": 0.0
+        }
+      },
+      "spearman_ipa": {
+        "Extroversão": {
+          "rho": 0.536,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.109,
+          "p": 0.0607
+        },
+        "Consciência": {
+          "rho": 0.029,
+          "p": 0.6146
+        },
+        "Neuroticismo": {
+          "rho": 0.168,
+          "p": 0.0035
+        },
+        "Abertura à Experiência": {
+          "rho": 0.624,
+          "p": 0.0
+        }
+      },
+      "ols": {
+        "r2": 0.707,
+        "f": 141.68,
+        "p": 0.0,
+        "coef": {
+          "Extroversão": {
+            "b": 1.595,
+            "p": 0.0
+          },
+          "Afabilidade": {
+            "b": 0.359,
+            "p": 0.0001
+          },
+          "Consciência": {
+            "b": 0.429,
+            "p": 0.0
+          },
+          "Neuroticismo": {
+            "b": 0.419,
+            "p": 0.0
+          },
+          "Abertura à Experiência": {
+            "b": 1.767,
+            "p": 0.0
+          }
+        }
+      },
+      "variabilidade_mesmo_perfil": {
+        "combinacoes_repetidas": 87,
+        "dp_medio_intra_combinacao": 0.151,
+        "pct_combinacoes_com_ipa_identico": 87.4
+      },
+      "pareado_com_0,7": {
+        "n_pares": 299,
+        "perfis_identicos": true,
+        "spearman_escore_ipa": 0.62,
+        "p": 0.0,
+        "concordancia_respostas_q2_q8_pct": 74.3,
+        "mesmo_perfil_ipa_pct": 82.9
+      }
+    },
+    "0,3": {
+      "n": 300,
+      "n_validos": 299,
+      "pct_bfi_valido": 100.0,
+      "pct_ipa_valido": 99.7,
+      "tentativas_media_bfi44": 1.0,
+      "tentativas_media_ipa": 1.02,
+      "perfis": {
+        "Conservador": 11,
+        "Moderado": 254,
+        "Arrojado": 34
+      },
+      "perfis_pct": {
+        "Conservador": 3.7,
+        "Moderado": 84.9,
+        "Arrojado": 11.4
+      },
+      "ipa_sem_q1_media": 17.09,
+      "ipa_sem_q1_dp": 2.47,
+      "manipulacao": {
+        "Extroversão": {
+          "rho": 0.938,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.859,
+          "p": 0.0
+        },
+        "Consciência": {
+          "rho": 0.891,
+          "p": 0.0
+        },
+        "Neuroticismo": {
+          "rho": 0.87,
+          "p": 0.0
+        },
+        "Abertura à Experiência": {
+          "rho": 0.928,
+          "p": 0.0
+        }
+      },
+      "spearman_ipa": {
+        "Extroversão": {
+          "rho": 0.413,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.107,
+          "p": 0.0641
+        },
+        "Consciência": {
+          "rho": 0.13,
+          "p": 0.0242
+        },
+        "Neuroticismo": {
+          "rho": 0.106,
+          "p": 0.0662
+        },
+        "Abertura à Experiência": {
+          "rho": 0.654,
+          "p": 0.0
+        }
+      },
+      "ols": {
+        "r2": 0.643,
+        "f": 105.71,
+        "p": 0.0,
+        "coef": {
+          "Extroversão": {
+            "b": 1.273,
+            "p": 0.0
+          },
+          "Afabilidade": {
+            "b": 0.344,
+            "p": 0.0012
+          },
+          "Consciência": {
+            "b": 0.486,
+            "p": 0.0
+          },
+          "Neuroticismo": {
+            "b": 0.278,
+            "p": 0.0114
+          },
+          "Abertura à Experiência": {
+            "b": 1.932,
+            "p": 0.0
+          }
+        }
+      },
+      "variabilidade_mesmo_perfil": {
+        "combinacoes_repetidas": 86,
+        "dp_medio_intra_combinacao": 0.935,
+        "pct_combinacoes_com_ipa_identico": 18.6
+      },
+      "pareado_com_0,7": {
+        "n_pares": 299,
+        "perfis_identicos": true,
+        "spearman_escore_ipa": 0.583,
+        "p": 0.0,
+        "concordancia_respostas_q2_q8_pct": 71.7,
+        "mesmo_perfil_ipa_pct": 82.9
+      }
+    },
+    "0,7": {
+      "n": 300,
+      "n_validos": 300,
+      "pct_bfi_valido": 100.0,
+      "pct_ipa_valido": 100.0,
+      "perfis": {
+        "Conservador": 11,
+        "Moderado": 247,
+        "Arrojado": 42
+      },
+      "perfis_pct": {
+        "Conservador": 3.7,
+        "Moderado": 82.3,
+        "Arrojado": 14.0
+      },
+      "ipa_sem_q1_media": 17.58,
+      "ipa_sem_q1_dp": 2.72,
+      "manipulacao": {
+        "Extroversão": {
+          "rho": 0.929,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.813,
+          "p": 0.0
+        },
+        "Consciência": {
+          "rho": 0.879,
+          "p": 0.0
+        },
+        "Neuroticismo": {
+          "rho": 0.835,
+          "p": 0.0
+        },
+        "Abertura à Experiência": {
+          "rho": 0.913,
+          "p": 0.0
+        }
+      },
+      "spearman_ipa": {
+        "Extroversão": {
+          "rho": 0.34,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.051,
+          "p": 0.3758
+        },
+        "Consciência": {
+          "rho": 0.206,
+          "p": 0.0003
+        },
+        "Neuroticismo": {
+          "rho": 0.136,
+          "p": 0.0184
+        },
+        "Abertura à Experiência": {
+          "rho": 0.53,
+          "p": 0.0
+        }
+      },
+      "ols": {
+        "r2": 0.459,
+        "f": 49.85,
+        "p": 0.0,
+        "coef": {
+          "Extroversão": {
+            "b": 1.189,
+            "p": 0.0
+          },
+          "Afabilidade": {
+            "b": 0.094,
+            "p": 0.5109
+          },
+          "Consciência": {
+            "b": 0.75,
+            "p": 0.0
+          },
+          "Neuroticismo": {
+            "b": 0.407,
+            "p": 0.0064
+          },
+          "Abertura à Experiência": {
+            "b": 1.716,
+            "p": 0.0
+          }
+        }
+      },
+      "variabilidade_mesmo_perfil": {
+        "combinacoes_repetidas": 87,
+        "dp_medio_intra_combinacao": 1.603,
+        "pct_combinacoes_com_ipa_identico": 6.9
+      }
+    },
+    "1,0": {
+      "n": 300,
+      "n_validos": 300,
+      "pct_bfi_valido": 100.0,
+      "pct_ipa_valido": 100.0,
+      "tentativas_media_bfi44": 1.13,
+      "tentativas_media_ipa": 1.07,
+      "perfis": {
+        "Conservador": 12,
+        "Moderado": 243,
+        "Arrojado": 45
+      },
+      "perfis_pct": {
+        "Conservador": 4.0,
+        "Moderado": 81.0,
+        "Arrojado": 15.0
+      },
+      "ipa_sem_q1_media": 17.67,
+      "ipa_sem_q1_dp": 2.77,
+      "manipulacao": {
+        "Extroversão": {
+          "rho": 0.916,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.809,
+          "p": 0.0
+        },
+        "Consciência": {
+          "rho": 0.871,
+          "p": 0.0
+        },
+        "Neuroticismo": {
+          "rho": 0.816,
+          "p": 0.0
+        },
+        "Abertura à Experiência": {
+          "rho": 0.92,
+          "p": 0.0
+        }
+      },
+      "spearman_ipa": {
+        "Extroversão": {
+          "rho": 0.364,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.098,
+          "p": 0.0905
+        },
+        "Consciência": {
+          "rho": 0.088,
+          "p": 0.1299
+        },
+        "Neuroticismo": {
+          "rho": 0.214,
+          "p": 0.0002
+        },
+        "Abertura à Experiência": {
+          "rho": 0.507,
+          "p": 0.0
+        }
+      },
+      "ols": {
+        "r2": 0.449,
+        "f": 47.92,
+        "p": 0.0,
+        "coef": {
+          "Extroversão": {
+            "b": 1.253,
+            "p": 0.0
+          },
+          "Afabilidade": {
+            "b": 0.246,
+            "p": 0.0947
+          },
+          "Consciência": {
+            "b": 0.301,
+            "p": 0.0441
+          },
+          "Neuroticismo": {
+            "b": 0.744,
+            "p": 0.0
+          },
+          "Abertura à Experiência": {
+            "b": 1.686,
+            "p": 0.0
+          }
+        }
+      },
+      "variabilidade_mesmo_perfil": {
+        "combinacoes_repetidas": 87,
+        "dp_medio_intra_combinacao": 1.554,
+        "pct_combinacoes_com_ipa_identico": 12.6
+      },
+      "pareado_com_0,7": {
+        "n_pares": 300,
+        "perfis_identicos": true,
+        "spearman_escore_ipa": 0.526,
+        "p": 0.0,
+        "concordancia_respostas_q2_q8_pct": 62.0,
+        "mesmo_perfil_ipa_pct": 77.3
+      }
+    }
+  },
+  "modelos": {
+    "llama3.1:8b (Exp. A, 30 primeiros)": {
+      "n": 30,
+      "n_validos": 30,
+      "pct_bfi_valido": 100.0,
+      "pct_ipa_valido": 100.0,
+      "perfis": {
+        "Conservador": 1,
+        "Moderado": 25,
+        "Arrojado": 4
+      },
+      "perfis_pct": {
+        "Conservador": 3.3,
+        "Moderado": 83.3,
+        "Arrojado": 13.3
+      },
+      "ipa_sem_q1_media": 18.0,
+      "ipa_sem_q1_dp": 2.67,
+      "manipulacao": {
+        "Extroversão": {
+          "rho": 0.937,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.776,
+          "p": 0.0
+        },
+        "Consciência": {
+          "rho": 0.898,
+          "p": 0.0
+        },
+        "Neuroticismo": {
+          "rho": 0.902,
+          "p": 0.0
+        },
+        "Abertura à Experiência": {
+          "rho": 0.901,
+          "p": 0.0
+        }
+      },
+      "spearman_ipa": {
+        "Extroversão": {
+          "rho": 0.409,
+          "p": 0.0249
+        },
+        "Afabilidade": {
+          "rho": 0.079,
+          "p": 0.6778
+        },
+        "Consciência": {
+          "rho": 0.054,
+          "p": 0.7772
+        },
+        "Neuroticismo": {
+          "rho": -0.238,
+          "p": 0.2056
+        },
+        "Abertura à Experiência": {
+          "rho": 0.458,
+          "p": 0.0109
+        }
+      },
+      "ols": {
+        "r2": 0.455,
+        "f": 4.0,
+        "p": 0.0088,
+        "coef": {
+          "Extroversão": {
+            "b": 1.322,
+            "p": 0.0181
+          },
+          "Afabilidade": {
+            "b": 0.497,
+            "p": 0.4042
+          },
+          "Consciência": {
+            "b": 0.106,
+            "p": 0.8367
+          },
+          "Neuroticismo": {
+            "b": -0.27,
+            "p": 0.6141
+          },
+          "Abertura à Experiência": {
+            "b": 1.637,
+            "p": 0.0046
+          }
+        }
+      }
+    },
+    "gemma-4-31b": {
+      "n": 2,
+      "n_validos": 2,
+      "pct_bfi_valido": 100.0,
+      "pct_ipa_valido": 100.0,
+      "tentativas_media_bfi44": 1.0,
+      "tentativas_media_ipa": 1.0,
+      "perfis": {
+        "Conservador": 0,
+        "Moderado": 2,
+        "Arrojado": 0
+      },
+      "perfis_pct": {
+        "Conservador": 0.0,
+        "Moderado": 100.0,
+        "Arrojado": 0.0
+      },
+      "ipa_sem_q1_media": 14.0,
+      "ipa_sem_q1_dp": 2.83,
+      "manipulacao": {
+        "Extroversão": {
+          "rho": null,
+          "p": null
+        },
+        "Afabilidade": {
+          "rho": null,
+          "p": null
+        },
+        "Consciência": {
+          "rho": null,
+          "p": null
+        },
+        "Neuroticismo": {
+          "rho": null,
+          "p": null
+        },
+        "Abertura à Experiência": {
+          "rho": null,
+          "p": null
+        }
+      },
+      "spearman_ipa": {
+        "Extroversão": {
+          "rho": null,
+          "p": null
+        },
+        "Afabilidade": {
+          "rho": null,
+          "p": null
+        },
+        "Consciência": {
+          "rho": null,
+          "p": null
+        },
+        "Neuroticismo": {
+          "rho": null,
+          "p": null
+        },
+        "Abertura à Experiência": {
+          "rho": null,
+          "p": null
+        }
+      },
+      "pareado_com_llama": null,
+      "tempo_medio_resposta_s": 34.8
+    },
+    "nemotron-3.5-super": {
+      "n": 30,
+      "n_validos": 30,
+      "pct_bfi_valido": 100.0,
+      "pct_ipa_valido": 100.0,
+      "tentativas_media_bfi44": 1.0,
+      "tentativas_media_ipa": 1.03,
+      "perfis": {
+        "Conservador": 17,
+        "Moderado": 4,
+        "Arrojado": 9
+      },
+      "perfis_pct": {
+        "Conservador": 56.7,
+        "Moderado": 13.3,
+        "Arrojado": 30.0
+      },
+      "ipa_sem_q1_media": 15.07,
+      "ipa_sem_q1_dp": 7.71,
+      "manipulacao": {
+        "Extroversão": {
+          "rho": 0.949,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.918,
+          "p": 0.0
+        },
+        "Consciência": {
+          "rho": 0.95,
+          "p": 0.0
+        },
+        "Neuroticismo": {
+          "rho": 0.99,
+          "p": 0.0
+        },
+        "Abertura à Experiência": {
+          "rho": 0.95,
+          "p": 0.0
+        }
+      },
+      "spearman_ipa": {
+        "Extroversão": {
+          "rho": 0.501,
+          "p": 0.0048
+        },
+        "Afabilidade": {
+          "rho": -0.059,
+          "p": 0.7576
+        },
+        "Consciência": {
+          "rho": 0.186,
+          "p": 0.3262
+        },
+        "Neuroticismo": {
+          "rho": -0.295,
+          "p": 0.1137
+        },
+        "Abertura à Experiência": {
+          "rho": 0.59,
+          "p": 0.0006
+        }
+      },
+      "ols": {
+        "r2": 0.659,
+        "f": 9.28,
+        "p": 0.0001,
+        "coef": {
+          "Extroversão": {
+            "b": 4.035,
+            "p": 0.0024
+          },
+          "Afabilidade": {
+            "b": -0.622,
+            "p": 0.6459
+          },
+          "Consciência": {
+            "b": 1.443,
+            "p": 0.2283
+          },
+          "Neuroticismo": {
+            "b": -0.541,
+            "p": 0.6585
+          },
+          "Abertura à Experiência": {
+            "b": 6.096,
+            "p": 0.0
+          }
+        }
+      },
+      "pareado_com_llama": {
+        "n_pares": 30,
+        "perfis_identicos": true,
+        "spearman_escore_ipa": 0.536,
+        "p": 0.0023,
+        "concordancia_respostas_q2_q8_pct": 25.7,
+        "mesmo_perfil_ipa_pct": 30.0
+      },
+      "tempo_medio_resposta_s": 15.2
+    },
+    "nemotron-3-ultra": {
+      "n": 30,
+      "n_validos": 30,
+      "pct_bfi_valido": 100.0,
+      "pct_ipa_valido": 100.0,
+      "tentativas_media_bfi44": 1.0,
+      "tentativas_media_ipa": 1.03,
+      "perfis": {
+        "Conservador": 12,
+        "Moderado": 6,
+        "Arrojado": 12
+      },
+      "perfis_pct": {
+        "Conservador": 40.0,
+        "Moderado": 20.0,
+        "Arrojado": 40.0
+      },
+      "ipa_sem_q1_media": 16.83,
+      "ipa_sem_q1_dp": 7.27,
+      "manipulacao": {
+        "Extroversão": {
+          "rho": 0.946,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.925,
+          "p": 0.0
+        },
+        "Consciência": {
+          "rho": 0.966,
+          "p": 0.0
+        },
+        "Neuroticismo": {
+          "rho": 0.958,
+          "p": 0.0
+        },
+        "Abertura à Experiência": {
+          "rho": 0.942,
+          "p": 0.0
+        }
+      },
+      "spearman_ipa": {
+        "Extroversão": {
+          "rho": 0.419,
+          "p": 0.0212
+        },
+        "Afabilidade": {
+          "rho": -0.405,
+          "p": 0.0262
+        },
+        "Consciência": {
+          "rho": 0.19,
+          "p": 0.3151
+        },
+        "Neuroticismo": {
+          "rho": -0.287,
+          "p": 0.1239
+        },
+        "Abertura à Experiência": {
+          "rho": 0.684,
+          "p": 0.0
+        }
+      },
+      "ols": {
+        "r2": 0.799,
+        "f": 19.06,
+        "p": 0.0,
+        "coef": {
+          "Extroversão": {
+            "b": 2.06,
+            "p": 0.0254
+          },
+          "Afabilidade": {
+            "b": -3.356,
+            "p": 0.002
+          },
+          "Consciência": {
+            "b": 1.274,
+            "p": 0.1454
+          },
+          "Neuroticismo": {
+            "b": -1.543,
+            "p": 0.0914
+          },
+          "Abertura à Experiência": {
+            "b": 6.751,
+            "p": 0.0
+          }
+        }
+      },
+      "pareado_com_llama": {
+        "n_pares": 30,
+        "perfis_identicos": true,
+        "spearman_escore_ipa": 0.5,
+        "p": 0.0049,
+        "concordancia_respostas_q2_q8_pct": 30.5,
+        "mesmo_perfil_ipa_pct": 36.7
+      },
+      "tempo_medio_resposta_s": 29.2
+    }
+  },
+  "sementes": {
+    "seed 123 (Exp. A)": {
+      "n": 300,
+      "n_validos": 300,
+      "pct_bfi_valido": 100.0,
+      "pct_ipa_valido": 100.0,
+      "perfis": {
+        "Conservador": 11,
+        "Moderado": 247,
+        "Arrojado": 42
+      },
+      "perfis_pct": {
+        "Conservador": 3.7,
+        "Moderado": 82.3,
+        "Arrojado": 14.0
+      },
+      "ipa_sem_q1_media": 17.58,
+      "ipa_sem_q1_dp": 2.72,
+      "manipulacao": {
+        "Extroversão": {
+          "rho": 0.929,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.813,
+          "p": 0.0
+        },
+        "Consciência": {
+          "rho": 0.879,
+          "p": 0.0
+        },
+        "Neuroticismo": {
+          "rho": 0.835,
+          "p": 0.0
+        },
+        "Abertura à Experiência": {
+          "rho": 0.913,
+          "p": 0.0
+        }
+      },
+      "spearman_ipa": {
+        "Extroversão": {
+          "rho": 0.34,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.051,
+          "p": 0.3758
+        },
+        "Consciência": {
+          "rho": 0.206,
+          "p": 0.0003
+        },
+        "Neuroticismo": {
+          "rho": 0.136,
+          "p": 0.0184
+        },
+        "Abertura à Experiência": {
+          "rho": 0.53,
+          "p": 0.0
+        }
+      },
+      "ols": {
+        "r2": 0.459,
+        "f": 49.85,
+        "p": 0.0,
+        "coef": {
+          "Extroversão": {
+            "b": 1.189,
+            "p": 0.0
+          },
+          "Afabilidade": {
+            "b": 0.094,
+            "p": 0.5109
+          },
+          "Consciência": {
+            "b": 0.75,
+            "p": 0.0
+          },
+          "Neuroticismo": {
+            "b": 0.407,
+            "p": 0.0064
+          },
+          "Abertura à Experiência": {
+            "b": 1.716,
+            "p": 0.0
+          }
+        }
+      }
+    },
+    "seed 456": {
+      "n": 300,
+      "n_validos": 298,
+      "pct_bfi_valido": 100.0,
+      "pct_ipa_valido": 99.3,
+      "tentativas_media_bfi44": 1.06,
+      "tentativas_media_ipa": 1.04,
+      "perfis": {
+        "Conservador": 20,
+        "Moderado": 239,
+        "Arrojado": 39
+      },
+      "perfis_pct": {
+        "Conservador": 6.7,
+        "Moderado": 80.2,
+        "Arrojado": 13.1
+      },
+      "ipa_sem_q1_media": 17.5,
+      "ipa_sem_q1_dp": 2.77,
+      "manipulacao": {
+        "Extroversão": {
+          "rho": 0.928,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.823,
+          "p": 0.0
+        },
+        "Consciência": {
+          "rho": 0.86,
+          "p": 0.0
+        },
+        "Neuroticismo": {
+          "rho": 0.836,
+          "p": 0.0
+        },
+        "Abertura à Experiência": {
+          "rho": 0.924,
+          "p": 0.0
+        }
+      },
+      "spearman_ipa": {
+        "Extroversão": {
+          "rho": 0.382,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": -0.003,
+          "p": 0.9583
+        },
+        "Consciência": {
+          "rho": -0.01,
+          "p": 0.8684
+        },
+        "Neuroticismo": {
+          "rho": 0.028,
+          "p": 0.6256
+        },
+        "Abertura à Experiência": {
+          "rho": 0.612,
+          "p": 0.0
+        }
+      },
+      "ols": {
+        "r2": 0.526,
+        "f": 64.84,
+        "p": 0.0,
+        "coef": {
+          "Extroversão": {
+            "b": 1.293,
+            "p": 0.0
+          },
+          "Afabilidade": {
+            "b": 0.169,
+            "p": 0.2324
+          },
+          "Consciência": {
+            "b": 0.048,
+            "p": 0.7363
+          },
+          "Neuroticismo": {
+            "b": -0.092,
+            "p": 0.4961
+          },
+          "Abertura à Experiência": {
+            "b": 2.106,
+            "p": 0.0
+          }
+        }
+      }
+    }
+  },
+  "modelos_locais": {
+    "llama3.1:8b (Exp. A)": {
+      "n": 300,
+      "n_validos": 300,
+      "pct_bfi_valido": 100.0,
+      "pct_ipa_valido": 100.0,
+      "perfis": {
+        "Conservador": 11,
+        "Moderado": 247,
+        "Arrojado": 42
+      },
+      "perfis_pct": {
+        "Conservador": 3.7,
+        "Moderado": 82.3,
+        "Arrojado": 14.0
+      },
+      "ipa_sem_q1_media": 17.58,
+      "ipa_sem_q1_dp": 2.72,
+      "manipulacao": {
+        "Extroversão": {
+          "rho": 0.929,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.813,
+          "p": 0.0
+        },
+        "Consciência": {
+          "rho": 0.879,
+          "p": 0.0
+        },
+        "Neuroticismo": {
+          "rho": 0.835,
+          "p": 0.0
+        },
+        "Abertura à Experiência": {
+          "rho": 0.913,
+          "p": 0.0
+        }
+      },
+      "spearman_ipa": {
+        "Extroversão": {
+          "rho": 0.34,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.051,
+          "p": 0.3758
+        },
+        "Consciência": {
+          "rho": 0.206,
+          "p": 0.0003
+        },
+        "Neuroticismo": {
+          "rho": 0.136,
+          "p": 0.0184
+        },
+        "Abertura à Experiência": {
+          "rho": 0.53,
+          "p": 0.0
+        }
+      },
+      "ols": {
+        "r2": 0.459,
+        "f": 49.85,
+        "p": 0.0,
+        "coef": {
+          "Extroversão": {
+            "b": 1.189,
+            "p": 0.0
+          },
+          "Afabilidade": {
+            "b": 0.094,
+            "p": 0.5109
+          },
+          "Consciência": {
+            "b": 0.75,
+            "p": 0.0
+          },
+          "Neuroticismo": {
+            "b": 0.407,
+            "p": 0.0064
+          },
+          "Abertura à Experiência": {
+            "b": 1.716,
+            "p": 0.0
+          }
+        }
+      }
+    },
+    "qwen2.5:7b": {
+      "n": 300,
+      "n_validos": 245,
+      "pct_bfi_valido": 95.3,
+      "pct_ipa_valido": 85.7,
+      "tentativas_media_bfi44": 1.32,
+      "tentativas_media_ipa": 1.55,
+      "perfis": {
+        "Conservador": 11,
+        "Moderado": 125,
+        "Arrojado": 109
+      },
+      "perfis_pct": {
+        "Conservador": 4.5,
+        "Moderado": 51.0,
+        "Arrojado": 44.5
+      },
+      "ipa_sem_q1_media": 19.48,
+      "ipa_sem_q1_dp": 4.34,
+      "manipulacao": {
+        "Extroversão": {
+          "rho": 0.914,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.873,
+          "p": 0.0
+        },
+        "Consciência": {
+          "rho": 0.888,
+          "p": 0.0
+        },
+        "Neuroticismo": {
+          "rho": 0.846,
+          "p": 0.0
+        },
+        "Abertura à Experiência": {
+          "rho": 0.846,
+          "p": 0.0
+        }
+      },
+      "spearman_ipa": {
+        "Extroversão": {
+          "rho": 0.267,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": -0.115,
+          "p": 0.0726
+        },
+        "Consciência": {
+          "rho": -0.045,
+          "p": 0.4805
+        },
+        "Neuroticismo": {
+          "rho": 0.104,
+          "p": 0.1059
+        },
+        "Abertura à Experiência": {
+          "rho": 0.817,
+          "p": 0.0
+        }
+      },
+      "ols": {
+        "r2": 0.796,
+        "f": 186.34,
+        "p": 0.0,
+        "coef": {
+          "Extroversão": {
+            "b": 1.551,
+            "p": 0.0
+          },
+          "Afabilidade": {
+            "b": -0.317,
+            "p": 0.0406
+          },
+          "Consciência": {
+            "b": -0.426,
+            "p": 0.0082
+          },
+          "Neuroticismo": {
+            "b": 0.322,
+            "p": 0.0495
+          },
+          "Abertura à Experiência": {
+            "b": 4.643,
+            "p": 0.0
+          }
+        }
+      },
+      "pareado_com_llama": {
+        "n_pares": 257,
+        "perfis_identicos": true,
+        "spearman_escore_ipa": 0.559,
+        "p": 0.0,
+        "concordancia_respostas_q2_q8_pct": 54.9,
+        "mesmo_perfil_ipa_pct": 54.5
+      }
+    },
+    "mistral:7b": {
+      "n": 300,
+      "n_validos": 294,
+      "pct_bfi_valido": 98.0,
+      "pct_ipa_valido": 100.0,
+      "tentativas_media_bfi44": 1.18,
+      "tentativas_media_ipa": 1.02,
+      "perfis": {
+        "Conservador": 0,
+        "Moderado": 25,
+        "Arrojado": 269
+      },
+      "perfis_pct": {
+        "Conservador": 0.0,
+        "Moderado": 8.5,
+        "Arrojado": 91.5
+      },
+      "ipa_sem_q1_media": 22.86,
+      "ipa_sem_q1_dp": 1.11,
+      "manipulacao": {
+        "Extroversão": {
+          "rho": 0.897,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.872,
+          "p": 0.0
+        },
+        "Consciência": {
+          "rho": 0.925,
+          "p": 0.0
+        },
+        "Neuroticismo": {
+          "rho": 0.881,
+          "p": 0.0
+        },
+        "Abertura à Experiência": {
+          "rho": 0.939,
+          "p": 0.0
+        }
+      },
+      "spearman_ipa": {
+        "Extroversão": {
+          "rho": 0.184,
+          "p": 0.0015
+        },
+        "Afabilidade": {
+          "rho": -0.175,
+          "p": 0.0026
+        },
+        "Consciência": {
+          "rho": -0.011,
+          "p": 0.8482
+        },
+        "Neuroticismo": {
+          "rho": 0.175,
+          "p": 0.0026
+        },
+        "Abertura à Experiência": {
+          "rho": 0.416,
+          "p": 0.0
+        }
+      },
+      "ols": {
+        "r2": 0.383,
+        "f": 35.74,
+        "p": 0.0,
+        "coef": {
+          "Extroversão": {
+            "b": 0.391,
+            "p": 0.0
+          },
+          "Afabilidade": {
+            "b": -0.287,
+            "p": 0.0
+          },
+          "Consciência": {
+            "b": 0.034,
+            "p": 0.6005
+          },
+          "Neuroticismo": {
+            "b": 0.285,
+            "p": 0.0
+          },
+          "Abertura à Experiência": {
+            "b": 0.632,
+            "p": 0.0
+          }
+        }
+      },
+      "pareado_com_llama": {
+        "n_pares": 300,
+        "perfis_identicos": true,
+        "spearman_escore_ipa": 0.348,
+        "p": 0.0,
+        "concordancia_respostas_q2_q8_pct": 36.5,
+        "mesmo_perfil_ipa_pct": 20.3
+      }
+    },
+    "gemma3:12b": {
+      "n": 300,
+      "n_validos": 300,
+      "pct_bfi_valido": 100.0,
+      "pct_ipa_valido": 100.0,
+      "tentativas_media_bfi44": 1.01,
+      "tentativas_media_ipa": 1.0,
+      "perfis": {
+        "Conservador": 72,
+        "Moderado": 178,
+        "Arrojado": 50
+      },
+      "perfis_pct": {
+        "Conservador": 24.0,
+        "Moderado": 59.3,
+        "Arrojado": 16.7
+      },
+      "ipa_sem_q1_media": 15.77,
+      "ipa_sem_q1_dp": 3.89,
+      "manipulacao": {
+        "Extroversão": {
+          "rho": 0.955,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.951,
+          "p": 0.0
+        },
+        "Consciência": {
+          "rho": 0.943,
+          "p": 0.0
+        },
+        "Neuroticismo": {
+          "rho": 0.957,
+          "p": 0.0
+        },
+        "Abertura à Experiência": {
+          "rho": 0.957,
+          "p": 0.0
+        }
+      },
+      "spearman_ipa": {
+        "Extroversão": {
+          "rho": 0.503,
+          "p": 0.0
+        },
+        "Afabilidade": {
+          "rho": 0.011,
+          "p": 0.8552
+        },
+        "Consciência": {
+          "rho": 0.209,
+          "p": 0.0003
+        },
+        "Neuroticismo": {
+          "rho": -0.067,
+          "p": 0.2498
+        },
+        "Abertura à Experiência": {
+          "rho": 0.619,
+          "p": 0.0
+        }
+      },
+      "ols": {
+        "r2": 0.648,
+        "f": 108.45,
+        "p": 0.0,
+        "coef": {
+          "Extroversão": {
+            "b": 2.697,
+            "p": 0.0
+          },
+          "Afabilidade": {
+            "b": -0.193,
+            "p": 0.2424
+          },
+          "Consciência": {
+            "b": 0.534,
+            "p": 0.0015
+          },
+          "Neuroticismo": {
+            "b": -0.125,
+            "p": 0.4666
+          },
+          "Abertura à Experiência": {
+            "b": 2.622,
+            "p": 0.0
+          }
+        }
+      },
+      "pareado_com_llama": {
+        "n_pares": 300,
+        "perfis_identicos": true,
+        "spearman_escore_ipa": 0.56,
+        "p": 0.0,
+        "concordancia_respostas_q2_q8_pct": 43.5,
+        "mesmo_perfil_ipa_pct": 62.0
+      }
+    }
+  }
+}

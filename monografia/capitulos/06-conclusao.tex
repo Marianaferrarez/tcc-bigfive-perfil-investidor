@@ -1,0 +1,192 @@
+% ============================================================================
+% CAPÍTULO 6 — CONCLUSÃO
+% ============================================================================
+\chapter{Conclusão}
+\label{cap:conclusao}
+
+A pergunta de pesquisa que orientou este trabalho (Capítulo
+\ref{cap:introducao}) era se níveis induzidos de personalidade Big Five em
+agentes de inteligência artificial predizem o escore do questionário de
+perfil de investidor (IPA). A resposta, com os dados da análise principal
+(Experimento A, BFI-44, N=300, \texttt{llama3.1:8b}), é afirmativa, porém
+parcial: o modelo com os cinco níveis induzidos explica 45,9\% da
+variância do escore IPA (R²=0,459, p$<$0,001, Tabela \ref{tab:ols}), mas
+apenas dois dos cinco traços, Abertura à Experiência e Extroversão, têm
+efeito que se sustenta em todas as condições testadas. As três questões
+de pesquisa definidas na introdução detalham essa resposta.
+
+\section{Respostas às questões de pesquisa}
+
+\textbf{RQ1: Os LLMs conseguem simular consistentemente os traços de
+personalidade solicitados?} Sim, a partir de um certo porte de modelo. No
+Experimento A, a correlação entre o nível induzido e o autorrelato no
+BFI-44 ficou entre 0,813 e 0,929 nos cinco traços (Tabela
+\ref{tab:manipulacao}), com valores semelhantes quando cada traço foi
+induzido isoladamente (Experimento B, Tabela \ref{tab:manipulacao-exp-b}),
+em todas as temperaturas testadas e nos demais modelos de 7 bilhões de
+parâmetros ou mais (seção \ref{sec:resultados-robustez}). A indução também
+se mostrou específica: cada nível induzido se reflete sobretudo no
+próprio traço, e a correlação entre os traços autorrelatados foi baixa
+(média de 0,110 em módulo; seção \ref{sec:resultados-intercorrelacao}).
+Essa consistência, porém, não é garantida em qualquer modelo: o modelo
+mais leve testado na seleção do modelo (\texttt{llama3.2:1b}) não
+incorporou nenhum dos cinco traços de forma detectável (seção
+\ref{sec:selecao-modelo}).
+
+\textbf{RQ2: Quais associações entre personalidade induzida e perfil de
+investidor são robustas?} As de \textbf{Abertura à Experiência} e
+\textbf{Extroversão}, ambas positivas: maior nível induzido desses traços
+leva a um escore IPA mais arrojado. As duas foram significativas, com
+$p<0,001$, nas oito rodadas com N=300 da análise de robustez e
+generalização (quatro temperaturas, dois sorteios de perfis e quatro
+modelos abertos; Tabela \ref{tab:robustez-sintese}) e aparecem na mesma
+direção nos dois modelos Nemotron. Abertura à Experiência é, além disso, o
+único traço que converge com os dois artigos-base
+\cite{debortoli2019,jiangpengyan2024} e com o estudo de
+\citeonline{hartley2025}, e o único que se manteve significativo quando
+induzido isoladamente (Experimento B). Os efeitos de
+\textbf{Consciência} e \textbf{Neuroticismo}, significativos no
+Experimento A, são \textbf{instáveis}: desaparecem com outro sorteio de
+perfis, oscilam com a temperatura e mudam de significância ou de sinal
+entre modelos. \textbf{Amabilidade} não tem efeito consistente.
+
+\textbf{RQ3: Quanto essas associações e os perfis financeiros dependem do
+modelo e dos parâmetros de geração?} A \textit{direção} das associações
+robustas depende pouco: Abertura à Experiência e Extroversão mantêm o
+sinal e a significância em todos os modelos e temperaturas testados. A
+temperatura afeta principalmente o ruído: reduzi-la de 0,7 para 0,0 eleva
+o R² de 0,459 para 0,707 e torna a manipulação mais fiel, sem mudar quais
+traços têm efeito estável. Já o \textit{tamanho} dos efeitos e,
+sobretudo, o \textit{perfil de investidor absoluto} dependem fortemente
+do modelo: com os mesmos perfis de personalidade, a proporção de agentes
+Arrojados vai de 14,0\% (\texttt{llama3.1:8b}) a 91,5\%
+(\texttt{mistral:7b}), e o mesmo agente recebe o mesmo perfil do
+\texttt{llama3.1:8b} em 20,3\% a 62,0\% dos casos, conforme o modelo. Os
+efeitos instáveis (Consciência e Neuroticismo) são justamente os que
+mais dependem do modelo e da geração.
+
+Esse padrão de resultado, dois efeitos estáveis cercados de efeitos
+menores que não se sustentam, delimita o que este tipo de simulação pode
+oferecer. A convergência de Abertura à Experiência entre um estudo com
+124 estudantes, um estudo com 3.325 investidores reais e a simulação com
+agentes de IA deste trabalho é a evidência mais forte que este TCC produz
+em favor da pergunta de pesquisa. Ao mesmo tempo, essa convergência não
+deve ser lida como prova de que um agente de linguagem ``possui''
+personalidade no sentido psicológico do termo: ela indica, de forma mais
+modesta, que o pipeline de indução e checagem de manipulação usado neste
+trabalho é capaz de reproduzir, ao menos para esse traço, uma relação já
+bem estabelecida entre humanos.
+
+\section{Objetivos específicos}
+
+Retomando os objetivos específicos definidos na introdução, um a um:
+
+\begin{enumerate}
+    \item \textbf{Induzir e verificar níveis de personalidade por
+    instrução}: atingido. A checagem de manipulação confirmou incorporação
+    forte e estatisticamente significativa dos cinco traços tanto no
+    Experimento A ($\rho$ entre 0,813 e 0,929, Tabela \ref{tab:manipulacao})
+    quanto no Experimento B ($\rho$ entre 0,837 e 0,930 por traço, Tabela
+    \ref{tab:manipulacao-exp-b}), com o \texttt{llama3.1:8b} escolhido
+    justamente por ser o único, entre os quatro modelos testados na
+    seleção do modelo, a atingir esse patamar de manipulação em todos os
+    traços simultaneamente;
+    \item \textbf{Aplicar o IPA e obter escore contínuo e classificação
+    categórica}: atingido. Os 300 agentes do Experimento A foram
+    classificados, pelo escore total do IPA (8 perguntas, 8 a 32 pontos,
+    seção \ref{sec:ipa-pontuacao}), em 3,7\% Conservador, 82,3\%
+    Moderado e 14,0\% Arrojado (Tabela \ref{tab:distribuicao-ipa}); para a
+    análise estatística, foi usado o escore contínuo restrito às
+    perguntas 2 a 8 (média 17,58, desvio padrão 2,72), que exclui a
+    pergunta 1 sorteada aleatoriamente;
+    \item \textbf{Testar a associação estatística entre nível induzido e
+    escore do IPA}: atingido para os cinco traços, por correlação de
+    Spearman (Tabela \ref{tab:spearman-ipa}) e regressão OLS (Tabela
+    \ref{tab:ols}), com quatro dos cinco coeficientes estatisticamente
+    significativos no Experimento A, dois deles estáveis (RQ2);
+    \item \textbf{Comparar os achados com De Bortoli et al. e Jiang, Peng
+    e Yan}: atingido (Capítulo \ref{cap:discussao}, seção "Alinhamento com
+    a literatura de referência"). Abertura à Experiência converge com os dois
+    artigos-base; Amabilidade converge com os dois por ausência de efeito
+    consistente; Extroversão diverge de ambos, mas de forma parcial; e
+    Consciência e Neuroticismo, além de divergirem dos dois artigos-base,
+    mostraram-se instáveis, o que impede tratar essa divergência como um
+    achado substantivo;
+    \item \textbf{Comparar diferentes modelos de linguagem quanto à
+    qualidade da indução}: atingido (Capítulo \ref{cap:metodologia}, seção
+    \ref{sec:selecao-modelo}, e Capítulo \ref{cap:resultados}, seção
+    \ref{sec:resultados-robustez}). Na seleção do modelo, a qualidade da
+    indução cresceu com o tamanho do modelo; na análise de
+    generalização, todos os modelos de 7 bilhões de parâmetros ou mais
+    incorporaram os cinco traços;
+    \item \textbf{Testar se a indução simultânea dos cinco traços afeta a
+    qualidade da indução ou a força da associação com o IPA}: atingido
+    (Experimento B, seção \ref{sec:discussao-exp-b}). A indução simultânea
+    não prejudica a checagem de manipulação em si, mas o desenho isolado,
+    com N entre 49 e 69 por traço, não teve poder estatístico suficiente
+    para confirmar ou refutar com segurança os efeitos secundários do
+    Experimento A;
+    \item \textbf{Avaliar a robustez e a generalização das associações}:
+    atingido (seções \ref{sec:resultados-robustez} e
+    \ref{sec:discussao-robustez}). Abertura à Experiência e Extroversão se
+    mantiveram em todas as temperaturas, sorteios e modelos testados;
+    Consciência e Neuroticismo, não.
+\end{enumerate}
+
+\section{Contribuições}
+
+Este trabalho contribui em três frentes. Em primeiro lugar, produz
+evidência de que agentes de IA baseados em LLM, quando adequadamente
+induzidos e submetidos a uma checagem de manipulação, reproduzem
+parcialmente relações já documentadas entre personalidade Big Five e
+comportamento de risco financeiro: a convergência de Abertura à
+Experiência entre os dois artigos-base e este trabalho é o achado central
+nesse sentido, ao passo que a instabilidade dos demais traços delimita
+com igual clareza até onde essa replicação se sustenta.
+
+Em segundo lugar, o trabalho propõe e aplica uma metodologia replicável
+para o uso de LLMs como sujeitos simulados em pesquisa comportamental:
+indução de personalidade por instrução, checagem de manipulação
+obrigatória antes de interpretar qualquer efeito sobre a variável
+dependente e uma análise de robustez e generalização que repete o
+experimento variando, um de cada vez, a temperatura, o sorteio de perfis
+e o modelo. Essa análise mostrou que um efeito estatisticamente
+significativo em uma única configuração (como Consciência e Neuroticismo
+no Experimento A) pode não se sustentar em outras, e que, sem ela, este
+trabalho teria apresentado quatro efeitos onde apenas dois são estáveis.
+
+Em terceiro lugar, a comparação entre modelos mostra que o modelo de
+linguagem não é um detalhe de implementação: ele determina se a indução
+funciona (o modelo mais leve testado não incorporou nenhum traço) e,
+mesmo entre modelos em que a indução funciona, determina o perfil de
+investidor absoluto atribuído a uma mesma personalidade. Resultados desse
+tipo de simulação devem, portanto, ser reportados como propriedades do
+modelo usado, e não como estimativas do comportamento de investidores.
+
+\section{Recomendações para trabalhos futuros}
+
+\begin{itemize}
+    \item Substituir ou complementar o questionário de perfil de investidor
+    por uma \textbf{tarefa comportamental de investimento}, em que o
+    agente toma decisões (por exemplo, alocar um valor entre ativos com
+    risco e retorno conhecidos) em vez de declarar preferências. Em
+    \citeonline{borman2024}, personas de LLM representaram melhor o
+    comportamento humano nesse formato do que em questionário, e essa
+    mudança pode reduzir a instabilidade observada nos traços de efeito
+    menor;
+    \item Estender a análise de generalização a modelos proprietários de
+    grande porte e a modelos maiores com N suficiente para inferência, já
+    que os modelos Nemotron foram testados apenas em piloto (N=30);
+    \item Utilizar modelos de linguagem com pelo menos 7 a 8 bilhões de
+    parâmetros para garantir manipulação confiável de todos os traços do
+    Big Five, já que os modelos menores testados neste trabalho
+    (\texttt{llama3.2:1b} e \texttt{llama3.2:3b}) não atingiram esse
+    patamar de manipulação para todos os cinco traços (Tabela
+    \ref{tab:comparacao-modelos});
+    \item Adaptar o IPA, ou adotar outro instrumento de tolerância ao
+    risco validado, ao contexto específico de agentes de IA, removendo ou
+    ajustando itens originalmente pensados para respondentes humanos (como
+    a pergunta de faixa etária, atribuída aleatoriamente neste trabalho
+    por não fazer sentido ser respondida pelo modelo, seção
+    \ref{sec:limitacoes-pipeline}).
+\end{itemize}

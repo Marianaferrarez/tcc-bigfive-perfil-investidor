@@ -1,0 +1,335 @@
+[2026-10-28 18:45:35] INÍCIO resultados/modelos_locais/exp_a_qwen25_7b.csv | backend=ollama modelo=qwen2.5:7b temperatura=0.7 modo=multi seed=123 intervalo=0.0s | já existentes=0, novos pedidos=300
+[2026-10-31 15:49:03] INÍCIO resultados/modelos_locais/exp_a_qwen25_7b.csv | backend=ollama modelo=qwen2.5:7b temperatura=0.7 modo=multi seed=123 intervalo=0.0s | já existentes=0, novos pedidos=300
+[2026-10-31 15:50:06] [1/300] agente_id=0 perfil_ipa='Moderado' score=22 tentativas bfi/ipa=1/1 (63.2s)
+[2026-10-31 15:50:45] [2/300] agente_id=1 perfil_ipa='Moderado' score=20 tentativas bfi/ipa=1/1 (39.3s)
+[2026-10-31 15:52:01] [3/300] agente_id=2 perfil_ipa='Arrojado' score=24 tentativas bfi/ipa=2/1 (75.8s)
+[2026-10-31 15:52:20] [4/300] agente_id=3 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/2 (18.9s)
+[2026-10-31 15:54:15] [5/300] agente_id=4 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=3/3 (115.1s) [ERRO DE PARSING]
+[2026-10-31 15:56:07] [6/300] agente_id=5 perfil_ipa='Moderado' score=16 tentativas bfi/ipa=3/1 (112.4s) [ERRO DE PARSING]
+[2026-10-31 15:56:23] [7/300] agente_id=6 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (16.3s)
+[2026-10-31 15:58:15] [8/300] agente_id=7 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=3/1 (111.4s)
+[2026-10-31 15:58:54] [9/300] agente_id=8 perfil_ipa='Moderado' score=23 tentativas bfi/ipa=1/1 (39.6s)
+[2026-10-31 15:59:32] [10/300] agente_id=9 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=1/1 (37.4s)
+[2026-10-31 15:59:33] PARCIAL N=10 | BFI válido=8/10 | IPA válido=10/10 | perfis=Arrojado 4, Moderado 6 | IPA média=22.30 | manipulação ρ: Extr +0.77, Afab +0.79, Cons +0.92, Neur +0.91, Aber +0.85
+[2026-10-31 16:00:13] [11/300] agente_id=10 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (40.4s)
+[2026-10-31 16:01:00] [12/300] agente_id=11 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/3 (46.2s)
+[2026-10-31 16:01:40] [13/300] agente_id=12 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=1/2 (40.6s)
+[2026-10-31 16:02:26] [14/300] agente_id=13 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (45.7s) [ERRO DE PARSING]
+[2026-10-31 16:03:05] [15/300] agente_id=14 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (38.9s)
+[2026-10-31 16:03:45] [16/300] agente_id=15 perfil_ipa='Arrojado' score=29 tentativas bfi/ipa=1/1 (40.3s)
+[2026-10-31 16:04:28] [17/300] agente_id=16 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/2 (42.7s)
+[2026-10-31 16:06:00] [18/300] agente_id=17 perfil_ipa='' score='' tentativas bfi/ipa=3/3 (91.7s) [ERRO DE PARSING]
+[2026-10-31 16:06:39] [19/300] agente_id=18 perfil_ipa='Conservador' score=15 tentativas bfi/ipa=1/1 (39.7s)
+[2026-10-31 16:08:32] [20/300] agente_id=19 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=3/1 (113.1s)
+[2026-10-31 16:08:32] PARCIAL N=20 | BFI válido=17/20 | IPA válido=18/20 | perfis=Arrojado 10, Conservador 1, Moderado 7 | IPA média=23.44 | manipulação ρ: Extr +0.89, Afab +0.78, Cons +0.77, Neur +0.81, Aber +0.78
+[2026-10-31 16:09:11] [21/300] agente_id=20 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (39.0s)
+[2026-10-31 16:11:02] [22/300] agente_id=21 perfil_ipa='Moderado' score=16 tentativas bfi/ipa=3/1 (110.3s)
+[2026-10-31 16:11:59] [23/300] agente_id=22 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=2/1 (57.1s)
+[2026-10-31 16:12:38] [24/300] agente_id=23 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (39.1s)
+[2026-10-31 16:13:36] [25/300] agente_id=24 perfil_ipa='' score='' tentativas bfi/ipa=2/3 (58.0s) [ERRO DE PARSING]
+[2026-10-31 16:14:15] [26/300] agente_id=25 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (39.2s)
+[2026-10-31 16:15:00] [27/300] agente_id=26 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (45.4s) [ERRO DE PARSING]
+[2026-10-31 16:15:39] [28/300] agente_id=27 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (38.5s)
+[2026-10-31 16:16:22] [29/300] agente_id=28 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/2 (43.1s)
+[2026-10-31 16:17:02] [30/300] agente_id=29 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (40.2s)
+[2026-10-31 16:17:02] PARCIAL N=30 | BFI válido=27/30 | IPA válido=26/30 | perfis=Arrojado 13, Conservador 1, Moderado 12 | IPA média=22.73 | manipulação ρ: Extr +0.86, Afab +0.81, Cons +0.68, Neur +0.76, Aber +0.84
+[2026-10-31 16:17:43] [31/300] agente_id=30 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/2 (41.1s)
+[2026-10-31 16:18:26] [32/300] agente_id=31 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/2 (42.6s)
+[2026-10-31 16:19:12] [33/300] agente_id=32 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (45.6s) [ERRO DE PARSING]
+[2026-10-31 16:19:51] [34/300] agente_id=33 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (39.5s)
+[2026-10-31 16:20:31] [35/300] agente_id=34 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/1 (39.4s)
+[2026-10-31 16:21:57] [36/300] agente_id=35 perfil_ipa='Moderado' score=16 tentativas bfi/ipa=3/1 (86.5s)
+[2026-10-31 16:22:36] [37/300] agente_id=36 perfil_ipa='Moderado' score=16 tentativas bfi/ipa=1/1 (39.3s)
+[2026-10-31 16:23:20] [38/300] agente_id=37 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (44.0s) [ERRO DE PARSING]
+[2026-10-31 16:24:02] [39/300] agente_id=38 perfil_ipa='Moderado' score=22 tentativas bfi/ipa=1/2 (41.8s)
+[2026-10-31 16:25:57] [40/300] agente_id=39 perfil_ipa='' score='' tentativas bfi/ipa=3/3 (115.1s) [ERRO DE PARSING]
+[2026-10-31 16:25:57] PARCIAL N=40 | BFI válido=37/40 | IPA válido=33/40 | perfis=Arrojado 16, Conservador 1, Moderado 16 | IPA média=22.52 | manipulação ρ: Extr +0.88, Afab +0.85, Cons +0.73, Neur +0.81, Aber +0.84
+[2026-10-31 16:27:11] [41/300] agente_id=40 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=2/1 (73.8s)
+[2026-10-31 16:27:30] [42/300] agente_id=41 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/2 (19.2s)
+[2026-10-31 16:28:08] [43/300] agente_id=42 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (38.0s)
+[2026-10-31 16:28:49] [44/300] agente_id=43 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/1 (40.6s)
+[2026-10-31 16:30:05] [45/300] agente_id=44 perfil_ipa='Moderado' score=23 tentativas bfi/ipa=2/1 (76.5s)
+[2026-10-31 16:31:19] [46/300] agente_id=45 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=2/1 (74.0s)
+[2026-10-31 16:31:35] [47/300] agente_id=46 perfil_ipa='Moderado' score=16 tentativas bfi/ipa=1/1 (15.3s)
+[2026-10-31 16:32:15] [48/300] agente_id=47 perfil_ipa='Moderado' score=22 tentativas bfi/ipa=1/2 (40.3s)
+[2026-10-31 16:32:32] [49/300] agente_id=48 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (16.9s)
+[2026-10-31 16:33:11] [50/300] agente_id=49 perfil_ipa='Conservador' score=14 tentativas bfi/ipa=1/1 (38.7s)
+[2026-10-31 16:33:11] PARCIAL N=50 | BFI válido=47/50 | IPA válido=43/50 | perfis=Arrojado 20, Conservador 2, Moderado 21 | IPA média=22.51 | manipulação ρ: Extr +0.88, Afab +0.88, Cons +0.80, Neur +0.80, Aber +0.86
+[2026-10-31 16:33:51] [51/300] agente_id=50 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (40.3s)
+[2026-10-31 16:34:31] [52/300] agente_id=51 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/1 (40.0s)
+[2026-10-31 16:35:11] [53/300] agente_id=52 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/1 (40.4s)
+[2026-10-31 16:35:49] [54/300] agente_id=53 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (38.1s)
+[2026-10-31 16:36:29] [55/300] agente_id=54 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (39.2s)
+[2026-10-31 16:37:08] [56/300] agente_id=55 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (39.8s)
+[2026-10-31 16:37:54] [57/300] agente_id=56 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (45.2s) [ERRO DE PARSING]
+[2026-10-31 16:39:07] [58/300] agente_id=57 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=2/1 (73.1s)
+[2026-10-31 16:39:52] [59/300] agente_id=58 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/3 (45.6s)
+[2026-10-31 16:40:31] [60/300] agente_id=59 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (38.8s)
+[2026-10-31 16:40:31] PARCIAL N=60 | BFI válido=57/60 | IPA válido=52/60 | perfis=Arrojado 25, Conservador 2, Moderado 25 | IPA média=22.60 | manipulação ρ: Extr +0.89, Afab +0.88, Cons +0.81, Neur +0.82, Aber +0.87
+[2026-10-31 16:41:14] [61/300] agente_id=60 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/2 (43.1s)
+[2026-10-31 16:41:54] [62/300] agente_id=61 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (39.9s)
+[2026-10-31 18:57:02] INÍCIO resultados/modelos_locais/exp_a_qwen25_7b.csv | backend=ollama modelo=qwen2.5:7b temperatura=0.7 modo=multi seed=123 intervalo=0.0s | já existentes=62, novos pedidos=238
+[2026-10-31 18:58:16] [1/238] agente_id=62 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (74.0s)
+[2026-10-31 18:59:48] [2/238] agente_id=63 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=2/1 (92.7s)
+[2026-10-31 19:00:37] [3/238] agente_id=64 perfil_ipa='Moderado' score=22 tentativas bfi/ipa=1/1 (48.4s)
+[2026-10-31 19:02:58] [4/238] agente_id=65 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=3/2 (141.1s) [ERRO DE PARSING]
+[2026-10-31 19:03:54] [5/238] agente_id=66 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (56.3s) [ERRO DE PARSING]
+[2026-10-31 19:04:43] [6/238] agente_id=67 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/1 (49.3s)
+[2026-10-31 19:05:31] [7/238] agente_id=68 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=1/1 (47.1s)
+[2026-10-31 19:06:20] [8/238] agente_id=69 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (49.2s)
+[2026-10-31 19:07:21] [9/238] agente_id=70 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=2/1 (61.2s)
+[2026-10-31 19:08:10] [10/238] agente_id=71 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (48.8s)
+[2026-10-31 19:08:11] PARCIAL N=72 | BFI válido=68/72 | IPA válido=63/72 | perfis=Arrojado 30, Conservador 2, Moderado 31 | IPA média=22.62 | manipulação ρ: Extr +0.90, Afab +0.88, Cons +0.85, Neur +0.84, Aber +0.87
+[2026-10-31 19:09:06] [11/238] agente_id=72 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (55.2s) [ERRO DE PARSING]
+[2026-10-31 19:09:25] [12/238] agente_id=73 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (18.6s)
+[2026-10-31 19:10:13] [13/238] agente_id=74 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (47.6s)
+[2026-10-31 19:11:31] [14/238] agente_id=75 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=3/1 (78.3s)
+[2026-10-31 19:12:20] [15/238] agente_id=76 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/1 (49.4s)
+[2026-10-31 19:14:38] [16/238] agente_id=77 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=3/1 (137.9s)
+[2026-10-31 19:16:10] [17/238] agente_id=78 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=2/1 (91.8s)
+[2026-10-31 19:17:43] [18/238] agente_id=79 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=2/1 (93.5s)
+[2026-10-31 19:18:41] [19/238] agente_id=80 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/3 (57.2s)
+[2026-10-31 19:20:17] [20/238] agente_id=81 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=2/1 (96.2s)
+[2026-10-31 19:20:17] PARCIAL N=82 | BFI válido=78/82 | IPA válido=72/82 | perfis=Arrojado 34, Conservador 2, Moderado 36 | IPA média=22.50 | manipulação ρ: Extr +0.90, Afab +0.84, Cons +0.86, Neur +0.86, Aber +0.88
+[2026-10-31 19:21:05] [21/238] agente_id=82 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/1 (47.8s)
+[2026-10-31 19:21:57] [22/238] agente_id=83 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/2 (52.7s)
+[2026-10-31 19:23:28] [23/238] agente_id=84 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=2/1 (90.8s)
+[2026-10-31 19:25:02] [24/238] agente_id=85 perfil_ipa='Arrojado' score=29 tentativas bfi/ipa=2/1 (93.7s)
+[2026-10-31 19:26:06] [25/238] agente_id=86 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=2/1 (63.9s)
+[2026-10-31 19:26:58] [26/238] agente_id=87 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/2 (52.1s)
+[2026-10-31 19:27:46] [27/238] agente_id=88 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (47.9s)
+[2026-10-31 19:29:27] [28/238] agente_id=89 perfil_ipa='Arrojado' score=24 tentativas bfi/ipa=2/2 (100.9s)
+[2026-10-31 19:31:07] [29/238] agente_id=90 perfil_ipa='' score='' tentativas bfi/ipa=2/3 (100.7s) [ERRO DE PARSING]
+[2026-10-31 19:32:48] [30/238] agente_id=91 perfil_ipa='' score='' tentativas bfi/ipa=2/3 (101.1s) [ERRO DE PARSING]
+[2026-10-31 19:32:48] PARCIAL N=92 | BFI válido=88/92 | IPA válido=80/92 | perfis=Arrojado 39, Conservador 2, Moderado 39 | IPA média=22.57 | manipulação ρ: Extr +0.90, Afab +0.85, Cons +0.85, Neur +0.80, Aber +0.87
+[2026-10-31 19:33:34] [31/238] agente_id=92 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (45.8s)
+[2026-10-31 19:35:52] [32/238] agente_id=93 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=3/1 (138.2s)
+[2026-10-31 19:36:41] [33/238] agente_id=94 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (48.6s)
+[2026-10-31 19:37:28] [34/238] agente_id=95 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (46.7s)
+[2026-10-31 19:38:17] [35/238] agente_id=96 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (49.1s)
+[2026-10-31 19:38:37] [36/238] agente_id=97 perfil_ipa='Moderado' score=16 tentativas bfi/ipa=1/1 (19.9s)
+[2026-10-31 19:39:34] [37/238] agente_id=98 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (57.1s) [ERRO DE PARSING]
+[2026-10-31 19:40:24] [38/238] agente_id=99 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/1 (49.8s)
+[2026-10-31 19:42:06] [39/238] agente_id=100 perfil_ipa='Arrojado' score=29 tentativas bfi/ipa=2/3 (102.5s)
+[2026-10-31 19:43:10] [40/238] agente_id=101 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=2/1 (63.4s)
+[2026-10-31 19:43:10] PARCIAL N=102 | BFI válido=98/102 | IPA válido=89/102 | perfis=Arrojado 42, Conservador 2, Moderado 45 | IPA média=22.37 | manipulação ρ: Extr +0.90, Afab +0.85, Cons +0.85, Neur +0.82, Aber +0.85
+[2026-10-31 19:44:43] [41/238] agente_id=102 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=2/1 (93.4s)
+[2026-10-31 19:46:15] [42/238] agente_id=103 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=2/1 (92.4s)
+[2026-10-31 19:47:03] [43/238] agente_id=104 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (47.3s)
+[2026-10-31 19:47:53] [44/238] agente_id=105 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (50.0s)
+[2026-10-31 19:49:29] [45/238] agente_id=106 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=2/2 (96.8s)
+[2026-10-31 19:50:20] [46/238] agente_id=107 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (50.2s)
+[2026-10-31 19:51:08] [47/238] agente_id=108 perfil_ipa='Conservador' score=15 tentativas bfi/ipa=1/1 (48.5s)
+[2026-10-31 19:51:57] [48/238] agente_id=109 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (48.8s)
+[2026-10-31 19:52:45] [49/238] agente_id=110 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (47.8s)
+[2026-10-31 19:53:41] [50/238] agente_id=111 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (56.4s) [ERRO DE PARSING]
+[2026-10-31 19:53:41] PARCIAL N=112 | BFI válido=108/112 | IPA válido=98/112 | perfis=Arrojado 45, Conservador 3, Moderado 50 | IPA média=22.20 | manipulação ρ: Extr +0.89, Afab +0.86, Cons +0.84, Neur +0.81, Aber +0.85
+[2026-10-31 19:54:31] [51/238] agente_id=112 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/2 (49.8s)
+[2026-10-31 19:55:20] [52/238] agente_id=113 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (49.0s)
+[2026-10-31 19:55:46] [53/238] agente_id=114 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (26.3s) [ERRO DE PARSING]
+[2026-10-31 19:56:42] [54/238] agente_id=115 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/3 (56.1s)
+[2026-10-31 19:57:53] [55/238] agente_id=116 perfil_ipa='' score='' tentativas bfi/ipa=2/3 (70.3s) [ERRO DE PARSING]
+[2026-10-31 19:58:38] [56/238] agente_id=117 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (45.7s)
+[2026-10-31 19:59:26] [57/238] agente_id=118 perfil_ipa='Conservador' score=15 tentativas bfi/ipa=1/1 (47.5s)
+[2026-10-31 20:00:18] [58/238] agente_id=119 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/2 (52.1s)
+[2026-10-31 20:01:08] [59/238] agente_id=120 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (49.8s)
+[2026-10-31 20:01:55] [60/238] agente_id=121 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (47.5s)
+[2026-10-31 20:01:55] PARCIAL N=122 | BFI válido=118/122 | IPA válido=106/122 | perfis=Arrojado 49, Conservador 4, Moderado 53 | IPA média=22.18 | manipulação ρ: Extr +0.90, Afab +0.87, Cons +0.85, Neur +0.83, Aber +0.86
+[2026-10-31 20:02:49] [61/238] agente_id=122 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (54.0s) [ERRO DE PARSING]
+[2026-10-31 20:03:38] [62/238] agente_id=123 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=1/1 (49.2s)
+[2026-10-31 20:04:28] [63/238] agente_id=124 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (49.1s)
+[2026-10-31 20:06:57] [64/238] agente_id=125 perfil_ipa='' score='' tentativas bfi/ipa=3/3 (149.1s) [ERRO DE PARSING]
+[2026-10-31 20:07:44] [65/238] agente_id=126 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (47.7s)
+[2026-10-31 20:08:40] [66/238] agente_id=127 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (55.6s) [ERRO DE PARSING]
+[2026-10-31 20:09:25] [67/238] agente_id=128 perfil_ipa='Conservador' score=15 tentativas bfi/ipa=1/1 (45.5s)
+[2026-10-31 20:10:14] [68/238] agente_id=129 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (48.9s)
+[2026-10-31 20:11:10] [69/238] agente_id=130 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/3 (55.8s)
+[2026-10-31 20:11:58] [70/238] agente_id=131 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (47.5s)
+[2026-10-31 20:11:58] PARCIAL N=132 | BFI válido=127/132 | IPA válido=113/132 | perfis=Arrojado 52, Conservador 5, Moderado 56 | IPA média=22.16 | manipulação ρ: Extr +0.90, Afab +0.88, Cons +0.85, Neur +0.84, Aber +0.87
+[2026-10-31 20:12:52] [71/238] agente_id=132 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (54.3s) [ERRO DE PARSING]
+[2026-10-31 20:13:58] [72/238] agente_id=133 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=2/2 (66.3s)
+[2026-10-31 20:14:46] [73/238] agente_id=134 perfil_ipa='Moderado' score=20 tentativas bfi/ipa=1/1 (47.7s)
+[2026-10-31 20:15:42] [74/238] agente_id=135 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (55.7s) [ERRO DE PARSING]
+[2026-10-31 20:17:20] [75/238] agente_id=136 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=2/2 (98.2s)
+[2026-10-31 20:18:10] [76/238] agente_id=137 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (49.8s)
+[2026-10-31 20:19:05] [77/238] agente_id=138 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (55.0s) [ERRO DE PARSING]
+[2026-10-31 20:19:53] [78/238] agente_id=139 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (48.1s)
+[2026-10-31 20:21:29] [79/238] agente_id=140 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=2/2 (96.3s)
+[2026-10-31 20:22:18] [80/238] agente_id=141 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (48.7s)
+[2026-10-31 20:22:18] PARCIAL N=142 | BFI válido=137/142 | IPA válido=120/142 | perfis=Arrojado 55, Conservador 5, Moderado 60 | IPA média=22.15 | manipulação ρ: Extr +0.90, Afab +0.88, Cons +0.85, Neur +0.83, Aber +0.86
+[2026-10-31 20:23:08] [81/238] agente_id=142 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (50.0s)
+[2026-10-31 20:23:57] [82/238] agente_id=143 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (49.0s)
+[2026-10-31 20:24:47] [83/238] agente_id=144 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/1 (50.0s)
+[2026-10-31 20:25:36] [84/238] agente_id=145 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (49.3s)
+[2026-10-31 20:28:02] [85/238] agente_id=146 perfil_ipa='Arrojado' score=24 tentativas bfi/ipa=3/2 (146.0s) [ERRO DE PARSING]
+[2026-10-31 20:28:52] [86/238] agente_id=147 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (50.1s)
+[2026-10-31 20:29:41] [87/238] agente_id=148 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (49.2s)
+[2026-10-31 20:30:31] [88/238] agente_id=149 perfil_ipa='Moderado' score=20 tentativas bfi/ipa=1/2 (50.1s)
+[2026-10-31 20:32:54] [89/238] agente_id=150 perfil_ipa='' score='' tentativas bfi/ipa=3/3 (142.6s) [ERRO DE PARSING]
+[2026-10-31 20:33:42] [90/238] agente_id=151 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=1/1 (47.6s)
+[2026-10-31 20:33:42] PARCIAL N=152 | BFI válido=146/152 | IPA válido=129/152 | perfis=Arrojado 59, Conservador 5, Moderado 65 | IPA média=22.18 | manipulação ρ: Extr +0.89, Afab +0.87, Cons +0.85, Neur +0.81, Aber +0.84
+[2026-10-31 20:34:30] [91/238] agente_id=152 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=1/1 (48.6s)
+[2026-10-31 20:35:18] [92/238] agente_id=153 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (48.1s)
+[2026-10-31 20:36:15] [93/238] agente_id=154 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (56.8s) [ERRO DE PARSING]
+[2026-10-31 20:37:08] [94/238] agente_id=155 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/2 (53.1s)
+[2026-10-31 20:37:28] [95/238] agente_id=156 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (20.1s)
+[2026-10-31 20:38:16] [96/238] agente_id=157 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/1 (48.1s)
+[2026-10-31 20:39:06] [97/238] agente_id=158 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=1/1 (49.3s)
+[2026-10-31 20:39:57] [98/238] agente_id=159 perfil_ipa='Moderado' score=20 tentativas bfi/ipa=1/2 (51.3s)
+[2026-10-31 20:40:19] [99/238] agente_id=160 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/2 (21.9s)
+[2026-10-31 20:42:44] [100/238] agente_id=161 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=3/1 (145.3s) [ERRO DE PARSING]
+[2026-10-31 20:42:44] PARCIAL N=162 | BFI válido=155/162 | IPA válido=138/162 | perfis=Arrojado 64, Conservador 5, Moderado 69 | IPA média=22.28 | manipulação ρ: Extr +0.89, Afab +0.87, Cons +0.85, Neur +0.80, Aber +0.85
+[2026-10-31 20:43:36] [101/238] agente_id=162 perfil_ipa='Moderado' score=22 tentativas bfi/ipa=1/2 (51.5s)
+[2026-10-31 20:44:30] [102/238] agente_id=163 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/2 (53.8s)
+[2026-10-31 20:44:51] [103/238] agente_id=164 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (21.4s)
+[2026-10-31 20:45:39] [104/238] agente_id=165 perfil_ipa='Moderado' score=23 tentativas bfi/ipa=1/1 (48.5s)
+[2026-10-31 20:46:26] [105/238] agente_id=166 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (46.7s)
+[2026-10-31 20:47:14] [106/238] agente_id=167 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (48.0s)
+[2026-10-31 20:48:23] [107/238] agente_id=168 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=2/1 (69.3s)
+[2026-10-31 20:49:13] [108/238] agente_id=169 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (49.4s)
+[2026-10-31 20:49:32] [109/238] agente_id=170 perfil_ipa='Conservador' score=15 tentativas bfi/ipa=1/1 (19.3s)
+[2026-10-31 20:50:20] [110/238] agente_id=171 perfil_ipa='Moderado' score=16 tentativas bfi/ipa=1/1 (48.1s)
+[2026-10-31 20:50:20] PARCIAL N=172 | BFI válido=165/172 | IPA válido=148/172 | perfis=Arrojado 69, Conservador 6, Moderado 73 | IPA média=22.30 | manipulação ρ: Extr +0.89, Afab +0.87, Cons +0.85, Neur +0.81, Aber +0.85
+[2026-10-31 20:51:09] [111/238] agente_id=172 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (48.3s)
+[2026-10-31 20:53:25] [112/238] agente_id=173 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=3/1 (136.5s) [ERRO DE PARSING]
+[2026-10-31 20:54:13] [113/238] agente_id=174 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=1/1 (47.9s)
+[2026-10-31 20:55:15] [114/238] agente_id=175 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=2/1 (62.3s)
+[2026-10-31 20:55:43] [115/238] agente_id=176 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (28.1s) [ERRO DE PARSING]
+[2026-10-31 20:56:37] [116/238] agente_id=177 perfil_ipa='Moderado' score=22 tentativas bfi/ipa=1/3 (53.2s)
+[2026-10-31 20:57:29] [117/238] agente_id=178 perfil_ipa='Conservador' score=15 tentativas bfi/ipa=1/2 (52.2s)
+[2026-10-31 20:58:17] [118/238] agente_id=179 perfil_ipa='Moderado' score=20 tentativas bfi/ipa=1/1 (48.6s)
+[2026-10-31 20:59:57] [119/238] agente_id=180 perfil_ipa='' score='' tentativas bfi/ipa=2/3 (99.1s) [ERRO DE PARSING]
+[2026-10-31 21:01:00] [120/238] agente_id=181 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=2/1 (63.8s)
+[2026-10-31 21:01:00] PARCIAL N=182 | BFI válido=174/182 | IPA válido=156/182 | perfis=Arrojado 70, Conservador 7, Moderado 79 | IPA média=22.18 | manipulação ρ: Extr +0.89, Afab +0.88, Cons +0.86, Neur +0.81, Aber +0.85
+[2026-10-31 21:01:50] [121/238] agente_id=182 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (49.3s)
+[2026-10-31 21:02:11] [122/238] agente_id=183 perfil_ipa='Moderado' score=20 tentativas bfi/ipa=1/1 (21.7s)
+[2026-10-31 21:04:30] [123/238] agente_id=184 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=3/1 (139.0s) [ERRO DE PARSING]
+[2026-10-31 21:05:20] [124/238] agente_id=185 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (49.7s)
+[2026-10-31 21:06:08] [125/238] agente_id=186 perfil_ipa='Arrojado' score=29 tentativas bfi/ipa=1/1 (48.4s)
+[2026-10-31 21:06:58] [126/238] agente_id=187 perfil_ipa='Moderado' score=23 tentativas bfi/ipa=1/2 (49.9s)
+[2026-10-31 21:07:46] [127/238] agente_id=188 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (47.7s)
+[2026-10-31 21:08:34] [128/238] agente_id=189 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (48.3s)
+[2026-10-31 21:09:25] [129/238] agente_id=190 perfil_ipa='Moderado' score=22 tentativas bfi/ipa=1/2 (50.6s)
+[2026-10-31 21:11:42] [130/238] agente_id=191 perfil_ipa='Moderado' score=16 tentativas bfi/ipa=3/1 (136.8s) [ERRO DE PARSING]
+[2026-10-31 21:11:42] PARCIAL N=192 | BFI válido=182/192 | IPA válido=166/192 | perfis=Arrojado 74, Conservador 7, Moderado 85 | IPA média=22.21 | manipulação ρ: Extr +0.90, Afab +0.88, Cons +0.87, Neur +0.82, Aber +0.85
+[2026-10-31 21:12:35] [131/238] agente_id=192 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/2 (52.9s)
+[2026-10-31 21:13:22] [132/238] agente_id=193 perfil_ipa='Arrojado' score=24 tentativas bfi/ipa=1/1 (47.8s)
+[2026-10-31 21:14:51] [133/238] agente_id=194 perfil_ipa='' score='' tentativas bfi/ipa=3/3 (88.2s) [ERRO DE PARSING]
+[2026-10-31 21:15:53] [134/238] agente_id=195 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=2/1 (61.9s)
+[2026-10-31 21:16:41] [135/238] agente_id=196 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/1 (48.9s)
+[2026-10-31 21:17:29] [136/238] agente_id=197 perfil_ipa='Moderado' score=16 tentativas bfi/ipa=1/1 (47.9s)
+[2026-10-31 21:18:25] [137/238] agente_id=198 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (55.6s) [ERRO DE PARSING]
+[2026-10-31 21:19:13] [138/238] agente_id=199 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (48.2s)
+[2026-10-31 21:20:02] [139/238] agente_id=200 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/1 (49.0s)
+[2026-10-31 21:21:29] [140/238] agente_id=201 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=2/1 (86.7s)
+[2026-10-31 21:21:29] PARCIAL N=202 | BFI válido=192/202 | IPA válido=174/202 | perfis=Arrojado 78, Conservador 7, Moderado 89 | IPA média=22.17 | manipulação ρ: Extr +0.90, Afab +0.88, Cons +0.87, Neur +0.82, Aber +0.86
+[2026-10-31 21:22:30] [141/238] agente_id=202 perfil_ipa='Moderado' score=16 tentativas bfi/ipa=2/1 (61.1s)
+[2026-10-31 21:23:19] [142/238] agente_id=203 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (49.4s)
+[2026-10-31 21:24:15] [143/238] agente_id=204 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (55.8s) [ERRO DE PARSING]
+[2026-10-31 21:26:33] [144/238] agente_id=205 perfil_ipa='Moderado' score=20 tentativas bfi/ipa=3/1 (138.3s) [ERRO DE PARSING]
+[2026-10-31 21:27:22] [145/238] agente_id=206 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (48.2s)
+[2026-10-31 21:28:14] [146/238] agente_id=207 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/2 (52.5s)
+[2026-10-31 21:30:36] [147/238] agente_id=208 perfil_ipa='' score='' tentativas bfi/ipa=3/3 (141.6s) [ERRO DE PARSING]
+[2026-10-31 21:31:23] [148/238] agente_id=209 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (47.5s)
+[2026-10-31 21:32:10] [149/238] agente_id=210 perfil_ipa='Moderado' score=22 tentativas bfi/ipa=1/1 (46.5s)
+[2026-10-31 21:33:03] [150/238] agente_id=211 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=1/3 (53.6s)
+[2026-10-31 21:33:03] PARCIAL N=212 | BFI válido=201/212 | IPA válido=182/212 | perfis=Arrojado 80, Conservador 7, Moderado 95 | IPA média=22.13 | manipulação ρ: Extr +0.90, Afab +0.88, Cons +0.87, Neur +0.82, Aber +0.86
+[2026-10-31 21:34:00] [151/238] agente_id=212 perfil_ipa='Moderado' score=23 tentativas bfi/ipa=1/3 (56.7s)
+[2026-10-31 21:34:50] [152/238] agente_id=213 perfil_ipa='Arrojado' score=29 tentativas bfi/ipa=1/1 (50.0s)
+[2026-10-31 21:35:37] [153/238] agente_id=214 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (47.0s)
+[2026-10-31 21:36:01] [154/238] agente_id=215 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/2 (23.5s)
+[2026-10-31 21:36:56] [155/238] agente_id=216 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (55.4s) [ERRO DE PARSING]
+[2026-10-31 21:37:44] [156/238] agente_id=217 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (48.2s)
+[2026-10-31 21:38:34] [157/238] agente_id=218 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (50.3s)
+[2026-10-31 21:39:26] [158/238] agente_id=219 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/2 (51.6s)
+[2026-10-31 21:40:14] [159/238] agente_id=220 perfil_ipa='Moderado' score=20 tentativas bfi/ipa=1/1 (48.4s)
+[2026-10-31 21:40:38] [160/238] agente_id=221 perfil_ipa='Arrojado' score=24 tentativas bfi/ipa=1/2 (23.8s)
+[2026-10-31 21:40:38] PARCIAL N=222 | BFI válido=211/222 | IPA válido=191/222 | perfis=Arrojado 85, Conservador 7, Moderado 99 | IPA média=22.19 | manipulação ρ: Extr +0.90, Afab +0.88, Cons +0.88, Neur +0.82, Aber +0.87
+[2026-10-31 21:41:26] [161/238] agente_id=222 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (47.9s)
+[2026-10-31 21:42:21] [162/238] agente_id=223 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/3 (55.1s)
+[2026-10-31 21:43:09] [163/238] agente_id=224 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=1/1 (47.9s)
+[2026-10-31 21:44:06] [164/238] agente_id=225 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (56.8s) [ERRO DE PARSING]
+[2026-10-31 21:44:52] [165/238] agente_id=226 perfil_ipa='Moderado' score=16 tentativas bfi/ipa=1/1 (46.2s)
+[2026-10-31 21:45:44] [166/238] agente_id=227 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/2 (52.4s)
+[2026-10-31 21:46:35] [167/238] agente_id=228 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/2 (51.0s)
+[2026-10-31 21:47:23] [168/238] agente_id=229 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (48.0s)
+[2026-10-31 21:48:12] [169/238] agente_id=230 perfil_ipa='Conservador' score=15 tentativas bfi/ipa=1/1 (48.2s)
+[2026-10-31 21:49:00] [170/238] agente_id=231 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (48.7s)
+[2026-10-31 21:49:00] PARCIAL N=232 | BFI válido=221/232 | IPA válido=200/232 | perfis=Arrojado 88, Conservador 8, Moderado 104 | IPA média=22.11 | manipulação ρ: Extr +0.90, Afab +0.87, Cons +0.87, Neur +0.83, Aber +0.86
+[2026-10-31 21:51:17] [171/238] agente_id=232 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=3/1 (136.3s)
+[2026-10-31 21:52:10] [172/238] agente_id=233 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/2 (53.0s)
+[2026-10-31 21:52:57] [173/238] agente_id=234 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (47.3s)
+[2026-10-31 21:53:45] [174/238] agente_id=235 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (47.9s)
+[2026-10-31 21:54:41] [175/238] agente_id=236 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (55.7s) [ERRO DE PARSING]
+[2026-10-31 21:55:30] [176/238] agente_id=237 perfil_ipa='Arrojado' score=24 tentativas bfi/ipa=1/2 (49.2s)
+[2026-10-31 21:56:25] [177/238] agente_id=238 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (55.7s) [ERRO DE PARSING]
+[2026-10-31 21:58:42] [178/238] agente_id=239 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=3/1 (136.5s)
+[2026-10-31 21:59:30] [179/238] agente_id=240 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (48.5s)
+[2026-10-31 21:59:54] [180/238] agente_id=241 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=1/2 (23.3s)
+[2026-10-31 21:59:54] PARCIAL N=242 | BFI válido=231/242 | IPA válido=208/242 | perfis=Arrojado 93, Conservador 8, Moderado 107 | IPA média=22.19 | manipulação ρ: Extr +0.91, Afab +0.87, Cons +0.87, Neur +0.84, Aber +0.86
+[2026-10-31 22:00:49] [181/238] agente_id=242 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/3 (55.6s)
+[2026-10-31 22:01:37] [182/238] agente_id=243 perfil_ipa='Moderado' score=16 tentativas bfi/ipa=1/1 (47.5s)
+[2026-10-31 22:03:50] [183/238] agente_id=244 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=3/1 (133.2s) [ERRO DE PARSING]
+[2026-10-31 22:04:54] [184/238] agente_id=245 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=2/1 (64.4s)
+[2026-10-31 22:07:14] [185/238] agente_id=246 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=3/1 (139.3s) [ERRO DE PARSING]
+[2026-10-31 22:08:08] [186/238] agente_id=247 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (54.2s) [ERRO DE PARSING]
+[2026-11-03 12:28:24] INÍCIO resultados/modelos_locais/exp_a_qwen25_7b.csv | backend=ollama modelo=qwen2.5:7b temperatura=0.7 modo=multi seed=123 intervalo=0.0s | já existentes=248, novos pedidos=52
+[2026-11-03 12:29:50] [1/52] agente_id=248 perfil_ipa='Moderado' score=16 tentativas bfi/ipa=2/1 (85.4s)
+[2026-11-03 12:31:18] [2/52] agente_id=249 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=2/1 (88.3s)
+[2026-11-03 12:32:04] [3/52] agente_id=250 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/1 (46.4s)
+[2026-11-03 12:32:23] [4/52] agente_id=251 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (18.5s)
+[2026-11-03 12:32:42] [5/52] agente_id=252 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=1/1 (19.6s)
+[2026-11-03 12:34:11] [6/52] agente_id=253 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=2/1 (88.4s)
+[2026-11-03 12:35:02] [7/52] agente_id=254 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/3 (51.2s)
+[2026-11-03 12:35:23] [8/52] agente_id=255 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (20.6s)
+[2026-11-03 12:36:10] [9/52] agente_id=256 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (47.3s)
+[2026-11-03 12:36:57] [10/52] agente_id=257 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (46.9s)
+[2026-11-03 12:36:58] PARCIAL N=258 | BFI válido=245/258 | IPA válido=223/258 | perfis=Arrojado 98, Conservador 8, Moderado 117 | IPA média=22.09 | manipulação ρ: Extr +0.91, Afab +0.87, Cons +0.87, Neur +0.82, Aber +0.86
+[2026-11-03 12:37:52] [11/52] agente_id=258 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (53.4s) [ERRO DE PARSING]
+[2026-11-03 12:38:41] [12/52] agente_id=259 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/2 (49.2s)
+[2026-11-03 12:39:27] [13/52] agente_id=260 perfil_ipa='Moderado' score=16 tentativas bfi/ipa=1/1 (45.9s)
+[2026-11-03 12:40:14] [14/52] agente_id=261 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/1 (47.0s)
+[2026-11-03 12:41:50] [15/52] agente_id=262 perfil_ipa='' score='' tentativas bfi/ipa=2/3 (96.4s) [ERRO DE PARSING]
+[2026-11-03 12:42:38] [16/52] agente_id=263 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/1 (47.6s)
+[2026-11-03 12:43:25] [17/52] agente_id=264 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (47.4s)
+[2026-11-03 12:44:10] [18/52] agente_id=265 perfil_ipa='Moderado' score=23 tentativas bfi/ipa=1/1 (44.9s)
+[2026-11-03 12:44:31] [19/52] agente_id=266 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (20.6s)
+[2026-11-03 12:45:24] [20/52] agente_id=267 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (53.4s) [ERRO DE PARSING]
+[2026-11-03 12:45:24] PARCIAL N=268 | BFI válido=255/268 | IPA válido=230/268 | perfis=Arrojado 103, Conservador 8, Moderado 119 | IPA média=22.15 | manipulação ρ: Extr +0.91, Afab +0.87, Cons +0.88, Neur +0.83, Aber +0.86
+[2026-11-03 12:46:11] [21/52] agente_id=268 perfil_ipa='Arrojado' score=29 tentativas bfi/ipa=1/1 (46.8s)
+[2026-11-03 12:47:04] [22/52] agente_id=269 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/3 (53.1s)
+[2026-11-03 12:47:58] [23/52] agente_id=270 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/3 (53.7s)
+[2026-11-03 12:48:44] [24/52] agente_id=271 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=1/1 (46.7s)
+[2026-11-03 12:49:31] [25/52] agente_id=272 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=1/1 (46.2s)
+[2026-11-03 12:50:17] [26/52] agente_id=273 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (46.1s)
+[2026-11-03 12:51:10] [27/52] agente_id=274 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/3 (53.7s)
+[2026-11-03 12:51:56] [28/52] agente_id=275 perfil_ipa='Moderado' score=16 tentativas bfi/ipa=1/1 (45.9s)
+[2026-11-03 12:52:47] [29/52] agente_id=276 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (50.4s) [ERRO DE PARSING]
+[2026-11-03 12:55:01] [30/52] agente_id=277 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=3/1 (134.4s) [ERRO DE PARSING]
+[2026-11-03 12:55:01] PARCIAL N=278 | BFI válido=264/278 | IPA válido=239/278 | perfis=Arrojado 108, Conservador 8, Moderado 123 | IPA média=22.19 | manipulação ρ: Extr +0.91, Afab +0.87, Cons +0.88, Neur +0.82, Aber +0.86
+[2026-11-03 12:55:45] [31/52] agente_id=278 perfil_ipa='Conservador' score=15 tentativas bfi/ipa=1/1 (44.1s)
+[2026-11-03 12:56:39] [32/52] agente_id=279 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (54.2s) [ERRO DE PARSING]
+[2026-11-03 12:57:25] [33/52] agente_id=280 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (45.5s)
+[2026-11-03 12:58:15] [34/52] agente_id=281 perfil_ipa='Arrojado' score=24 tentativas bfi/ipa=1/2 (49.7s)
+[2026-11-03 12:59:01] [35/52] agente_id=282 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (46.3s)
+[2026-11-03 12:59:22] [36/52] agente_id=283 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/2 (20.7s)
+[2026-11-03 13:01:12] [37/52] agente_id=284 perfil_ipa='' score='' tentativas bfi/ipa=3/3 (110.4s) [ERRO DE PARSING]
+[2026-11-03 13:02:00] [38/52] agente_id=285 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/1 (47.7s)
+[2026-11-03 13:02:19] [39/52] agente_id=286 perfil_ipa='Arrojado' score=24 tentativas bfi/ipa=1/1 (19.3s)
+[2026-11-03 13:03:05] [40/52] agente_id=287 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (45.6s)
+[2026-11-03 13:03:05] PARCIAL N=288 | BFI válido=274/288 | IPA válido=247/288 | perfis=Arrojado 112, Conservador 9, Moderado 126 | IPA média=22.15 | manipulação ρ: Extr +0.91, Afab +0.87, Cons +0.88, Neur +0.83, Aber +0.86
+[2026-11-03 13:03:51] [41/52] agente_id=288 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/1 (46.6s)
+[2026-11-03 13:04:42] [42/52] agente_id=289 perfil_ipa='Arrojado' score=28 tentativas bfi/ipa=1/2 (50.5s)
+[2026-11-03 13:05:07] [43/52] agente_id=290 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (25.4s) [ERRO DE PARSING]
+[2026-11-03 13:05:57] [44/52] agente_id=291 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=1/2 (49.8s)
+[2026-11-03 13:06:43] [45/52] agente_id=292 perfil_ipa='Moderado' score=21 tentativas bfi/ipa=1/1 (45.6s)
+[2026-11-03 13:07:30] [46/52] agente_id=293 perfil_ipa='Moderado' score=22 tentativas bfi/ipa=1/1 (47.5s)
+[2026-11-03 13:08:15] [47/52] agente_id=294 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (44.6s)
+[2026-11-03 13:09:45] [48/52] agente_id=295 perfil_ipa='Conservador' score=15 tentativas bfi/ipa=2/2 (90.2s)
+[2026-11-03 13:11:12] [49/52] agente_id=296 perfil_ipa='Conservador' score=15 tentativas bfi/ipa=2/1 (87.4s)
+[2026-11-03 13:11:59] [50/52] agente_id=297 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (46.7s)
+[2026-11-03 13:11:59] PARCIAL N=298 | BFI válido=284/298 | IPA válido=256/298 | perfis=Arrojado 114, Conservador 11, Moderado 131 | IPA média=22.08 | manipulação ρ: Extr +0.91, Afab +0.87, Cons +0.88, Neur +0.83, Aber +0.86
+[2026-11-03 13:12:46] [51/52] agente_id=298 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (47.1s)
+[2026-11-03 13:13:39] [52/52] agente_id=299 perfil_ipa='' score='' tentativas bfi/ipa=1/3 (53.2s) [ERRO DE PARSING]
+[2026-11-03 13:13:39] FIM: 52 agentes novos em 2715.0s (52.2s/agente)
+[2026-11-03 13:13:39] RESUMO N=300 | BFI válido=286/300 | IPA válido=257/300 | perfis=Arrojado 115, Conservador 11, Moderado 131 | IPA média=22.10 | manipulação ρ: Extr +0.91, Afab +0.87, Cons +0.88, Neur +0.83, Aber +0.86

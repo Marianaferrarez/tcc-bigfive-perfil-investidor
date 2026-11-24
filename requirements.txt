@@ -1,0 +1,7 @@
+# Versões usadas nas análises do TCC (Python 3.13)
+pandas==2.2.3
+numpy==2.1.2
+scipy==1.17.1
+statsmodels==0.14.6
+matplotlib==3.10.8
+requests==2.33.1

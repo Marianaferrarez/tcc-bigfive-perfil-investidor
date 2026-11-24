@@ -1,0 +1,612 @@
+{
+  "exp_a": {
+    "nome": "Experimento A (principal)",
+    "arquivo": "principal/exp_a_bfi44_multitraco_8b.csv",
+    "n": 300,
+    "frequencias": {
+      "Extroversão": {
+        "contagens": [
+          99,
+          96,
+          105
+        ],
+        "pct": [
+          33.0,
+          32.0,
+          35.0
+        ],
+        "chi2": 0.42,
+        "p": 0.811
+      },
+      "Afabilidade": {
+        "contagens": [
+          102,
+          98,
+          100
+        ],
+        "pct": [
+          34.0,
+          32.7,
+          33.3
+        ],
+        "chi2": 0.08,
+        "p": 0.961
+      },
+      "Consciência": {
+        "contagens": [
+          101,
+          105,
+          94
+        ],
+        "pct": [
+          33.7,
+          35.0,
+          31.3
+        ],
+        "chi2": 0.62,
+        "p": 0.733
+      },
+      "Neuroticismo": {
+        "contagens": [
+          92,
+          112,
+          96
+        ],
+        "pct": [
+          30.7,
+          37.3,
+          32.0
+        ],
+        "chi2": 2.24,
+        "p": 0.326
+      },
+      "Abertura à Experiência": {
+        "contagens": [
+          107,
+          98,
+          95
+        ],
+        "pct": [
+          35.7,
+          32.7,
+          31.7
+        ],
+        "chi2": 0.78,
+        "p": 0.677
+      }
+    },
+    "pares": [
+      {
+        "a": "Extroversão",
+        "b": "Afabilidade",
+        "rho": 0.015,
+        "p_rho": 0.79,
+        "chi2": 3.81,
+        "p_chi2": 0.433,
+        "cramer_v": 0.08
+      },
+      {
+        "a": "Extroversão",
+        "b": "Consciência",
+        "rho": -0.049,
+        "p_rho": 0.398,
+        "chi2": 6.44,
+        "p_chi2": 0.169,
+        "cramer_v": 0.104
+      },
+      {
+        "a": "Extroversão",
+        "b": "Neuroticismo",
+        "rho": -0.021,
+        "p_rho": 0.715,
+        "chi2": 0.69,
+        "p_chi2": 0.953,
+        "cramer_v": 0.034
+      },
+      {
+        "a": "Extroversão",
+        "b": "Abertura à Experiência",
+        "rho": 0.011,
+        "p_rho": 0.855,
+        "chi2": 2.46,
+        "p_chi2": 0.652,
+        "cramer_v": 0.064
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Consciência",
+        "rho": 0.04,
+        "p_rho": 0.494,
+        "chi2": 1.84,
+        "p_chi2": 0.764,
+        "cramer_v": 0.055
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Neuroticismo",
+        "rho": 0.103,
+        "p_rho": 0.075,
+        "chi2": 3.5,
+        "p_chi2": 0.478,
+        "cramer_v": 0.076
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Abertura à Experiência",
+        "rho": -0.011,
+        "p_rho": 0.845,
+        "chi2": 4.17,
+        "p_chi2": 0.383,
+        "cramer_v": 0.083
+      },
+      {
+        "a": "Consciência",
+        "b": "Neuroticismo",
+        "rho": 0.053,
+        "p_rho": 0.364,
+        "chi2": 1.74,
+        "p_chi2": 0.783,
+        "cramer_v": 0.054
+      },
+      {
+        "a": "Consciência",
+        "b": "Abertura à Experiência",
+        "rho": -0.006,
+        "p_rho": 0.921,
+        "chi2": 3.78,
+        "p_chi2": 0.436,
+        "cramer_v": 0.079
+      },
+      {
+        "a": "Neuroticismo",
+        "b": "Abertura à Experiência",
+        "rho": -0.003,
+        "p_rho": 0.958,
+        "chi2": 4.97,
+        "p_chi2": 0.29,
+        "cramer_v": 0.091
+      }
+    ],
+    "vif": {
+      "Extroversão": 1.003,
+      "Afabilidade": 1.012,
+      "Consciência": 1.006,
+      "Neuroticismo": 1.014,
+      "Abertura à Experiência": 1.0
+    },
+    "combinacoes": {
+      "possiveis": 243,
+      "unicas_obs": 174,
+      "unicas_sim_media": 172.4,
+      "unicas_sim_ic95": [
+        163,
+        182
+      ],
+      "max_repeticoes_obs": 5,
+      "max_repeticoes_sim_ic95": [
+        4,
+        7
+      ]
+    },
+    "monte_carlo": {
+      "n_sim": 10000,
+      "max_abs_rho_obs": 0.103,
+      "max_abs_rho_pct_sim_maior_igual": 54.2,
+      "max_desvio_contagem_obs": 12.0,
+      "max_desvio_pct_sim_maior_igual": 86.9
+    },
+    "soma_niveis": {
+      "media": 9.963,
+      "dp": 1.866,
+      "esperado_media": 10.0,
+      "esperado_dp": 1.826
+    },
+    "metades": {
+      "Extroversão": 0.444,
+      "Afabilidade": 0.531,
+      "Consciência": 0.729,
+      "Neuroticismo": 0.486,
+      "Abertura à Experiência": 0.78
+    },
+    "impacto": {
+      "Extroversão": {
+        "coef_simples": 1.165,
+        "p_simples": 0.0,
+        "coef_multi": 1.189,
+        "p_multi": 0.0
+      },
+      "Afabilidade": {
+        "coef_simples": 0.164,
+        "p_simples": 0.3921,
+        "coef_multi": 0.094,
+        "p_multi": 0.5109
+      },
+      "Consciência": {
+        "coef_simples": 0.704,
+        "p_simples": 0.0003,
+        "coef_multi": 0.75,
+        "p_multi": 0.0
+      },
+      "Neuroticismo": {
+        "coef_simples": 0.424,
+        "p_simples": 0.0325,
+        "coef_multi": 0.407,
+        "p_multi": 0.0064
+      },
+      "Abertura à Experiência": {
+        "coef_simples": 1.722,
+        "p_simples": 0.0,
+        "coef_multi": 1.716,
+        "p_multi": 0.0
+      }
+    },
+    "n_ipa_valido": 300,
+    "q1": {
+      "contagens": [
+        87,
+        85,
+        67,
+        61
+      ],
+      "chi2": 6.72,
+      "p": 0.081,
+      "indep_p": {
+        "Extroversão": 0.498,
+        "Afabilidade": 0.405,
+        "Consciência": 0.491,
+        "Neuroticismo": 0.205,
+        "Abertura à Experiência": 0.925
+      }
+    },
+    "bate_com_seed_123": true
+  },
+  "piloto": {
+    "nome": "Piloto BFI-10",
+    "arquivo": "piloto/dataset_llama31_8b.csv",
+    "n": 300,
+    "frequencias": {
+      "Extroversão": {
+        "contagens": [
+          99,
+          96,
+          105
+        ],
+        "pct": [
+          33.0,
+          32.0,
+          35.0
+        ],
+        "chi2": 0.42,
+        "p": 0.811
+      },
+      "Afabilidade": {
+        "contagens": [
+          102,
+          98,
+          100
+        ],
+        "pct": [
+          34.0,
+          32.7,
+          33.3
+        ],
+        "chi2": 0.08,
+        "p": 0.961
+      },
+      "Consciência": {
+        "contagens": [
+          101,
+          105,
+          94
+        ],
+        "pct": [
+          33.7,
+          35.0,
+          31.3
+        ],
+        "chi2": 0.62,
+        "p": 0.733
+      },
+      "Neuroticismo": {
+        "contagens": [
+          92,
+          112,
+          96
+        ],
+        "pct": [
+          30.7,
+          37.3,
+          32.0
+        ],
+        "chi2": 2.24,
+        "p": 0.326
+      },
+      "Abertura à Experiência": {
+        "contagens": [
+          107,
+          98,
+          95
+        ],
+        "pct": [
+          35.7,
+          32.7,
+          31.7
+        ],
+        "chi2": 0.78,
+        "p": 0.677
+      }
+    },
+    "pares": [
+      {
+        "a": "Extroversão",
+        "b": "Afabilidade",
+        "rho": 0.015,
+        "p_rho": 0.79,
+        "chi2": 3.81,
+        "p_chi2": 0.433,
+        "cramer_v": 0.08
+      },
+      {
+        "a": "Extroversão",
+        "b": "Consciência",
+        "rho": -0.049,
+        "p_rho": 0.398,
+        "chi2": 6.44,
+        "p_chi2": 0.169,
+        "cramer_v": 0.104
+      },
+      {
+        "a": "Extroversão",
+        "b": "Neuroticismo",
+        "rho": -0.021,
+        "p_rho": 0.715,
+        "chi2": 0.69,
+        "p_chi2": 0.953,
+        "cramer_v": 0.034
+      },
+      {
+        "a": "Extroversão",
+        "b": "Abertura à Experiência",
+        "rho": 0.011,
+        "p_rho": 0.855,
+        "chi2": 2.46,
+        "p_chi2": 0.652,
+        "cramer_v": 0.064
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Consciência",
+        "rho": 0.04,
+        "p_rho": 0.494,
+        "chi2": 1.84,
+        "p_chi2": 0.764,
+        "cramer_v": 0.055
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Neuroticismo",
+        "rho": 0.103,
+        "p_rho": 0.075,
+        "chi2": 3.5,
+        "p_chi2": 0.478,
+        "cramer_v": 0.076
+      },
+      {
+        "a": "Afabilidade",
+        "b": "Abertura à Experiência",
+        "rho": -0.011,
+        "p_rho": 0.845,
+        "chi2": 4.17,
+        "p_chi2": 0.383,
+        "cramer_v": 0.083
+      },
+      {
+        "a": "Consciência",
+        "b": "Neuroticismo",
+        "rho": 0.053,
+        "p_rho": 0.364,
+        "chi2": 1.74,
+        "p_chi2": 0.783,
+        "cramer_v": 0.054
+      },
+      {
+        "a": "Consciência",
+        "b": "Abertura à Experiência",
+        "rho": -0.006,
+        "p_rho": 0.921,
+        "chi2": 3.78,
+        "p_chi2": 0.436,
+        "cramer_v": 0.079
+      },
+      {
+        "a": "Neuroticismo",
+        "b": "Abertura à Experiência",
+        "rho": -0.003,
+        "p_rho": 0.958,
+        "chi2": 4.97,
+        "p_chi2": 0.29,
+        "cramer_v": 0.091
+      }
+    ],
+    "vif": {
+      "Extroversão": 1.003,
+      "Afabilidade": 1.012,
+      "Consciência": 1.006,
+      "Neuroticismo": 1.014,
+      "Abertura à Experiência": 1.0
+    },
+    "combinacoes": {
+      "possiveis": 243,
+      "unicas_obs": 174,
+      "unicas_sim_media": 172.4,
+      "unicas_sim_ic95": [
+        163,
+        182
+      ],
+      "max_repeticoes_obs": 5,
+      "max_repeticoes_sim_ic95": [
+        4,
+        7
+      ]
+    },
+    "monte_carlo": {
+      "n_sim": 10000,
+      "max_abs_rho_obs": 0.103,
+      "max_abs_rho_pct_sim_maior_igual": 54.2,
+      "max_desvio_contagem_obs": 12.0,
+      "max_desvio_pct_sim_maior_igual": 87.5
+    },
+    "soma_niveis": {
+      "media": 9.963,
+      "dp": 1.866,
+      "esperado_media": 10.0,
+      "esperado_dp": 1.826
+    },
+    "metades": {
+      "Extroversão": 0.444,
+      "Afabilidade": 0.531,
+      "Consciência": 0.729,
+      "Neuroticismo": 0.486,
+      "Abertura à Experiência": 0.78
+    },
+    "impacto": {
+      "Extroversão": {
+        "coef_simples": 0.726,
+        "p_simples": 0.0001,
+        "coef_multi": 0.717,
+        "p_multi": 0.0001
+      },
+      "Afabilidade": {
+        "coef_simples": 0.28,
+        "p_simples": 0.1464,
+        "coef_multi": 0.261,
+        "p_multi": 0.1451
+      },
+      "Consciência": {
+        "coef_simples": 0.045,
+        "p_simples": 0.8189,
+        "coef_multi": 0.069,
+        "p_multi": 0.7045
+      },
+      "Neuroticismo": {
+        "coef_simples": 0.19,
+        "p_simples": 0.3433,
+        "coef_multi": 0.179,
+        "p_multi": 0.3345
+      },
+      "Abertura à Experiência": {
+        "coef_simples": 1.121,
+        "p_simples": 0.0,
+        "coef_multi": 1.117,
+        "p_multi": 0.0
+      }
+    },
+    "n_ipa_valido": 300,
+    "q1": {
+      "contagens": [
+        87,
+        85,
+        67,
+        61
+      ],
+      "chi2": 6.72,
+      "p": 0.081,
+      "indep_p": {
+        "Extroversão": 0.498,
+        "Afabilidade": 0.405,
+        "Consciência": 0.491,
+        "Neuroticismo": 0.205,
+        "Abertura à Experiência": 0.925
+      }
+    },
+    "bate_com_seed_123": true
+  },
+  "exp_b": {
+    "nome": "Experimento B (traço dominante)",
+    "arquivo": "principal/exp_b_bfi44_dominante_8b.csv",
+    "n": 300,
+    "dominante": {
+      "contagens": [
+        57,
+        62,
+        63,
+        69,
+        49
+      ],
+      "chi2": 3.733,
+      "p": 0.443
+    },
+    "niveis_por_dominante": {
+      "Extroversão": {
+        "contagens": [
+          22,
+          22,
+          13
+        ],
+        "n": 57,
+        "chi2": 2.842,
+        "p": 0.241
+      },
+      "Afabilidade": {
+        "contagens": [
+          21,
+          16,
+          25
+        ],
+        "n": 62,
+        "chi2": 1.968,
+        "p": 0.374
+      },
+      "Consciência": {
+        "contagens": [
+          19,
+          25,
+          19
+        ],
+        "n": 63,
+        "chi2": 1.143,
+        "p": 0.565
+      },
+      "Neuroticismo": {
+        "contagens": [
+          21,
+          15,
+          33
+        ],
+        "n": 69,
+        "chi2": 7.304,
+        "p": 0.026
+      },
+      "Abertura à Experiência": {
+        "contagens": [
+          13,
+          20,
+          16
+        ],
+        "n": 49,
+        "chi2": 1.51,
+        "p": 0.47
+      }
+    },
+    "nao_dominantes_todos_medio": true,
+    "q1": {
+      "contagens": [
+        83,
+        72,
+        73,
+        72
+      ],
+      "chi2": 1.147,
+      "p": 0.766,
+      "indep_p": {
+        "Extroversão": 0.281,
+        "Afabilidade": 0.213,
+        "Consciência": 0.972,
+        "Neuroticismo": 0.873,
+        "Abertura à Experiência": 0.804
+      }
+    },
+    "bate_com_seed_123": true
+  },
+  "piloto_igual_exp_a": true
+}

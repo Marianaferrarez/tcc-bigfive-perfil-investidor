@@ -1,0 +1,184 @@
+% ============================================================================
+% TCC — Big Five x Perfil de Investidor: simulação com agentes de IA
+% Template oficial do DCC/UFRRJ (projetofinal-dcc.cls, Prof. Filipe Braida),
+% adaptado do modelo original do DCC/UFRJ.
+% Fonte do template: https://github.com/filipebraida/monografia-latex
+%
+% Compilação: pdflatex + bibtex + pdflatex x2, de dentro de monografia/
+% ============================================================================
+\documentclass{projetofinal-dcc}
+
+% ---------------------------------------------------------------------------
+% Pacotes
+% ---------------------------------------------------------------------------
+\usepackage{lmodern}
+% inputenc/fontenc/graphicx/amsmath/hyperref/color/booktabs/xcolor/abntex2cite/
+% microtype/csquotes/acronym/ccaption já são carregados por projetofinal-dcc.cls
+
+% Quadros (ABNT: informação textual, diferente de Tabela, que é numérica).
+% Numeração por capítulo, como figuras e tabelas, e lista própria.
+\usepackage{newfloat}
+\DeclareFloatingEnvironment[fileext=loq, listname={Lista de Quadros}, name=Quadro, within=chapter]{quadro}
+
+% Caixa para prompts enviados ao modelo de linguagem: fonte monoespaçada
+% dentro de um quadro com borda, padrão usual de apresentação de prompts.
+\usepackage[most]{tcolorbox}
+\newtcolorbox{promptbox}{
+    enhanced, sharp corners,
+    colback=gray!6, colframe=gray!55, boxrule=0.6pt,
+    left=2.5mm, right=2.5mm, top=1.5mm, bottom=1.5mm,
+    fontupper=\ttfamily\footnotesize,
+    before upper={\setlength{\parindent}{0pt}\setlength{\parskip}{0.5em}\raggedright}
+}
+% Trecho variável dentro de um prompt (preenchido pelo código para cada agente)
+\newcommand{\campo}[1]{\textit{\{#1\}}}
+
+% Marcador visual de pendência (não deve aparecer na versão final)
+\newcommand{\FIXME}[1]{\textbf{\textcolor{red}{[PENDENTE: #1]}}}
+
+% ---------------------------------------------------------------------------
+% Configurações de aparência do PDF
+% ---------------------------------------------------------------------------
+\hypersetup{
+    pdftitle={Traços de Personalidade Big Five e Perfil de Investidor: uma Simulação com Agentes de Inteligência Artificial},
+    pdfauthor={Mariana Ferreira Ferrarez Ribeiro},
+    pdfkeywords={Big Five}{Personalidade}{Perfil de Investidor}{Inteligência Artificial}{LLM}{Finanças Comportamentais},
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black,
+    filecolor=black,
+    bookmarksdepth=4
+}
+
+% Números da verificação do sorteio (\aleat...), gerados por analise_aleatorizacao.py
+\input{../resultados/tabelas/aleatorizacao_numeros}
+
+% ---------------------------------------------------------------------------
+% Início do documento
+% ---------------------------------------------------------------------------
+\begin{document}
+
+% título é obrigatório
+\title{Traços de Personalidade Big Five e Perfil de Investidor: uma Simulação com Agentes de Inteligência Artificial}
+
+% autor é obrigatório; agradecimentos entram como 2º argumento
+\author{Mariana Ferreira Ferrarez Ribeiro}{\input{pretextual/agradecimentos}}
+
+% orientador é obrigatório
+\advisor[Prof.]{Leandro Guimarães Marques Alvim,~D.Sc.}{DCC~-~UFRRJ}{}
+
+% banca (máx. 3 membros; orientador já é adicionado automaticamente)
+\banca[Prof.]{Filipe Braida do Carmo,~D.Sc.}{DCC~-~UFRRJ}
+\banca[Prof.]{Ronaldo e Silva Vieira,~M.Sc.}{DCC~-~UFRRJ}
+
+\dept{dcc}
+\curso{cbcc}
+
+\location{Nova Iguaçu}{RJ}{Brasil}
+
+% mês e ano de defesa
+\date{Dezembro}{2026}
+\maketitle
+
+\startdocument
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%A G R A D E C I M E N T O S
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makethankspage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%R E S U M O  /  A B S T R A C T
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}{
+  \input{pretextual/resumo}
+}
+\end{abstract}
+
+\begin{englishabstract}{
+  \input{pretextual/abstract}
+}
+\end{englishabstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%L I S T A S
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makefigurespage
+\addcontentsline{toc}{chapter}{Lista de Quadros}
+\listofquadros
+\pagebreak
+\maketablespage
+
+% Abreviaturas e siglas (ordem alfabética)
+% O pacote acronym é carregado com [printonlyused] pela classe
+% (projetofinal-dcc.cls), que só lista uma sigla se \ac{} for usado no
+% corpo do texto. A monografia escreve as siglas direto na prosa (ex.
+% "IPA"), não via \ac{IPA}, então a lista sairia vazia por padrão.
+% \acused{} NÃO resolve isso (testado e confirmado: só marca a sigla como
+% "já introduzida" para fins de \ac{} subsequente, não ativa o \write no
+% .aux que o printonlyused verifica -- ver acronym.sty, comandos
+% \acused/\AC@logged). A forma robusta e independente de número de
+% passadas é desligar \AC@printonlyused localmente só dentro deste bloco.
+\makeatletter
+\AC@printonlyusedfalse
+\makeatother
+\makeabrevpage{
+  \begin{acronym}[ANBIMA]
+    \acro{ABNT}{Associação Brasileira de Normas Técnicas}
+    \acro{ANBIMA}{Associação Brasileira das Entidades dos Mercados Financeiro e de Capitais}
+    \acro{BFI}{Big Five Inventory}
+    \acro{CPU}{Central Processing Unit}
+    \acro{CRT}{Cognitive Reflection Test}
+    \acro{GPU}{Graphics Processing Unit}
+    \acro{IA}{Inteligência Artificial}
+    \acro{IPA}{Índice de Perfil do Investidor}
+    \acro{LLM}{Large Language Model (Modelo de Linguagem de Grande Escala)}
+    \acro{OLS}{Ordinary Least Squares (Mínimos Quadrados Ordinários)}
+    \acro{RQ}{Research Question (Questão de Pesquisa)}
+    \acro{TCC}{Trabalho de Conclusão de Curso}
+    \acro{UFRRJ}{Universidade Federal Rural do Rio de Janeiro}
+  \end{acronym}
+}
+
+% Símbolos (ordem alfabética; notação estatística usada no trabalho)
+\makesymbolspage{
+  \begin{acronym}[XXXX]
+    \acro{F}{Estatística F do teste de significância global da regressão OLS}
+    \acro{N}{Tamanho da amostra}
+    \acro{p}{Valor-p (nível descritivo de significância estatística)}
+    \acro{R2}[$R^2$]{Coeficiente de determinação da regressão OLS}
+    \acro{rho}[$\rho$]{Coeficiente de correlação de Spearman}
+  \end{acronym}
+}
+\makeatletter
+\AC@printonlyusedtrue
+\makeatother
+
+\maketocpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%C O N T E Ú D O
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\startcontent
+% Folga extra na quebra de linha para parágrafos com termos longos em
+% \texttt (nomes de modelos), evitando linhas que ultrapassam a margem.
+\setlength{\emergencystretch}{3em}
+\input{capitulos/01-introducao}
+\input{capitulos/02-referencial-teorico}
+\input{capitulos/03-metodologia}
+\input{capitulos/04-resultados}
+\input{capitulos/05-discussao}
+\input{capitulos/06-conclusao}
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% B I B L I O G R A F I A
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makebibspage{referencias}
+
+% Sem apêndices nem anexos: a pedido do orientador, os instrumentos (BFI-10,
+% BFI-44, IPA), a regra de pontuação do IPA e os prompts ficam no Cap. 3, e a
+% verificação do sorteio no Cap. 4. Os antigos postextual/apendices.tex e
+% postextual/anexos.tex podem ser recuperados pelo histórico do git.
+
+\end{document}

@@ -1,0 +1,80 @@
+{
+  "titulo": "BFI-10 - Big Five Inventory (versão reduzida de 10 itens) - português",
+  "fonte": "De Bortoli, D., Da Costa Jr., N., Goulart, M., & Campara, J. (2019). Personality traits and investor profile analysis: A behavioral finance study. PLoS ONE, 14(3), e0214062. Anexo 3 (S2 Questionnaire - versão em português, material suplementar).",
+  "origem_instrumento": "Rammstedt, B., & John, O. P. (2007). Measuring personality in one minute or less: A 10-item short version of the Big Five Inventory in English and German. Journal of Research in Personality, 41, 203-212.",
+  "instrucoes": "As declarações a seguir dizem respeito à sua percepção sobre si mesmo em uma variedade de situações. Indique o número que melhor expressa sua opinião sobre você mesmo em cada afirmação. Frase-base: 'Eu me vejo como alguém que...'",
+  "escala": {
+    "1": "Discordo totalmente",
+    "2": "Discordo em parte",
+    "3": "Nem concordo nem discordo",
+    "4": "Concordo em parte",
+    "5": "Concordo totalmente"
+  },
+  "observacoes": [
+    "Cada dimensão do Big Five é medida por 2 itens: um com escore direto e outro com escore reverso (reverso = true).",
+    "Para itens reversos, o escore final do item = 6 - resposta (em escala 1-5), antes de calcular a média da dimensão.",
+    "A pontuação de cada dimensão (Extroversão, Afabilidade, Consciência, Neuroticismo, Abertura à Experiência) é a média dos seus 2 itens (já com a reversão aplicada quando necessário)."
+  ],
+  "itens": [
+    {
+      "id": 1,
+      "texto": "É reservado.",
+      "dimensao": "Extroversão",
+      "reverso": true
+    },
+    {
+      "id": 2,
+      "texto": "Geralmente confia nas pessoas.",
+      "dimensao": "Afabilidade",
+      "reverso": false
+    },
+    {
+      "id": 3,
+      "texto": "Tende a ser preguiçoso.",
+      "dimensao": "Consciência",
+      "reverso": true
+    },
+    {
+      "id": 4,
+      "texto": "É relaxado, controla bem o estresse.",
+      "dimensao": "Neuroticismo",
+      "reverso": true
+    },
+    {
+      "id": 5,
+      "texto": "Tem poucos interesses artísticos.",
+      "dimensao": "Abertura à Experiência",
+      "reverso": true
+    },
+    {
+      "id": 6,
+      "texto": "É sociável, extrovertido.",
+      "dimensao": "Extroversão",
+      "reverso": false
+    },
+    {
+      "id": 7,
+      "texto": "Tende a ser crítico com os outros (encontrar defeitos).",
+      "dimensao": "Afabilidade",
+      "reverso": true
+    },
+    {
+      "id": 8,
+      "texto": "Insiste até concluir a tarefa ou o trabalho.",
+      "dimensao": "Consciência",
+      "reverso": false
+    },
+    {
+      "id": 9,
+      "texto": "Fica nervoso facilmente.",
+      "dimensao": "Neuroticismo",
+      "reverso": false
+    },
+    {
+      "id": 10,
+      "texto": "Tem uma imaginação fértil.",
+      "dimensao": "Abertura à Experiência",
+      "reverso": false
+    }
+  ]
+}

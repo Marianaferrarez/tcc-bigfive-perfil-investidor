@@ -1,0 +1,42 @@
+[2026-11-03 09:22:14] INÍCIO resultados\modelos\nemotron3_ultra.csv | backend=openrouter modelo=nvidia/nemotron-3-ultra-550b-a55b:free temperatura=0.7 modo=multi seed=123 intervalo=8.0s | já existentes=0, novos pedidos=30
+[2026-11-03 09:22:55] [1/30] agente_id=0 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (40.8s)
+[2026-11-03 09:23:43] [2/30] agente_id=1 perfil_ipa='Conservador' score=10 tentativas bfi/ipa=1/1 (48.3s)
+[2026-11-03 09:24:23] [3/30] agente_id=2 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/1 (39.5s)
+[2026-11-03 09:24:59] [4/30] agente_id=3 perfil_ipa='Arrojado' score=26 tentativas bfi/ipa=1/1 (35.8s)
+[2026-11-03 09:25:39] [5/30] agente_id=4 perfil_ipa='Conservador' score=11 tentativas bfi/ipa=1/1 (40.8s)
+[2026-11-03 09:25:51] PARCIAL N=5 | BFI válido=5/5 | IPA válido=5/5 | perfis=Arrojado 2, Conservador 2, Moderado 1 | IPA média=18.20 | manipulação ρ: Extr +0.89, Afab +0.89, Cons +0.71, Neur +1.00, Aber +0.73
+[2026-11-03 09:26:27] [6/30] agente_id=5 perfil_ipa='Conservador' score=10 tentativas bfi/ipa=1/1 (36.1s)
+[2026-11-03 09:27:05] [7/30] agente_id=6 perfil_ipa='Conservador' score=10 tentativas bfi/ipa=1/1 (37.6s)
+[2026-11-03 09:28:00] [8/30] agente_id=7 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (54.9s)
+[2026-11-03 09:28:39] [9/30] agente_id=8 perfil_ipa='Moderado' score=17 tentativas bfi/ipa=1/1 (38.8s)
+[2026-11-03 09:29:20] [10/30] agente_id=9 perfil_ipa='Moderado' score=16 tentativas bfi/ipa=1/1 (40.9s)
+[2026-11-03 09:29:20] PARCIAL N=10 | BFI válido=10/10 | IPA válido=10/10 | perfis=Arrojado 3, Conservador 4, Moderado 3 | IPA média=17.10 | manipulação ρ: Extr +0.82, Afab +0.94, Cons +0.93, Neur +0.96, Aber +0.90
+[2026-11-03 09:30:02] [11/30] agente_id=10 perfil_ipa='Arrojado' score=29 tentativas bfi/ipa=1/1 (42.3s)
+[2026-11-03 09:30:50] [12/30] agente_id=11 perfil_ipa='Arrojado' score=29 tentativas bfi/ipa=1/1 (48.1s)
+[2026-11-03 09:31:29] [13/30] agente_id=12 perfil_ipa='Conservador' score=12 tentativas bfi/ipa=1/1 (38.7s)
+[2026-11-03 09:34:04] [14/30] agente_id=13 perfil_ipa='Moderado' score=23 tentativas bfi/ipa=1/1 (155.5s)
+[2026-11-03 09:34:47] [15/30] agente_id=14 perfil_ipa='Conservador' score=11 tentativas bfi/ipa=1/1 (42.4s)
+[2026-11-03 09:34:47] PARCIAL N=15 | BFI válido=15/15 | IPA válido=15/15 | perfis=Arrojado 5, Conservador 6, Moderado 4 | IPA média=18.33 | manipulação ρ: Extr +0.88, Afab +0.94, Cons +0.95, Neur +0.94, Aber +0.85
+[2026-11-03 09:35:36] [16/30] agente_id=15 perfil_ipa='Arrojado' score=29 tentativas bfi/ipa=1/1 (48.8s)
+[2026-11-03 09:36:11] [17/30] agente_id=16 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (35.4s)
+[2026-11-03 09:36:57] [18/30] agente_id=17 perfil_ipa='Arrojado' score=25 tentativas bfi/ipa=1/1 (45.6s)
+[2026-11-03 09:37:44] [19/30] agente_id=18 perfil_ipa='Conservador' score=9 tentativas bfi/ipa=1/2 (47.1s)
+[2026-11-03 09:38:18] [20/30] agente_id=19 perfil_ipa='Arrojado' score=30 tentativas bfi/ipa=1/1 (34.7s)
+[2026-11-03 09:38:18] PARCIAL N=20 | BFI válido=20/20 | IPA válido=20/20 | perfis=Arrojado 9, Conservador 7, Moderado 4 | IPA média=19.75 | manipulação ρ: Extr +0.92, Afab +0.92, Cons +0.95, Neur +0.94, Aber +0.91
+[2026-11-03 09:38:52] [21/30] agente_id=20 perfil_ipa='Conservador' score=14 tentativas bfi/ipa=1/1 (34.1s)
+[2026-11-03 09:38:53] PARADA: limite diário do OpenRouter atingido ({"error":{"message":"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day","code":429,"metadata":{"head). Agente 21 descartado; rode o mesmo comando depois para retomar.
+[2026-11-03 09:38:53] FIM: 21 agentes novos em 999.1s (47.6s/agente)
+[2026-11-03 09:38:53] RESUMO N=21 | BFI válido=21/21 | IPA válido=21/21 | perfis=Arrojado 9, Conservador 8, Moderado 4 | IPA média=19.48 | manipulação ρ: Extr +0.93, Afab +0.93, Cons +0.95, Neur +0.95, Aber +0.92
+[2026-11-04 10:00:10] INÍCIO resultados\modelos\nemotron3_ultra.csv | backend=openrouter modelo=nvidia/nemotron-3-ultra-550b-a55b:free temperatura=0.7 modo=multi seed=123 intervalo=8.0s | já existentes=21, novos pedidos=9
+[2026-11-04 10:00:55] [1/9] agente_id=21 perfil_ipa='Conservador' score=13 tentativas bfi/ipa=1/1 (45.1s)
+[2026-11-04 10:01:39] [2/9] agente_id=22 perfil_ipa='Moderado' score=19 tentativas bfi/ipa=1/1 (43.7s)
+[2026-11-04 10:02:25] [3/9] agente_id=23 perfil_ipa='Conservador' score=15 tentativas bfi/ipa=1/1 (45.7s)
+[2026-11-04 10:03:08] [4/9] agente_id=24 perfil_ipa='Arrojado' score=27 tentativas bfi/ipa=1/1 (43.7s)
+[2026-11-04 10:03:48] [5/9] agente_id=25 perfil_ipa='Conservador' score=14 tentativas bfi/ipa=1/1 (39.4s)
+[2026-11-04 10:04:02] PARCIAL N=26 | BFI válido=26/26 | IPA válido=26/26 | perfis=Arrojado 10, Conservador 11, Moderado 5 | IPA média=19.12 | manipulação ρ: Extr +0.93, Afab +0.93, Cons +0.96, Neur +0.95, Aber +0.94
+[2026-11-04 10:04:42] [6/9] agente_id=26 perfil_ipa='Arrojado' score=31 tentativas bfi/ipa=1/1 (40.7s)
+[2026-11-04 10:05:23] [7/9] agente_id=27 perfil_ipa='Moderado' score=18 tentativas bfi/ipa=1/1 (40.8s)
+[2026-11-04 10:06:06] [8/9] agente_id=28 perfil_ipa='Conservador' score=13 tentativas bfi/ipa=1/1 (42.7s)
+[2026-11-04 10:06:46] [9/9] agente_id=29 perfil_ipa='Arrojado' score=24 tentativas bfi/ipa=1/1 (40.0s)
+[2026-11-04 10:06:46] FIM: 9 agentes novos em 395.9s (44.0s/agente)
+[2026-11-04 10:06:46] RESUMO N=30 | BFI válido=30/30 | IPA válido=30/30 | perfis=Arrojado 12, Conservador 12, Moderado 6 | IPA média=19.43 | manipulação ρ: Extr +0.95, Afab +0.92, Cons +0.97, Neur +0.96, Aber +0.94
