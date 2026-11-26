@@ -5,215 +5,229 @@
 \label{cap:discussao}
 
 \section{Alinhamento com a literatura de referência}
+\label{sec:discussao-alinhamento}
+
+A Tabela \ref{tab:alinhamento-literatura} resume, traço a traço, os
+achados dos dois artigos-base, os do Experimento A e a classificação de
+cada traço na análise de robustez e generalização.
 
 \begin{table}[htb]
     \caption{Comparação dos achados com os artigos-base (Experimento A)}
     \label{tab:alinhamento-literatura}
     \centering
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{lcccc}
+    \small
+    \setlength{\tabcolsep}{4pt}
+    \begin{tabular}{>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{4.4cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{2.3cm}}
         \toprule
-        Traço & De Bortoli (2019) & Jiang et al. (2024) & Este estudo (Exp. A) & Análise de robustez \\
+        Traço & De Bortoli et al. (2019) & Jiang, Peng e Yan (2024) & Este estudo (Exp. A) & Análise de robustez \\
         \midrule
-        Abertura à Experiência & Sig. positivo & Sig. positivo & Sig. positivo & Estável \\
-        Extroversão            & Não sig.       & Otimismo (indireto) & Sig. positivo & Estável \\
-        Consciência            & Não sig.       & Sig. negativo & Sig. positivo & Instável \\
-        Neuroticismo           & Não sig.       & Sig. negativo & Sig. positivo & Instável \\
-        Amabilidade             & Não sig.       & Papel mínimo & Não sig. & Sem efeito consistente \\
+        Abertura à Experiência & Sig. positivo & Sig. positivo & Sig. positivo & Robusto \\
+        \addlinespace
+        Extroversão            & Não sig.      & Menor aversão ao risco declarada; sem efeito na alocação (EUA e Austrália); negativo na participação (Alemanha) & Sig. positivo & Robusto \\
+        \addlinespace
+        Consciência            & Não sig.      & Sig. negativo & Sig. positivo & Instável \\
+        \addlinespace
+        Neuroticismo           & Não sig.      & Sig. negativo & Sig. positivo & Instável \\
+        \addlinespace
+        Amabilidade            & Não sig.      & Maior aversão ao risco declarada; sem efeito na alocação & Não sig. & Sem efeito consistente \\
         \bottomrule
-    \end{tabular}%
-    }
-    \legend{Fonte: elaborado pela autora a partir de \cite{debortoli2019}, \cite{jiangpengyan2024} e das Tabelas \ref{tab:ols} e \ref{tab:robustez-sintese} (Capítulo \ref{cap:resultados}).}
+    \end{tabular}
+    \legend{Fonte: elaborado pela autora a partir de \citeonline{debortoli2019}, \citeonline{jiangpengyan2024} e das Tabelas \ref{tab:ols} e \ref{tab:robustez-sintese} (Capítulo \ref{cap:resultados}). Em \citeonline{jiangpengyan2024}, ``sig.'' refere-se ao efeito sobre a alocação em ações.}
 \end{table}
 
 O efeito positivo e significativo de Abertura à Experiência sobre o
 escore do IPA (Tabelas \ref{tab:spearman-ipa} e \ref{tab:ols}) é o
-resultado mais robusto deste trabalho, por ser o único traço que replica
-de forma consistente nos dois artigos-base. Em \citeonline{debortoli2019},
-Abertura à Experiência foi o único traço estatisticamente significativo
-para prever o perfil de risco real de estudantes em uma simulação de
-investimento; em \citeonline{jiangpengyan2024}, o mesmo traço está entre
-os dois com maior poder explicativo sobre o comportamento de investidores
-reais, com efeito robusto sobre a alocação em ações nas três amostras do
-estudo (Estados Unidos, Austrália e Alemanha). Os autores deste segundo
-artigo decompõem o mecanismo por trás desse efeito: ao contrário do
-Neuroticismo, cujo efeito passa pela leitura pessimista do cenário
-econômico, o efeito de Abertura à Experiência não depende de crenças
-sobre o mercado: decorre de uma disposição mais direta a aceitar risco,
-independentemente de como o investidor avalia as perspectivas econômicas
-(seção \ref{cap:referencial}).
+resultado deste trabalho com maior respaldo externo: Abertura à
+Experiência é o único traço com efeito significativo que converge com os
+dois artigos-base. Em \citeonline{debortoli2019}, Abertura à Experiência
+foi o único traço estatisticamente significativo para prever o perfil de
+risco real de estudantes em uma simulação de investimento; em
+\citeonline{jiangpengyan2024}, o mesmo traço está entre os dois com maior
+poder explicativo sobre o comportamento de investidores reais e se
+associa ao investimento em ações nas três amostras do estudo (Estados
+Unidos, Austrália e Alemanha; nesta última, pela participação no mercado
+de ações). Para esses autores, ao contrário do Neuroticismo, cujo canal
+provável é o das crenças pessimistas sobre o cenário econômico, o efeito
+de Abertura à Experiência passa principalmente pela preferência por
+risco, e não pelo retorno médio esperado do mercado (seção
+\ref{sec:jiang}).
 
-Esse padrão, o mesmo traço na mesma direção em três contextos
-metodologicamente distintos, é uma evidência relevante de robustez,
-embora não uma prova. As três amostras diferem em praticamente tudo que
+Esse padrão (o mesmo traço na mesma direção em três contextos
+metodologicamente distintos) é uma evidência relevante de robustez,
+embora não uma prova. As três amostras diferem em praticamente tudo o que
 poderia gerar um resultado espúrio: sujeitos (estudantes brasileiros;
 investidores reais americanos, majoritariamente homens brancos com mais
 de 60 anos e patrimônio elevado; agentes de linguagem artificial),
-variável dependente (perfil obtido por simulação de investimento real;
-alocação declarada de carteira; escore de um questionário de perfil de
-investidor respondido pelo próprio agente) e método estatístico
-(regressão logística ordenada; OLS; correlação de Spearman e OLS). Um
-efeito que se sustenta apesar dessa variação tem menor probabilidade de
-ser um artefato de amostra, de instrumento ou de escolha estatística
-específica de um dos três estudos. Ao mesmo tempo, essa convergência não
-deve ser lida como evidência de que o agente de IA ``possui'' uma
-disposição psicológica real ao risco equivalente à humana; ela mostra,
-de forma mais modesta, que o pipeline de indução e mensuração deste
-trabalho é capaz de reproduzir, ao menos para este traço, uma relação já
-bem estabelecida na literatura, o que funciona também como uma validação
-indireta do desenho experimental adotado, sem prejuízo das limitações de
-validade externa desse tipo de simulação discutidas adiante neste
+variável dependente (perfil obtido em uma simulação de investimento com
+dados históricos reais; alocação declarada de carteira; escore de um
+questionário de perfil de investidor respondido pelo próprio agente) e
+método estatístico (regressão logística ordenada; OLS; correlação de
+Spearman e OLS). Um efeito que se sustenta apesar dessa variação tem
+menor probabilidade de ser um artefato de amostra, de instrumento ou de
+escolha estatística específica de um dos três estudos. Ao mesmo tempo,
+essa convergência não deve ser lida como evidência de que o agente de IA
+``possui'' uma disposição psicológica real ao risco equivalente à
+humana; ela mostra, de forma mais modesta, que o \textit{pipeline} de
+indução e mensuração deste trabalho é capaz de reproduzir, ao menos para
+este traço, uma relação documentada nos dois artigos-base. Isso funciona
+também como uma validação indireta do desenho experimental adotado, sem
+prejuízo das limitações de validade externa discutidas adiante neste
 capítulo.
 
 \textbf{Extroversão} não foi confirmada por \citeonline{debortoli2019}
 (traço não significativo naquele estudo) e está apenas parcialmente
 alinhada com \citeonline{jiangpengyan2024}, que encontram Extroversão
-associada a expectativas mais otimistas sobre o mercado, mas sem efeito
-significativo sobre a alocação real em ações; ou seja, o mecanismo que
-Jiang et al. relatam para Extroversão é indireto e não se traduz em
-comportamento, enquanto neste trabalho o efeito sobre o escore do IPA é
-direto e significativo (coeficiente 1,19, p $<$ 0,001, Tabela
-\ref{tab:ols}). Duas observações, feitas antes da análise de robustez,
-relativizavam esse achado. Primeiro, na seleção do modelo, o efeito não
-apareceu no \texttt{llama3.2:3b}, em que a manipulação de Extroversão foi
-fraca ($\rho$=0,185; Tabela \ref{tab:comparacao-modelos}), o que era
+associada a expectativas mais otimistas sobre o mercado e a menor
+aversão ao risco declarada, mas sem efeito significativo sobre a
+alocação em ações nas amostras americana e australiana (e com efeito
+negativo sobre a participação no mercado de ações na amostra alemã).
+Assim, a direção do efeito encontrado neste trabalho, em que o IPA é ele
+próprio um questionário de risco declarado, é compatível com a menor
+aversão ao risco declarada relatada por esses autores, embora lá ela não
+se traduza em maior investimento em ações. Neste trabalho, o efeito
+sobre o escore do IPA é significativo (coeficiente de 1,189;
+$p<0{,}001$; Tabela \ref{tab:ols}). Duas observações, feitas antes da
+análise de robustez, relativizavam esse achado. Primeiro, na seleção do
+modelo, o efeito não apareceu no \texttt{llama3.2:3b}, em que a
+manipulação de Extroversão foi fraca ($\rho=0{,}185$; seção
+\ref{sec:selecao-modelo}), o que era
 compatível tanto com um achado real mascarado por manipulação ruim quanto
-com um efeito restrito ao \texttt{llama3.1:8b}. Segundo, o
-Experimento B (traço isolado, seção \ref{sec:exp-a-b}) não confirma este
-achado com significância estatística ($\rho$=0,242, p=0,070, N=57, Tabela
-\ref{tab:ipa-exp-b}), embora a magnitude seja parecida à do Experimento A (0,340),
-o que sugere que a perda de significância pode refletir apenas o N bem
-menor por traço no desenho isolado, não a ausência do efeito (discutido
-em detalhe na seção \ref{sec:discussao-exp-b}). A análise de robustez e
-generalização resolve essa dúvida a favor do efeito: com N=300 em cada
-rodada, Extroversão foi positiva e significativa ($p<0,001$) nas quatro
-temperaturas, com outro sorteio de perfis e nos três modelos abertos
-adicionais (Tabela \ref{tab:robustez-sintese}), além de aparecer na mesma
-direção nos dois modelos Nemotron. Isso responde às duas observações: o
-efeito não é restrito ao \texttt{llama3.1:8b}, e sua ausência no
-Experimento B é atribuível ao N menor. Por isso, Extroversão é tratada neste
-trabalho como um efeito \textbf{robusto}, ao lado de Abertura à
-Experiência, ainda que sem o respaldo dos dois artigos-base que Abertura
-tem.
+com um efeito restrito ao \texttt{llama3.1:8b}. Segundo, o Experimento B
+(traço isolado) não confirmou o achado com significância estatística,
+possivelmente pelo N menor por traço (seção \ref{sec:discussao-exp-b}).
+A análise de robustez e generalização resolve essa dúvida a favor do
+efeito: nas rodadas com 300 agentes, Extroversão foi positiva e
+significativa ($p<0{,}001$) nas quatro temperaturas, com outro sorteio de
+perfis e nos três modelos abertos adicionais (Tabela
+\ref{tab:robustez-sintese}), além de aparecer na mesma direção nos dois
+modelos Nemotron. Isso responde às duas observações: o efeito não é
+restrito ao \texttt{llama3.1:8b}, e sua perda de significância no
+Experimento B é compatível com o N menor. Por isso, Extroversão é tratada
+neste trabalho como um efeito robusto, ao lado de Abertura à Experiência,
+ainda que com respaldo apenas parcial na literatura de referência.
 
-\textbf{Consciência e Neuroticismo}, diferentemente do que ocorria no
-estudo piloto (BFI-10, onde nenhum dos dois era significativo), emergiram
-como \textbf{significativos e positivos} na análise principal com BFI-44
-(coeficientes 0,75 e 0,41 respectivamente, Tabela \ref{tab:ols}). Isso
-muda a natureza da divergência em relação à literatura de referência: já
-não é uma ausência de efeito (que seria consistente com
-\citeonline{debortoli2019}, onde os dois também não são significativos),
-e sim um efeito \textbf{na direção oposta} à relatada por
-\citeonline{jiangpengyan2024}, que encontram Consciência e Neuroticismo
-significativos e \textbf{negativos} sobre a alocação em ações, de forma
-robusta nas três amostras do artigo (Estados Unidos, Austrália e
-Alemanha; ver Capítulo \ref{cap:referencial}, seção "Síntese e hipóteses
-de referência"). Ou seja, este trabalho diverge de \emph{ambos} os
-artigos-base para esses dois traços: de De Bortoli et al. por encontrar
-efeito onde eles não encontraram, e de Jiang et al. por encontrar o sinal
-oposto ao deles. Não há, neste trabalho, dados que permitam decidir entre
-duas explicações concorrentes para esse padrão: (i) o mecanismo humano
-que Jiang et al. descrevem para Neuroticismo (leitura mais pessimista
-do cenário econômico, que reduz alocação em ações) pode simplesmente
-não se manifestar da mesma forma em um agente de LLM, cujas "crenças"
-sobre o mercado não são geradas pelos mesmos processos cognitivos
-descritos na literatura de finanças comportamentais; ou (ii) a descrição
-de personalidade usada no \textit{prompt} para Consciência e Neuroticismo
-(perfis\_personalidade.json) pode estar sendo interpretada pelo modelo de
-um modo que favorece respostas mais decididas/arrojadas no IPA: por
-exemplo, se o modelo associa "alta Consciência" (organização, disciplina,
-orientação a objetivos) a uma postura mais assertiva de investimento, em
-vez de à cautela esperada pela literatura humana. O Experimento B (seção
-\ref{sec:discussao-exp-b}) mostra que, isolados, nenhum dos dois traços
-mantém significância estatística, e Neuroticismo inverte de sinal
-novamente ($\rho$=$-$0,116, Tabela \ref{tab:ipa-exp-b}). A análise de
-robustez e generalização confirma essa fragilidade com amostras de mesmo
-tamanho que a do Experimento A: com outro sorteio de perfis, os dois
-coeficientes ficam próximos de zero e sem significância (0,048 e
-$-$0,092, Tabela \ref{tab:robustez-seed}); entre temperaturas, oscilam
-bastante de tamanho; e entre modelos, Consciência chega a inverter o
-sinal (negativa no \texttt{qwen2.5:7b}) e cada um dos dois perde a
+\textbf{Consciência e Neuroticismo}, que não eram significativos no
+estudo piloto (BFI-10), foram significativos e positivos no Experimento
+A (coeficientes de 0,750 e 0,407, respectivamente; Tabela \ref{tab:ols}),
+mas, como se discute adiante, esses efeitos se mostraram instáveis na
+análise de robustez. Tomado isoladamente, o resultado do Experimento A
+divergiria de \emph{ambos} os artigos-base: de \citeonline{debortoli2019},
+em que os dois traços não são significativos, por indicar efeito onde
+eles não encontraram; e de \citeonline{jiangpengyan2024}, que encontram
+Consciência e Neuroticismo significativos e negativos sobre a
+alocação em ações (Neuroticismo nas três amostras do artigo: Estados
+Unidos, Austrália e Alemanha; Consciência nas amostras americana e
+alemã; seção \ref{sec:jiang}), por indicar o sinal
+oposto. Caso esse efeito se mostrasse estável, duas explicações seriam
+possíveis, sem que os dados deste trabalho permitam decidir entre elas:
+(i) o mecanismo humano que \citeonline{jiangpengyan2024} descrevem para
+Neuroticismo (leitura mais pessimista do cenário econômico, que reduz a
+alocação em ações) pode não se manifestar da mesma forma em um agente de
+LLM, cujas ``crenças'' sobre o mercado não são geradas pelos mesmos
+processos cognitivos descritos na literatura de finanças
+comportamentais; ou (ii) as descrições de personalidade usadas no
+\textit{prompt} para Consciência e Neuroticismo (Quadro
+\ref{quadro:perfis-nivel}) podem estar sendo interpretadas pelo modelo de
+um modo que favorece respostas mais decididas ou arrojadas no IPA: por
+exemplo, se o modelo associa ``alta Consciência'' (organização,
+disciplina, orientação a objetivos) a uma postura mais assertiva de
+investimento, em vez de à cautela esperada pela literatura humana.
+
+Os demais resultados, porém, indicam que esses efeitos não são
+estáveis. No Experimento B (seção \ref{sec:discussao-exp-b}), isolados,
+nenhum dos dois traços mantém significância estatística, e Neuroticismo
+passa a ter sinal negativo ($\rho=-0{,}116$; Tabela
+\ref{tab:ipa-exp-b}). A análise de robustez e generalização confirma essa
+fragilidade com amostras de mesmo tamanho que a do Experimento A: com
+outro sorteio de perfis, os dois coeficientes ficam próximos de zero e
+sem significância (0,048 e $-$0,092; Tabela \ref{tab:robustez-seed});
+entre temperaturas, variam consideravelmente em magnitude, ainda que
+continuem significativos; e entre modelos, Consciência chega a inverter
+o sinal (negativa no \texttt{qwen2.5:7b}) e cada um dos dois perde a
 significância em pelo menos um modelo (Tabela \ref{tab:robustez-sintese}).
 Por isso, Consciência e Neuroticismo são considerados neste trabalho
-\textbf{resultados instáveis}: os efeitos aparecem no Experimento A, mas
-dependem do sorteio, da temperatura e do modelo, e não devem ser
-interpretados como uma relação geral entre esses traços e o perfil de
-investidor simulado. Essa conclusão também relativiza a divergência com
-\citeonline{jiangpengyan2024} discutida acima: sem um efeito estável, o
-sinal oposto ao da literatura humana não pode ser tratado como um
-achado substantivo sobre os agentes.
+resultados instáveis: os efeitos aparecem no Experimento A, mas
+dependem do sorteio e do modelo, e não devem ser interpretados como uma
+relação geral entre esses traços e o perfil de investidor simulado. Essa
+conclusão também relativiza a divergência com
+\citeonline{jiangpengyan2024}: sem um efeito estável, o sinal oposto ao
+da literatura humana não pode ser tratado como um achado substantivo
+sobre os agentes.
 
-\textbf{Amabilidade} é o único traço sem nenhuma divergência a discutir:
-não apresentou efeito significativo em nenhum dos três datasets deste
-trabalho (piloto, Experimento A ou Experimento B, isolado ou não), o que
-é consistente com os dois artigos-base: Amabilidade também não é
-significativa em \citeonline{debortoli2019} e tem "papel mínimo" em
-\citeonline{jiangpengyan2024}. Dos cinco traços investigados, é o único
-em que os quatro estudos (os dois artigos-base e os dois desenhos deste
-trabalho) concordam integralmente. Na análise de robustez, Amabilidade
-aparece significativa em algumas rodadas, mas com sinais opostos
-(positiva nas temperaturas 0,0 e 0,3, negativa no \texttt{qwen2.5:7b} e
-no \texttt{mistral:7b}, Tabela \ref{tab:robustez-sintese}), o que reforça
-a leitura de que não há um efeito consistente desse traço sobre o escore
-do IPA.
+\textbf{Amabilidade} não apresentou efeito significativo em nenhum dos
+três conjuntos de dados deste trabalho (piloto, Experimento A ou
+Experimento B), o que é consistente com \citeonline{debortoli2019}, em
+que o traço também não é significativo, e com a ausência de efeito
+sobre a alocação em ações em \citeonline{jiangpengyan2024}. A única
+divergência é com a associação entre Amabilidade e maior aversão ao
+risco declarada que \citeonline{jiangpengyan2024} encontram nas perguntas
+hipotéticas da pesquisa, que não aparece no IPA dos agentes. Na análise de
+robustez, Amabilidade aparece significativa em algumas rodadas, mas com
+sinais opostos (positiva nas temperaturas 0,0 e 0,3, negativa no
+\texttt{qwen2.5:7b} e no \texttt{mistral:7b}; Tabela
+\ref{tab:robustez-sintese}), o que reforça a leitura de que não há um
+efeito consistente desse traço sobre o escore do IPA.
 
 \section{Indução simultânea vs. isolada: o Experimento B}
 \label{sec:discussao-exp-b}
 
-O Experimento B foi motivado por uma pergunta metodológica levantada
-durante a orientação deste trabalho: será que induzir os 5 traços do Big
-Five simultaneamente no mesmo \textit{prompt}, o desenho do Experimento
-A, herdado da forma como a personalidade é medida em sujeitos humanos nos
-dois artigos-base, que sempre possuem os 5 traços presentes em algum
-nível, dilui ou confunde o sinal de cada traço individual, em
-comparação a manipular apenas 1 traço por vez? O Experimento B testa essa
-possibilidade diretamente, mantendo modelo e instrumento fixos e variando
-apenas o desenho de indução (seção \ref{sec:exp-a-b}).
+O Experimento B investiga se induzir os cinco traços simultaneamente no
+mesmo \textit{prompt} (desenho do Experimento A, que corresponde à forma
+como a personalidade é medida em humanos, que sempre apresentam os cinco
+traços em algum nível) dilui ou confunde o sinal de cada traço, em
+comparação com a manipulação de um traço por vez.
+O Experimento B testa essa possibilidade diretamente, mantendo modelo e
+instrumento fixos e variando apenas o desenho de indução (seção
+\ref{sec:exp-a-b}).
 
-A resposta, com os dados deste trabalho, é dividida em duas partes. Na
-\textbf{checagem de manipulação}, ou seja, na capacidade do modelo de
+A resposta, com os dados deste trabalho, tem duas partes. Na
+checagem de manipulação, ou seja, na capacidade do modelo de
 incorporar corretamente o nível de personalidade pedido, os dois
 desenhos produzem resultados praticamente idênticos (Tabela
-\ref{tab:manipulacao-exp-b}, Figura \ref{fig:exp-ab-manipulacao}): a correlação entre nível induzido e
-autorrelato varia entre 0,81 e 0,93 tanto com os 5 traços variando juntos
-quanto com apenas 1 variando isoladamente, sem diferença sistemática a
-favor de nenhum dos dois desenhos. Isso é evidência direta \textbf{contra}
-a hipótese de que a indução simultânea prejudica a capacidade do modelo
-de incorporar cada traço: se houvesse esse tipo de interferência, seria
-razoável esperar uma checagem de manipulação mais fraca no Experimento A
-(5 traços competindo por "atenção" no mesmo \textit{prompt}) do que no B
-(1 traço isolado), o que não se observa.
+\ref{tab:manipulacao-exp-b}, Figura \ref{fig:exp-ab-manipulacao}): a
+correlação entre nível induzido e autorrelato vai de 0,813 a 0,929 com os
+cinco traços variando juntos e de 0,837 a 0,930 com apenas um variando
+isoladamente, sem diferença sistemática a favor de nenhum dos dois
+desenhos. Isso é evidência contrária à hipótese de que a indução
+simultânea prejudica a capacidade do modelo de incorporar cada traço: se
+houvesse esse tipo de interferência, seria razoável esperar uma checagem
+de manipulação mais fraca no Experimento A (cinco traços competindo por
+``atenção'' no mesmo \textit{prompt}) do que no B (um traço isolado), o
+que não se observa.
 
-Já na \textbf{ligação com o escore do IPA} (Tabela \ref{tab:ipa-exp-b},
-Figura \ref{fig:exp-ab-ipa}), o resultado é mais heterogêneo por traço. Abertura à Experiência não só
-se mantém significativa isolada como fica mais forte ($\rho$=0,792 contra
-0,530 no Experimento A); o achado mais robusto deste trabalho continua
-robusto sob o desenho alternativo. Os outros quatro traços, no entanto,
-perdem significância estatística quando isolados, incluindo os três que
-emergiram como novidade no Experimento A (Extroversão, Consciência e
-Neuroticismo, seção anterior). A explicação mais provável para essa
-perda não é interferência entre traços, já descartada pela
-checagem de manipulação idêntica nos dois desenhos, e sim
-\textbf{poder estatístico}: o Experimento B tem, para cada traço
-individual, entre 49 e 69 agentes (só os agentes em que aquele traço foi
-sorteado como dominante), contra 300 no Experimento A. Para Extroversão,
-por exemplo, a magnitude do efeito é semelhante nos dois desenhos (0,340
-no A, 0,242 no B); a diferença é se esse coeficiente atinge o limiar de
-significância com N=300 ou com N=57, não necessariamente se o efeito
-existe. Neuroticismo é a exceção mais chamativa, invertendo de sinal
-entre os dois desenhos (positivo no A, negativo no B, Tabela
-\ref{tab:ipa-exp-b}); com N=69, essa inversão é compatível com
-instabilidade de amostra pequena, mas também reforça que esse é o traço
-com evidência menos consistente entre todos os testados neste trabalho.
+Já na ligação com o escore do IPA (Tabela \ref{tab:ipa-exp-b},
+Figura \ref{fig:exp-ab-ipa}), o resultado é mais heterogêneo por traço.
+Abertura à Experiência não só se mantém significativa isolada como fica
+mais forte ($\rho=0{,}792$ contra 0,530 no Experimento A), ou seja, se
+sustenta também sob o desenho alternativo. Os
+outros quatro traços, no entanto, perdem significância estatística
+quando isolados, incluindo os três que haviam sido significativos no
+Experimento A (Extroversão, Consciência e Neuroticismo), dos quais apenas
+Extroversão se mostrou robusta na análise de robustez (seção
+\ref{sec:discussao-robustez}). Uma interferência entre traços é pouco
+provável, dada a checagem de manipulação equivalente nos dois desenhos;
+pesa, em vez disso, o poder estatístico: o Experimento B tem,
+para cada traço individual, entre 49 e 69 agentes (só os agentes em que
+aquele traço foi sorteado como dominante), contra 300 no Experimento A.
+Para Extroversão, a magnitude do efeito é semelhante nos dois desenhos
+($\rho=0{,}340$ no A e $0{,}242$ no B, com $p=0{,}070$ e N=57), e a
+análise de robustez confirma essa leitura. Para Consciência e
+Neuroticismo, a perda de significância é mais consistente com a
+instabilidade desses efeitos, que se manifesta mesmo com 300 agentes.
+Neuroticismo é a exceção mais notável, invertendo o sinal entre os dois
+desenhos (positivo no A, negativo no B; Tabela \ref{tab:ipa-exp-b}); com
+N=69, essa inversão é compatível com a instabilidade de uma amostra
+pequena, mas também reforça que esse é um dos dois traços com evidência
+menos consistente neste trabalho.
 
-Em síntese, o Experimento B responde à pergunta original de forma
-específica: \textbf{induzir os 5 traços simultaneamente não parece
-prejudicar a qualidade da indução em si}, mas o desenho isolado, do jeito
-que foi implementado aqui (N pequeno por traço), \textbf{não tem poder
-estatístico suficiente para confirmar ou refutar com segurança} os
-achados secundários do Experimento A. Essa confirmação veio da análise
-de robustez e generalização, discutida na próxima seção, que manteve
-N=300 em cada rodada: Extroversão se confirmou, e Consciência e
+Assim, o Experimento B responde à pergunta original de forma
+específica: induzir os cinco traços simultaneamente não parece
+prejudicar a qualidade da indução em si, mas o desenho isolado, tal como
+foi implementado aqui (N pequeno por traço), não tem poder estatístico
+suficiente para confirmar ou refutar com segurança os achados
+secundários do Experimento A. Essa verificação veio da análise
+de robustez e generalização, discutida na próxima seção, que manteve 300
+agentes em cada rodada: Extroversão se confirmou, e Consciência e
 Neuroticismo não.
 
 \section{Robustez e generalização dos resultados}
@@ -222,32 +236,39 @@ Neuroticismo não.
 A análise de robustez e generalização (seção \ref{sec:resultados-robustez})
 separa com clareza dois grupos de resultados. O primeiro é formado por
 Abertura à Experiência e Extroversão, que elevam o escore do IPA em todas
-as oito rodadas com N=300 (quatro temperaturas, dois sorteios de perfis e
-quatro modelos abertos), sempre com $p<0,001$, e também nos dois modelos
-Nemotron. Como essas rodadas variam, um de cada vez, o ruído da geração,
-os perfis sorteados e o modelo, é pouco provável que esses dois efeitos
-sejam produto de uma configuração específica do Experimento A. O segundo
-grupo é formado pelos três traços de efeito menor (Consciência,
-Neuroticismo e Amabilidade), cujos coeficientes mudam de significância e
-de sinal entre rodadas. A temperatura, em particular, afeta mais o ruído
-do que a direção dos efeitos: reduzi-la aumenta a fidelidade da
-manipulação e o R², sem alterar quais traços têm efeito estável.
+as oito rodadas com 300 agentes (as quatro temperaturas, incluindo a do
+Experimento A; um segundo sorteio de perfis; e três modelos abertos
+adicionais), sempre com $p<0{,}001$, e aparecem na mesma direção nos dois
+modelos Nemotron.
+Como essas rodadas variam, um de cada vez, o ruído da geração, os perfis
+sorteados e o modelo, é pouco provável que esses dois efeitos sejam
+produto de uma configuração específica do Experimento A. O segundo grupo
+é formado pelos três traços de efeito menor (Consciência, Neuroticismo e
+Amabilidade), cujos coeficientes mudam de significância e de sinal entre
+rodadas. A temperatura, em particular, afeta mais o ruído do que a
+direção dos efeitos: reduzi-la aumenta a fidelidade da manipulação e o
+$R^2$, sem alterar o sinal e a significância de Abertura à Experiência e
+de Extroversão. Amabilidade, porém, torna-se significativa nas
+temperaturas mais baixas (0,0 e 0,3), o que mostra que uma única
+configuração de geração pode indicar efeitos que não se sustentam nas
+demais.
 
 A generalização entre modelos, porém, vale para a \textit{direção} dos
 dois efeitos estáveis, não para o \textit{nível} de risco declarado pelos
-agentes. Com os mesmos perfis de personalidade, o perfil médio de
-investidor vai de majoritariamente Moderado (\texttt{llama3.1:8b}) a
-quase todo Arrojado (\texttt{mistral:7b}), e o mesmo agente recebe o
-mesmo perfil do \texttt{llama3.1:8b} em apenas 20,3\% a 62,0\% dos casos,
-conforme o modelo (Tabela \ref{tab:robustez-modelos-pareada}). O tamanho
-dos efeitos também varia: o coeficiente de Abertura à Experiência vai de
-0,632 (\texttt{mistral:7b}) a 4,643 (\texttt{qwen2.5:7b}). Na prática,
-isso significa que uma simulação desse tipo pode indicar
-\textit{quais} traços tornam um agente mais ou menos tolerante ao risco,
-mas o perfil de investidor absoluto que ela atribui a uma personalidade
-é, em grande parte, uma característica do modelo usado. Esse ponto é
-relevante para qualquer uso de agentes de IA como substitutos de
-respondentes humanos em avaliações de \textit{suitability}.
+agentes. Com os mesmos perfis de personalidade, a distribuição dos perfis
+de investidor vai de majoritariamente Moderado (\texttt{llama3.1:8b}) a
+quase todo Arrojado (\texttt{mistral:7b}), e o perfil atribuído a um
+mesmo agente coincide com o obtido no \texttt{llama3.1:8b} em apenas
+20,3\% a 62,0\% dos casos, conforme o modelo (Tabela
+\ref{tab:robustez-modelos-pareada}). O tamanho dos efeitos também varia:
+o coeficiente de Abertura à Experiência vai de 0,632
+(\texttt{mistral:7b}) a 4,643 (\texttt{qwen2.5:7b}). Na prática, isso
+significa que uma simulação desse tipo pode indicar \textit{quais} traços
+tornam um agente mais ou menos tolerante ao risco, mas o perfil de
+investidor absoluto que ela atribui a uma personalidade é, em grande
+parte, uma característica do modelo usado. Esse ponto é relevante para
+qualquer uso de agentes de IA como substitutos de respondentes humanos em
+avaliações de \textit{suitability}.
 
 \section{Comparação com estudos de personalidade induzida em LLMs}
 \label{sec:discussao-llm}
@@ -260,87 +281,96 @@ três níveis (Baixo, Médio e Alto), com a personalidade verificada por um
 teste do próprio modelo dos cinco fatores antes da análise. A diferença
 está no modo de compor a amostra (os autores usaram uma persona para cada
 uma das 243 combinações possíveis; este trabalho sorteou os níveis de 300
-agentes) e no modelo (ChatGPT 4.0, proprietário, contra, na análise
-principal e nas rodadas com N=300, modelos abertos de 7 a 12 bilhões de
-parâmetros). Os dois estudos também usam regressão
-OLS para estimar a relação entre os traços e o comportamento. Essa
-proximidade torna a comparação mais direta do que com os artigos-base,
-que trabalham com sujeitos humanos.
+agentes) e no modelo: os autores usaram o ChatGPT 4.0, proprietário;
+este trabalho, modelos abertos de 7 a 12 bilhões de parâmetros, tanto na
+análise principal quanto nas rodadas de generalização com 300 agentes, e,
+em caráter exploratório, dois modelos Nemotron maiores. Os dois estudos
+também usam regressão OLS para estimar a relação entre os traços e o
+comportamento. Essa proximidade torna a comparação mais direta do que com
+os artigos-base, que trabalham com sujeitos humanos.
 
 A comparação mais informativa é com o questionário comportamental de
 \citeonline{borman2024}, já que o IPA também é um questionário. Naquele
 estudo, o questionário reproduziu a direção esperada pela literatura
 humana para o apetite ao risco em Abertura à Experiência, Extroversão e
 Neuroticismo, mas não em Consciência e Amabilidade. Neste trabalho,
-Abertura e Extroversão aparecem na direção esperada e de forma estável,
-convergindo com os autores; Consciência é instável e Amabilidade não
-apresenta efeito consistente, o que também converge com a dificuldade
-relatada por eles para esses dois traços no questionário. A divergência está em
-Neuroticismo, que \citeonline{borman2024} reproduziram na direção
-esperada e que, neste trabalho, é instável e, quando significativo,
-positivo. Os autores relatam ainda que as personas representaram melhor
-o comportamento humano em uma tarefa simulada de investimento do que no
-questionário, inclusive acertando a direção dos cinco traços no apetite
-ao risco. Esse resultado sugere que parte da instabilidade observada
-neste trabalho nos traços de efeito menor pode estar ligada ao formato
-de questionário, e motiva uma das recomendações de trabalho futuro
-(Capítulo \ref{cap:conclusao}).
+Abertura à Experiência e Extroversão aparecem na direção esperada e de
+forma estável, convergindo com os autores; Consciência é instável e
+Amabilidade não apresenta efeito consistente, o que também converge com
+a dificuldade relatada por eles para esses dois traços no questionário.
+A divergência está em Neuroticismo, que \citeonline{borman2024}
+reproduziram na direção esperada e que, neste trabalho, é instável e,
+quando significativo, positivo. Os autores relatam ainda que as personas
+representaram melhor o comportamento humano em uma tarefa simulada de
+investimento do que no questionário, inclusive acertando a direção dos
+cinco traços no apetite ao risco. Esse resultado sugere que parte da
+instabilidade observada neste trabalho nos traços de efeito menor pode
+estar ligada ao formato de questionário, e motiva uma das recomendações
+de trabalho futuro (Capítulo \ref{cap:conclusao}).
 
 O estudo de \citeonline{hartley2025} converge com este trabalho em dois
 pontos, apesar das diferenças de desenho (um traço induzido por vez,
-modelos proprietários e risco medido por escolhas entre loterias). O
-primeiro é o papel central de Abertura à Experiência: no GPT-4o, foi o
-único traço com correlação significativa com os parâmetros de
-sensibilidade ao risco, assim como é, neste trabalho, o traço de maior e
-mais estável efeito sobre o IPA. O segundo é a dependência do modelo: os
-autores observaram que a relação entre personalidade e risco não se
+modelos proprietários e risco medido pelo equivalente certo de
+loterias). O primeiro é o papel central de Abertura à Experiência: no
+GPT-4o, foi o único traço com correlação significativa com os parâmetros
+de sensibilidade ao risco, assim como é, neste trabalho, o traço de maior
+efeito sobre o IPA em sete das oito rodadas com 300 agentes, sempre com
+significância (assim como Extroversão). O segundo é a dependência do modelo:
+os autores observaram que a relação entre personalidade e risco não se
 manteve nas variantes menores dos modelos e chegou a se inverter em
 alguns deles, o que tem paralelo na variação entre modelos encontrada
 aqui, tanto na seleção do modelo (seção \ref{sec:selecao-modelo}) quanto
-na análise de generalização. Diferentemente de Hartley et al., porém,
-este trabalho encontrou Extroversão com efeito estável em todos os
-modelos testados, o que pode refletir a diferença de instrumento
-(questionário de \textit{suitability} contra loterias) ou de forma de
-indução (cinco traços simultâneos contra um traço por vez).
+na análise de generalização. Diferentemente de \citeonline{hartley2025},
+porém, em que Extroversão não teve correlação significativa com os
+parâmetros de risco no GPT-4o (o único modelo para o qual os autores
+relatam a comparação entre os cinco traços), este trabalho encontrou Extroversão com efeito estável
+em todos os modelos da análise de generalização, o que pode refletir a
+diferença de instrumento (questionário de \textit{suitability} contra
+loterias) ou de forma de indução (cinco traços simultâneos contra um
+traço por vez).
 
 \section{O papel da checagem de manipulação}
 
-Além da comparação entre desenhos de indução (seção anterior), a
-comparação entre os 4 modelos de linguagem testados (Tabela
+Além da comparação entre desenhos de indução, a comparação entre os
+quatro modelos de linguagem testados na seleção do modelo (Tabela
 \ref{tab:comparacao-modelos}, seção \ref{sec:selecao-modelo}) é, em si,
 um resultado deste trabalho: mostra que a qualidade da indução de
 personalidade não é uniforme entre modelos, e que essa qualidade, não
 apenas o tamanho do modelo isoladamente, é pré-requisito para
 interpretar qualquer efeito sobre o IPA. O caso mais claro é Abertura à
-Experiência: não significativa no \texttt{llama3.2:1b} ($\rho\approx$0,09
-n.s.) nem no \texttt{llama3.2:3b} ($\rho$=0,077 n.s.) na checagem de
-manipulação, e por consequência também não significativa na relação com
-o IPA nesses dois modelos, mas fortemente incorporada no
-\texttt{llama3.1:8b} ($\rho$=0,739 no piloto BFI-10; 0,913 no Experimento
-A com BFI-44), onde o efeito sobre o IPA finalmente emerge com
-significância. A interpretação mais direta é que os modelos menores não
-"desconfirmam" a relação entre Abertura e perfil de investidor: eles
-simplesmente falham em incorporar o traço de forma detectável, tornando
-impossível testar a relação com esses dados. Sem a checagem de
-manipulação, um resultado não significativo em um modelo pequeno poderia
-ser lido (incorretamente) como evidência contra a hipótese de pesquisa,
-quando na verdade reflete uma falha na etapa de indução, anterior à
-pergunta de pesquisa em si.
+Experiência. No \texttt{llama3.2:1b}, o traço não foi incorporado
+($\rho=-0{,}014$, n.s., na checagem de manipulação) nem se associou ao
+escore do IPA ($\rho=0{,}089$, n.s.). No \texttt{llama3.2:3b}, também não
+foi incorporado ($\rho=0{,}077$, n.s.), mas, mesmo assim, apareceu
+associado ao escore do IPA ($\rho=0{,}191$, $p<0{,}001$). Como a indução
+desse traço não foi verificada nesse modelo, essa associação não pode
+ser atribuída à personalidade induzida: ela pode refletir qualquer outro
+aspecto do \textit{prompt} ou do comportamento do modelo. Sem a checagem
+de manipulação, esse resultado poderia ser lido, incorretamente, como
+confirmação da hipótese de pesquisa. Apenas no \texttt{llama3.1:8b}, em
+que Abertura à Experiência foi fortemente incorporada ($\rho=0{,}739$ no
+piloto com BFI-10; $0{,}913$ no Experimento A com BFI-44), o efeito sobre
+o IPA pode ser interpretado como efeito do traço induzido. A checagem de
+manipulação protege, portanto, contra os dois erros: tomar a ausência de
+efeito em um modelo que não incorporou o traço como evidência contra a
+hipótese, e tomar uma associação em um modelo que não incorporou o traço
+como evidência a favor dela.
 
 \section{Vieses de resposta dos agentes}
+\label{sec:vieses}
 
-Os quatro modelos testados na seleção do modelo apresentam vieses de resposta ao IPA que
-independem da personalidade induzida. O mais consistente é o
-\textbf{viés de centralidade}: os modelos da família Llama concentram
-respostas no perfil Moderado, em proporção que diminui à medida que o
-modelo cresce: aproximadamente 96\% no \texttt{llama3.2:1b}, 90\% no
-\texttt{llama3.2:3b} e 78\% no \texttt{llama3.1:8b} (estudo piloto,
-BFI-10). No Experimento A (BFI-44), o mesmo modelo (\texttt{llama3.1:8b})
-concentrou 82,3\% dos agentes no perfil Moderado (Tabela
-\ref{tab:distribuicao-ipa}), proporção semelhante à do piloto, o que
-sugere que o viés de centralidade é uma característica do modelo, não do
-instrumento de checagem de manipulação usado. O \texttt{gemma3:4b}
-apresenta um viés distinto, de \textbf{conservadorismo}: no piloto
+Os quatro modelos testados na seleção do modelo apresentam vieses de
+resposta ao IPA que independem da personalidade induzida. O mais
+consistente é o \textbf{viés de centralidade}: os modelos da família
+Llama concentram respostas no perfil Moderado, em proporção que diminui à
+medida que o modelo cresce (aproximadamente 96\% no \texttt{llama3.2:1b},
+90\% no \texttt{llama3.2:3b} e 78\% no \texttt{llama3.1:8b}; seleção
+do modelo, BFI-10). No Experimento A (BFI-44), o mesmo modelo
+(\texttt{llama3.1:8b}) concentrou 82,3\% dos agentes no perfil Moderado
+(Tabela \ref{tab:distribuicao-ipa}), proporção semelhante à da seleção do modelo, o
+que sugere que o viés de centralidade é uma característica do modelo, não
+do instrumento de checagem de manipulação usado. O \texttt{gemma3:4b}
+apresenta um viés distinto, de \textbf{conservadorismo}: no teste
 reduzido com esse modelo (N=30), 60\% dos agentes foram classificados
 como Conservador e nenhum como Arrojado, mesmo com personalidades
 induzidas variadas. A análise de generalização mostrou que cada modelo
@@ -352,62 +382,66 @@ forma polarizada entre Conservador e Arrojado (Tabelas
 \ref{tab:robustez-modelos} e \ref{tab:robustez-nemotron}).
 
 Esses vieses são relevantes por dois motivos. Primeiro, como limitação de
-validade: um modelo com viés de centralidade forte comprime a variância
-do escore do IPA, o que reduz o poder estatístico disponível para
-detectar qualquer efeito real da personalidade sobre esse escore,
-prejudicando sistematicamente os modelos menores duas vezes (manipulação
-mais fraca e menor variância na variável dependente). Segundo, como
-achado metodológico por si só: a atenuação do viés de centralidade com o
-aumento do modelo (96\%→90\%→78\%→82,3\%, aproximadamente) sugere que
-não é só a capacidade de incorporar personalidade que melhora com modelos
-maiores, mas também a disposição do modelo a dar respostas mais
-extremas/decididas em geral, um comportamento de LLMs como sujeitos
-simulados que merece atenção em trabalhos futuros que usem esse tipo de
-questionário de múltipla escolha com agentes de IA.
+validade: um modelo com viés forte de concentração em uma categoria
+comprime a variância do escore do IPA, o que reduz o poder estatístico
+disponível para detectar qualquer efeito real da personalidade sobre esse
+escore; na seleção do modelo, com a família Llama, isso prejudicou duplamente os
+modelos menores (manipulação mais fraca e menor variância na variável
+dependente). Segundo, como achado metodológico por si só: a atenuação
+desse viés com o aumento do modelo na seleção do modelo sugere que não é só a
+capacidade de incorporar personalidade que melhora com modelos maiores,
+mas também a disposição do modelo a dar respostas mais extremas ou
+decididas em geral. A análise de generalização, porém, indica que o viés
+depende mais do modelo do que de seu tamanho, um comportamento de LLMs
+como sujeitos simulados que merece atenção em trabalhos futuros que usem
+questionários de múltipla escolha com agentes de IA.
 
 \section{Limitações do estudo}
+\label{sec:limitacoes}
 
 \begin{itemize}
     \item \textbf{O instrumento de autorrelato da análise principal não
     corresponde exatamente ao de nenhum dos dois artigos-base}. O BFI-10,
     usado no estudo piloto e na comparação entre modelos, é o mesmo
-    instrumento (e a mesma tradução) usados por
+    instrumento (e a mesma tradução) usado por
     \citeonline{debortoli2019}; o BFI-44, usado na análise principal
     (Experimentos A e B), em uma versão em português que não é idêntica
     à adaptação validada para o Brasil por \citeonline{andrade2008}, não
-    corresponde exatamente nem ao BFI-10
-    de De Bortoli et al. nem ao SAPA-20 de \citeonline{jiangpengyan2024}.
-    Essa é uma limitação real de comparabilidade introduzida pela
-    migração de instrumento (seção \ref{sec:exp-a-b}), mitigada, mas
-    não eliminada, pelo fato de os itens do BFI-44 medirem os mesmos 5
-    traços do mesmo modelo teórico (Big Five), com escala de resposta
-    idêntica à do BFI-10;
+    corresponde exatamente nem ao BFI-10 de \citeonline{debortoli2019}
+    nem ao SAPA-20 de \citeonline{jiangpengyan2024}. Essa é uma
+    limitação real de comparabilidade introduzida pela troca de
+    instrumento (seção \ref{sec:bfi44}), mitigada, mas não eliminada,
+    pelo fato de os itens do BFI-44 medirem os mesmos cinco traços do
+    mesmo modelo teórico (Big Five), com escala de resposta idêntica à do
+    BFI-10;
     \item \textbf{Vieses de resposta do modelo}, sobretudo a
     concentração de respostas no perfil Moderado, discutidos na seção
     anterior, comprimem a variância da variável dependente e reduzem o
     poder estatístico disponível para detectar efeitos reais da
     personalidade;
     \item \textbf{Os cortes de classificação do perfil IPA
-    (Conservador/\allowbreak Moderado/\allowbreak Arrojado) são uma operacionalização própria
-    deste trabalho}, não publicada no artigo original de referência para
-    o questionário (seção \ref{sec:ipa-pontuacao}); outra
-    escolha de corte poderia produzir uma distribuição de perfis
-    diferente, embora não afete as correlações de Spearman nem os
-    coeficientes da OLS, calculados sobre o escore contínuo;
+    (Conservador/\allowbreak Moderado/\allowbreak Arrojado) são uma
+    operacionalização própria deste trabalho}, não publicada no artigo
+    original de referência para o questionário (seção
+    \ref{sec:ipa-pontuacao}); outra escolha de corte poderia produzir uma
+    distribuição de perfis diferente, embora não afete as correlações de
+    Spearman nem os coeficientes da OLS, calculados sobre o escore
+    contínuo;
     \item \textbf{Validade externa}: os sujeitos deste trabalho são
-    agentes de linguagem artificial, não investidores reais: os
-    achados dizem respeito a como um modelo de linguagem específico
-    responde quando instruído a simular uma personalidade, não
+    agentes de linguagem artificial, não investidores reais; portanto, os
+    achados dizem respeito a como modelos de linguagem específicos
+    respondem quando instruídos a simular uma personalidade, não
     necessariamente a como pessoas reais com essas personalidades se
     comportariam;
     \item \textbf{Abrangência dos modelos testados}: a análise de
     generalização cobriu quatro modelos abertos de 7 a 12 bilhões de
-    parâmetros com N=300 e dois modelos maiores apenas em piloto (N=30),
-    acessados por uma cota gratuita de API. Modelos proprietários de
-    grande porte (como os das famílias GPT, Claude e Gemini) não foram
-    testados, e um modelo previsto para o piloto (Gemma 4 31B) não pôde
-    ser incluído por indisponibilidade do provedor gratuito; os
-    resultados podem não se estender a esses modelos;
+    parâmetros com 300 agentes e dois modelos maiores (Nemotron) apenas
+    em teste exploratório (N=30), estes acessados por uma cota gratuita
+    de API. Modelos proprietários de grande porte (como os das famílias
+    GPT, Claude e Gemini) não foram testados, e um modelo previsto para
+    essa etapa (Gemma 4 31B) não pôde ser incluído por indisponibilidade
+    do provedor gratuito; os resultados podem não se estender a esses
+    modelos;
     \item \textbf{Questionário em vez de tarefa comportamental}: o perfil
     de investidor foi medido por um questionário de autorrelato (IPA), e
     não pelo comportamento do agente em uma tarefa de investimento. Em
@@ -416,7 +450,7 @@ questionário de múltipla escolha com agentes de IA.
     questionário, o que sugere que o formato do instrumento pode ter
     contribuído para a instabilidade dos efeitos menores;
     \item \textbf{N pequeno por traço no Experimento B} (49 a 69 agentes,
-    contra 300 no Experimento A), como discutido na seção
+    contra 300 no Experimento A): como discutido na seção
     \ref{sec:discussao-exp-b}, isso limita a capacidade desse experimento
     de confirmar ou refutar com segurança os efeitos secundários do
     Experimento A, papel que coube à análise de robustez e

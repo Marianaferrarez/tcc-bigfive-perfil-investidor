@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib
+import matplotlib.ticker
 matplotlib.use('Agg')
 from scipy import stats
 import statsmodels.api as sm
@@ -35,111 +36,133 @@ nomes_curtos = [ROTULO[d] if d != 'Abertura à Experiência' else 'Abertura\nà 
 OUTDIR = 'resultados/figuras'
 
 
-# ── Fig 1: Spearman ──────────────────────────────────────────────────────────
-spearman_vals = {}
-for d in DIMS:
-    r, p = stats.spearmanr(df[f'nivel_{d}_num'], df['ipa_score_sem_q1'])
-    spearman_vals[d] = (r, p)
+# ── Formatação em português ──────────────────────────────────────────────────
+# Vírgula decimal e sinal de menos tipográfico, como no texto da monografia.
+# As figuras não têm título próprio: o título fica na legenda (\caption) do
+# LaTeX, conforme a ABNT.
+def num(x, casas=3, sinal=False):
+    s = f'{x:+.{casas}f}' if sinal else f'{x:.{casas}f}'
+    return s.replace('-', '−').replace('.', ',')
 
-rhos = [spearman_vals[d][0] for d in DIMS]
-pvals = [spearman_vals[d][1] for d in DIMS]
 
-fig, ax = plt.subplots(figsize=(8, 3.8))
-bars = ax.barh(nomes_curtos, rhos, color=['#2E75B6' if r > 0 else '#c0392b' for r in rhos], alpha=0.85, height=0.55)
-for bar, r, p in zip(bars, rhos, pvals):
-    sig = '***' if p < 0.001 else ('**' if p < 0.01 else ('*' if p < 0.05 else 'n.s.'))
-    ax.text(r + 0.008 if r >= 0 else r - 0.008, bar.get_y() + bar.get_height() / 2,
-            f'ρ={r:+.3f} {sig}', va='center', ha='left' if r >= 0 else 'right', fontsize=10)
-ax.axvline(0, color='black', linewidth=0.8)
-ax.set_xlim(-0.25, 0.55)
-ax.set_xlabel('Correlação de Spearman (ρ) com escore IPA Q2–Q8', fontsize=11)
-ax.set_title('Big Five → Perfil de Investidor (IPA)\nCorrelações de Spearman — llama3.1:8b (N=300)', fontsize=12, fontweight='bold', color='#1F3864')
-ax.invert_yaxis(); ax.spines['top'].set_visible(False); ax.spines['right'].set_visible(False)
-plt.tight_layout(pad=0.3)
-plt.savefig(f'{OUTDIR}/fig1_spearman.png', dpi=150, bbox_inches='tight', pad_inches=0.15)
-plt.close()
-print('fig1 ok')
+def sig_de(p):
+    return '***' if p < 0.001 else ('**' if p < 0.01 else ('*' if p < 0.05 else 'n.s.'))
+
+
+virgula = matplotlib.ticker.FuncFormatter(lambda x, _: f'{x:g}'.replace('-', '−').replace('.', ','))
+
+
+def preparar(caminho):
+    d = pd.read_csv(caminho)
+    d = d[d['ipa_perfil'].isin(PERFIL_ORDEM)].copy()
+    d['ipa_score_sem_q1'] = d['ipa_score'] - d['ipa_q1_atribuida'].map({'a': 4, 'b': 3, 'c': 2, 'd': 1})
+    return d
+
+
+df_piloto = preparar('resultados/piloto/dataset_llama31_8b.csv')
+# (dataset, sufixo do arquivo, instrumento de autorrelato)
+VERSOES = [(df, '', 'BFI-44'), (df_piloto, '_piloto', 'BFI-10')]
+
+
+# ── Fig 1: Spearman (nível induzido x escore IPA) ───────────────────────────
+def gerar_fig1(dados, sufixo):
+    rhos, pvals = [], []
+    for d in DIMS:
+        r, p = stats.spearmanr(dados[f'nivel_{d}_num'], dados['ipa_score_sem_q1'])
+        rhos.append(r); pvals.append(p)
+    fig, ax = plt.subplots(figsize=(8, 3.6))
+    bars = ax.barh(nomes_curtos, rhos, color=['#2E75B6' if r > 0 else '#c0392b' for r in rhos], alpha=0.85, height=0.55)
+    for bar, r, p in zip(bars, rhos, pvals):
+        ax.text(r + 0.008 if r >= 0 else r - 0.008, bar.get_y() + bar.get_height() / 2,
+                f'ρ = {num(r, sinal=True)} {sig_de(p)}', va='center', ha='left' if r >= 0 else 'right', fontsize=10)
+    ax.axvline(0, color='black', linewidth=0.8)
+    ax.set_xlim(-0.25, 0.62)
+    ax.xaxis.set_major_formatter(virgula)
+    ax.set_xlabel('Correlação de Spearman (ρ) com o escore IPA (Q2–Q8)', fontsize=11)
+    ax.invert_yaxis(); ax.spines['top'].set_visible(False); ax.spines['right'].set_visible(False)
+    plt.tight_layout(pad=0.3)
+    plt.savefig(f'{OUTDIR}/fig1_spearman{sufixo}.png', dpi=150, bbox_inches='tight', pad_inches=0.15)
+    plt.close()
 
 
 # ── Fig 2: Boxplots (escore IPA por nível induzido, um painel por traço) ────
-# NOTA: este bloco não existia no regen_figs.py apesar de fig2_boxplots.png
-# já existir no repo -- reconstruído em 2026-08-28 a partir do estilo dos
-# demais gráficos deste script (ver commit "Migrar figuras principais...").
-fig_b, axes_b = plt.subplots(1, 5, figsize=(15, 4.0), sharey=True)
-for ax, trait, short in zip(axes_b, DIMS, [ROTULO[d].replace('à Experiência', '\nà Experiência') for d in DIMS]):
-    dados = [df[df[f'nivel_{trait}'] == n]['ipa_score_sem_q1'].values for n in NIVEL_ORDEM]
-    bp = ax.boxplot(dados, tick_labels=NIVEL_ORDEM, patch_artist=True, widths=0.55,
-                     medianprops=dict(color='#1F3864', linewidth=2),
-                     flierprops=dict(marker='o', markersize=3, alpha=0.5))
-    for patch in bp['boxes']:
-        patch.set_facecolor('#AED6F1')
-        patch.set_alpha(0.85)
-    r, p = stats.spearmanr(df[f'nivel_{trait}_num'], df['ipa_score_sem_q1'])
-    sig = '***' if p < 0.001 else ('**' if p < 0.01 else ('*' if p < 0.05 else 'n.s.'))
-    ax.set_title(f'{short}\nρ={r:+.3f} {sig}', fontsize=10, fontweight='bold',
-                 color='#1F3864' if p < 0.05 else '#888888')
-    ax.tick_params(axis='x', labelsize=9)
-    ax.spines['top'].set_visible(False); ax.spines['right'].set_visible(False)
-    if ax is axes_b[0]:
-        ax.set_ylabel('Escore IPA (Q2–Q8)', fontsize=10)
-fig_b.suptitle('Distribuição do escore IPA por nível induzido — llama3.1:8b (N=%d)' % len(df),
-               fontsize=12, fontweight='bold', color='#1F3864', y=1.02)
-plt.tight_layout(pad=0.5)
-plt.savefig(f'{OUTDIR}/fig2_boxplots.png', dpi=150, bbox_inches='tight', pad_inches=0.15)
-plt.close()
-print('fig2 ok')
+# Grade 2x3 (o sexto espaço fica vazio), para que os painéis fiquem legíveis
+# na largura da página da monografia.
+def gerar_boxplots(dados_df, sufixo):
+    fig_b, axes_b = plt.subplots(2, 3, figsize=(11, 8.0), sharey=True)
+    for ax, trait in zip(axes_b.flat, DIMS):
+        dados = [dados_df[dados_df[f'nivel_{trait}'] == n]['ipa_score_sem_q1'].values for n in NIVEL_ORDEM]
+        bp = ax.boxplot(dados, tick_labels=NIVEL_ORDEM, patch_artist=True, widths=0.55,
+                        medianprops=dict(color='#1F3864', linewidth=2),
+                        flierprops=dict(marker='o', markersize=4, alpha=0.5))
+        for patch in bp['boxes']:
+            patch.set_facecolor('#AED6F1')
+            patch.set_alpha(0.85)
+        r, p = stats.spearmanr(dados_df[f'nivel_{trait}_num'], dados_df['ipa_score_sem_q1'])
+        ax.set_title(f'{ROTULO[trait]}\nρ = {num(r, sinal=True)} {sig_de(p)}', fontsize=13, fontweight='bold',
+                     color='#1F3864' if p < 0.05 else '#888888')
+        ax.tick_params(axis='both', labelsize=12)
+        ax.yaxis.set_tick_params(labelleft=True)
+        ax.yaxis.set_major_locator(matplotlib.ticker.MultipleLocator(2))
+        ax.spines['top'].set_visible(False); ax.spines['right'].set_visible(False)
+    for ax in axes_b[:, 0]:
+        ax.set_ylabel('Escore IPA (Q2–Q8)', fontsize=12)
+    axes_b[1, 2].axis('off')
+    plt.tight_layout(pad=0.8, h_pad=2.0)
+    plt.savefig(f'{OUTDIR}/fig2_boxplots{sufixo}.png', dpi=150, bbox_inches='tight', pad_inches=0.15)
+    plt.close()
 
 
 # ── Fig 3: OLS ───────────────────────────────────────────────────────────────
-X = df[[f'nivel_{d}_num' for d in DIMS]]
-m = sm.OLS(df['ipa_score_sem_q1'], sm.add_constant(X)).fit()
-coefs = [m.params[f'nivel_{d}_num'] for d in DIMS]
-errs  = [m.bse[f'nivel_{d}_num'] * 1.96 for d in DIMS]
-pvals_ols = [m.pvalues[f'nivel_{d}_num'] for d in DIMS]
-
-fig, ax = plt.subplots(figsize=(8, 3.8))
-for i, (coef, err, p, cor) in enumerate(zip(coefs, errs, pvals_ols, ['#2E75B6' if p < 0.05 else '#D5D5D5' for p in pvals_ols])):
-    ax.barh(i, coef, color=cor, alpha=0.85, height=0.5)
-    ax.errorbar(coef, i, xerr=err, color='#2c3e50', linewidth=2, capsize=5, capthick=2)
-    sig = '***' if p < 0.001 else ('**' if p < 0.01 else ('*' if p < 0.05 else 'n.s.'))
-    ax.text(coef + err + 0.03 if coef >= 0 else coef - err - 0.03, i,
-            f'{coef:+.3f} {sig}', va='center', ha='left' if coef >= 0 else 'right', fontsize=10)
-ax.set_yticks(range(len(DIMS))); ax.set_yticklabels(nomes_curtos, fontsize=11)
-ax.axvline(0, color='black', linewidth=0.8)
-ax.set_xlabel('Coeficiente OLS (IC 95%)', fontsize=11)
-ax.set_title(f'Regressão OLS: Big Five → Escore IPA (Q2–Q8)\nR²={m.rsquared:.3f}   F={m.fvalue:.2f}   p<0.001   N=300', fontsize=12, fontweight='bold', color='#1F3864')
-ax.invert_yaxis(); ax.spines['top'].set_visible(False); ax.spines['right'].set_visible(False)
-plt.tight_layout(pad=0.3)
-plt.savefig(f'{OUTDIR}/fig3_ols.png', dpi=150, bbox_inches='tight', pad_inches=0.15)
-plt.close()
-print('fig3 ok')
+def gerar_fig3(dados, sufixo):
+    X = dados[[f'nivel_{d}_num' for d in DIMS]]
+    m = sm.OLS(dados['ipa_score_sem_q1'], sm.add_constant(X)).fit()
+    coefs = [m.params[f'nivel_{d}_num'] for d in DIMS]
+    errs = [m.bse[f'nivel_{d}_num'] * 1.96 for d in DIMS]
+    pvals_ols = [m.pvalues[f'nivel_{d}_num'] for d in DIMS]
+    fig, ax = plt.subplots(figsize=(8, 3.6))
+    for i, (coef, err, p) in enumerate(zip(coefs, errs, pvals_ols)):
+        ax.barh(i, coef, color='#2E75B6' if p < 0.05 else '#D5D5D5', alpha=0.85, height=0.5)
+        ax.errorbar(coef, i, xerr=err, color='#2c3e50', linewidth=2, capsize=5, capthick=2)
+        ax.text(coef + err + 0.03 if coef >= 0 else coef - err - 0.03, i,
+                f'{num(coef, sinal=True)} {sig_de(p)}', va='center', ha='left' if coef >= 0 else 'right', fontsize=10)
+    ax.set_yticks(range(len(DIMS))); ax.set_yticklabels(nomes_curtos, fontsize=11)
+    ax.axvline(0, color='black', linewidth=0.8)
+    ax.xaxis.set_major_formatter(virgula)
+    ax.set_xlabel('Coeficiente OLS (barras de erro: IC 95%)', fontsize=11)
+    ax.invert_yaxis(); ax.spines['top'].set_visible(False); ax.spines['right'].set_visible(False)
+    plt.tight_layout(pad=0.3)
+    plt.savefig(f'{OUTDIR}/fig3_ols{sufixo}.png', dpi=150, bbox_inches='tight', pad_inches=0.15)
+    plt.close()
 
 
 # ── Fig 4: Manipulação ───────────────────────────────────────────────────────
-rhos_m = []
-for d in DIMS:
-    r, _ = stats.spearmanr(df[f'nivel_{d}_num'], df[f'bfi_{d}'])
-    rhos_m.append(r)
+def gerar_fig4(dados, sufixo, instrumento):
+    rhos_m = [stats.spearmanr(dados[f'nivel_{d}_num'], dados[f'bfi_{d}'])[0] for d in DIMS]
+    fig, ax = plt.subplots(figsize=(8, 4.0))
+    bars = ax.barh(nomes_curtos, rhos_m, color=['#27ae60' if r >= 0.5 else '#f39c12' for r in rhos_m], alpha=0.85, height=0.55)
+    for bar, r in zip(bars, rhos_m):
+        ax.text(r + 0.01, bar.get_y() + bar.get_height() / 2,
+                f'ρ = {num(r)}', va='center', ha='left', fontsize=10, fontweight='bold')
+    ax.axvline(0.5, color='#27ae60', linewidth=1.5, linestyle='--', alpha=0.6, label='Forte (ρ ≥ 0,50)')
+    ax.axvline(0.3, color='#f39c12', linewidth=1.5, linestyle='--', alpha=0.6, label='Moderada (ρ ≥ 0,30)')
+    ax.set_xlim(0, 1.15)
+    ax.xaxis.set_major_formatter(virgula)
+    ax.set_xlabel(f'Correlação de Spearman (ρ) entre nível induzido e autorrelato ({instrumento})', fontsize=11)
+    # Legenda abaixo do eixo, para não sobrepor as barras mais longas.
+    ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.18), ncol=2, fontsize=9, frameon=False)
+    ax.invert_yaxis(); ax.spines['top'].set_visible(False); ax.spines['right'].set_visible(False)
+    plt.tight_layout(pad=0.3)
+    plt.savefig(f'{OUTDIR}/fig4_manipulacao{sufixo}.png', dpi=150, bbox_inches='tight', pad_inches=0.15)
+    plt.close()
 
-fig, ax = plt.subplots(figsize=(8, 4.3))
-bars = ax.barh(nomes_curtos, rhos_m, color=['#27ae60' if r >= 0.5 else '#f39c12' for r in rhos_m], alpha=0.85, height=0.55)
-for bar, r in zip(bars, rhos_m):
-    ax.text(r + 0.01, bar.get_y() + bar.get_height()/2,
-            f'ρ={r:.3f}', va='center', ha='left', fontsize=10, fontweight='bold')
-ax.axvline(0.5, color='#27ae60', linewidth=1.5, linestyle='--', alpha=0.6, label='Forte (ρ≥0,50)')
-ax.axvline(0.3, color='#f39c12', linewidth=1.5, linestyle='--', alpha=0.6, label='Moderada (ρ≥0,30)')
-ax.set_xlim(0, 1.15)
-ax.set_xlabel('ρ — nível induzido × BFI-10 autorrelatado', fontsize=11)
-ax.set_title('Checagem de Manipulação — llama3.1:8b (N=300)\nO modelo incorporou a personalidade do prompt?', fontsize=12, fontweight='bold', color='#1F3864')
-# Legenda fora da área de barras (dentro do plot ela sobrepunha o rótulo de
-# Abertura à Experiência, cuja barra é a mais longa) -- mesmo padrão usado
-# em fig8/fig9 (legenda abaixo do eixo).
-ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.18), ncol=2, fontsize=9, frameon=False)
-ax.invert_yaxis(); ax.spines['top'].set_visible(False); ax.spines['right'].set_visible(False)
-plt.tight_layout(pad=0.3)
-plt.savefig(f'{OUTDIR}/fig4_manipulacao.png', dpi=150, bbox_inches='tight', pad_inches=0.15)
-plt.close()
-print('fig4 ok')
+
+for dados, sufixo, instrumento in VERSOES:
+    gerar_fig1(dados, sufixo)
+    gerar_boxplots(dados, sufixo)
+    gerar_fig3(dados, sufixo)
+    gerar_fig4(dados, sufixo, instrumento)
+print('fig1-fig4 ok (Experimento A e estudo piloto)')
 
 
 # ── Fig 5, 6, 7: ATENÇÃO -- têm ρ HARDCODED como texto (não recalculado a

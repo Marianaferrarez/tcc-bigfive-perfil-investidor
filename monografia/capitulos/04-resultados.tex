@@ -4,9 +4,10 @@
 \chapter{Resultados}
 \label{cap:resultados}
 
-Este capítulo reporta os resultados de três datasets principais, todos
-gerados com o modelo \texttt{llama3.1:8b} (seção \ref{sec:selecao-modelo}),
-N=300 cada, seguidos das rodadas da análise de robustez e generalização.
+Este capítulo reporta os resultados de três conjuntos de dados (estudo
+piloto, Experimento A e Experimento B), todos gerados com o modelo
+\texttt{llama3.1:8b} (seção \ref{sec:selecao-modelo}), com 300 agentes
+cada, seguidos das rodadas da análise de robustez e generalização.
 Antes deles, a seção \ref{sec:resultados-sorteio} verifica se o sorteio
 dos perfis de personalidade ficou equilibrado e independente entre os
 traços, condição para que os resultados seguintes possam ser atribuídos a
@@ -14,19 +15,17 @@ cada traço. A seção \ref{sec:resultados-piloto} reporta o \textbf{estudo pilo
 (instrumento BFI-10), etapa inicial que motivou a escolha do modelo e
 produziu o primeiro indício do achado central deste trabalho. A seção
 \ref{sec:resultados-exp-a} reporta o \textbf{Experimento A}, instrumento
-BFI-44, desenho de indução simultânea dos 5 traços. Esta é a
-\textbf{análise principal} deste TCC, à qual as demais seções deste
-trabalho se referem por padrão quando mencionam "os resultados" sem
-qualificação adicional. A seção \ref{sec:resultados-exp-b} reporta o
-\textbf{Experimento B}, mesmo instrumento e modelo do Experimento A, mas
-com apenas 1 traço variando por agente: um teste de robustez
-metodológica, não uma segunda análise principal. A seção
-\ref{sec:resultados-robustez} reporta a análise de robustez e
+BFI-44, desenho de indução simultânea dos cinco traços. Esta é a
+\textbf{análise principal} do trabalho; salvo indicação em contrário,
+``os resultados'' referem-se a ela. A seção \ref{sec:resultados-exp-b}
+reporta o \textbf{Experimento B}, mesmo instrumento e modelo do
+Experimento A, mas com apenas um traço variando por agente: uma
+verificação do desenho de indução, não uma segunda análise principal. A
+seção \ref{sec:resultados-robustez} reporta a análise de robustez e
 generalização (outras temperaturas, novo sorteio de perfis e outros
-modelos de linguagem), e a seção
-\ref{sec:comparacao-modelos-resultados} remete à comparação entre os 4
-modelos de linguagem testados na seleção do modelo, já detalhada no
-Capítulo \ref{cap:metodologia}. Nenhuma seção deste capítulo discute o alinhamento
+modelos de linguagem). A comparação entre os quatro modelos de linguagem
+testados na seleção do modelo, feita com o BFI-10, está no Capítulo
+\ref{cap:metodologia} (seção \ref{sec:selecao-modelo}). Nenhuma seção deste capítulo discute o alinhamento
 dos achados com a literatura de referência; essa discussão fica para o
 Capítulo \ref{cap:discussao}.
 
@@ -38,16 +37,16 @@ Como os níveis de personalidade de cada agente foram definidos por sorteio
 equilibrado entre os níveis e independente entre os traços. Um sorteio
 concentrado em alguns níveis, ou com traços correlacionados entre si,
 poderia fazer o efeito de um traço ser atribuído a outro. O estudo piloto e
-o Experimento A usaram exatamente o mesmo sorteio (\textit{seed} 123), de
-modo que as verificações abaixo valem para os dois.
+o Experimento A usaram exatamente o mesmo sorteio (semente 123), de
+modo que as verificações a seguir valem para os dois.
 
 \subsection{Equilíbrio entre os níveis}
 
-Em cada um dos 5 traços, cada nível recebeu entre \aleatContagemMin{} e
+Em cada um dos cinco traços, cada nível recebeu entre \aleatContagemMin{} e
 \aleatContagemMax{} dos \aleatN{} agentes, sem desvio significativo da
 distribuição uniforme em nenhum traço (p $\geq$ \aleatPFreqMin; Tabela
 \ref{tab:aleat-frequencias} e Figura \ref{fig:aleat-niveis}). A soma dos 5
-níveis por agente teve média \aleatSomaMedia{} e desvio-padrão
+níveis por agente teve média \aleatSomaMedia{} e desvio padrão
 \aleatSomaDP, próximos dos valores esperados para um sorteio uniforme (10
 e 1,83). A distribuição também se manteve estável ao longo da geração: os
 primeiros e os últimos 150 agentes não diferem em nenhum traço (p entre
@@ -59,7 +58,7 @@ primeiros e os últimos 150 agentes não diferem em nenhum traço (p entre
     \caption{Número de agentes por nível induzido em cada traço (Experimento A)}
     \label{fig:aleat-niveis}
     \centering
-    \includegraphics[width=0.85\textwidth]{../resultados/figuras/fig10_aleatorizacao_niveis.png}
+    \includegraphics[width=\textwidth]{../resultados/figuras/fig10_aleatorizacao_niveis.png}
     \legend{Fonte: dados da pesquisa. Linha tracejada: contagem esperada em um sorteio uniforme.}
 \end{figure}
 
@@ -68,7 +67,7 @@ primeiros e os últimos 150 agentes não diferem em nenhum traço (p entre
 Nenhum par de traços apresentou associação significativa entre os níveis
 sorteados ($|\rho| \leq$ \aleatRhoMax, p $\geq$ \aleatPRhoMin; V de Cramér
 $\leq$ \aleatCramerMax; Tabela \ref{tab:aleat-independencia}). Na regressão
-OLS com os 5 traços, o fator de inflação da variância ficou entre
+OLS com os cinco traços, o fator de inflação da variância ficou entre
 \aleatVIFMin{} e \aleatVIFMax, ou seja, sem multicolinearidade entre os
 preditores.
 
@@ -91,7 +90,7 @@ propriedade esperada do desenho por sorteio, e não uma falha dele.
 Se o sorteio tivesse produzido traços correlacionados, o coeficiente de um
 traço mudaria ao incluir os demais no modelo. A Tabela
 \ref{tab:aleat-impacto} mostra que isso não ocorre: os coeficientes da
-regressão simples e da OLS com os 5 traços são muito próximos (Abertura à
+regressão simples e da OLS com os cinco traços são muito próximos (Abertura à
 Experiência: \aleatAberturaCoefSimples{} e \aleatAberturaCoefMulti), e os
 traços significativos são os mesmos nos dois modelos.
 
@@ -103,9 +102,9 @@ No Experimento B, o traço dominante foi distribuído de forma equilibrada
 entre os agentes ($\chi^2$ = \aleatDominanteChi, p = \aleatDominanteP;
 Tabela \ref{tab:aleat-exp-b}). O único desequilíbrio está nos níveis de
 Neuroticismo quando dominante (p = \aleatNeuroBP), que deixa de ser
-significativo após a correção de Bonferroni para os 5 testes (limite de
-0,01). Esse desequilíbrio reduz um pouco o poder do teste de Neuroticismo
-isolado, mas não altera a direção do efeito estimado.
+significativo após a correção de Bonferroni para os cinco testes (limite
+de 0,01). Esse desequilíbrio pode reduzir ligeiramente o poder do teste
+de Neuroticismo isolado.
 
 \input{../resultados/tabelas/aleatorizacao_exp_b}
 
@@ -137,7 +136,7 @@ autorrelato do agente no BFI-10, por traço.
         Extroversão             & 0,410 & $<$ 0,001 & Moderada \\
         \bottomrule
     \end{tabular}
-    \legend{Fonte: dados da pesquisa.}
+    \legend{Fonte: dados da pesquisa. Avaliação: forte para $\rho \geq 0{,}50$; moderada para $0{,}30 \leq \rho < 0{,}50$.}
 \end{table}
 
 \begin{figure}[htb]
@@ -148,11 +147,10 @@ autorrelato do agente no BFI-10, por traço.
     \legend{Fonte: dados da pesquisa.}
 \end{figure}
 
-Todos os 5 traços foram incorporados de forma estatisticamente
+Todos os cinco traços foram incorporados de forma estatisticamente
 significativa; Extroversão foi a mais fraca (ainda assim moderada),
-padrão associado ao viés de discordância em itens de pontuação invertida
-(seção \ref{sec:limitacoes-pipeline}), atenuado no BFI-44 por ter mais
-itens por traço (seção \ref{sec:exp-a-b}).
+padrão compatível com o viés de discordância em itens de pontuação
+reversa descrito na seção \ref{sec:limitacoes-pipeline}.
 
 A Tabela \ref{tab:distribuicao-ipa-piloto} mostra a distribuição do
 perfil de investidor obtido, e a Tabela \ref{tab:spearman-ipa-piloto}
@@ -186,8 +184,8 @@ correlação entre nível induzido e escore do IPA, por traço.
         Abertura à Experiência & 0,326 & $<$ 0,001 \\
         Extroversão            & 0,221 & $<$ 0,001 \\
         Amabilidade             & 0,083 & 0,152 \\
-        Consciência            & 0,013 & 0,821 \\
         Neuroticismo           & 0,044 & 0,449 \\
+        Consciência            & 0,013 & 0,821 \\
         \bottomrule
     \end{tabular}
     \legend{Fonte: dados da pesquisa.}
@@ -205,13 +203,13 @@ correlação entre nível induzido e escore do IPA, por traço.
     \caption{Estudo piloto: distribuição do escore IPA por nível induzido (\textit{boxplots})}
     \label{fig:boxplots-piloto}
     \centering
-    \includegraphics[width=0.8\textwidth]{../resultados/figuras/fig2_boxplots_piloto.png}
+    \includegraphics[width=\textwidth]{../resultados/figuras/fig2_boxplots_piloto.png}
     \legend{Fonte: dados da pesquisa.}
 \end{figure}
 
-Na regressão OLS com os 5 traços simultâneos (Tabela
+Na regressão OLS com os cinco traços simultâneos (Tabela
 \ref{tab:ols-piloto}, Figura \ref{fig:ols-piloto}), o modelo geral obteve
-R² = 0,169; F(5, 294) = 11,96; p $<$ 0,001. Apenas Abertura à
+$R^2=0{,}169$; $F(5, 294)=11{,}96$; $p<0{,}001$. Apenas Abertura à
 Experiência e Extroversão apresentaram coeficiente estatisticamente
 significativo.
 
@@ -226,8 +224,8 @@ significativo.
         Abertura à Experiência & 1,117 & $<$ 0,001 \\
         Extroversão            & 0,717 & $<$ 0,001 \\
         Amabilidade             & 0,261 & 0,145 \\
-        Consciência            & 0,069 & 0,705 \\
         Neuroticismo           & 0,179 & 0,335 \\
+        Consciência            & 0,069 & 0,705 \\
         \bottomrule
     \end{tabular}
     \legend{Fonte: dados da pesquisa.}
@@ -257,7 +255,7 @@ nível de personalidade induzido (1/2/3) e o escore de autorrelato do
 agente no BFI-44, por traço.
 
 \begin{table}[htb]
-    \caption{Correlação entre nível induzido e autorrelato de personalidade (N=300)}
+    \caption{Experimento A: correlação entre nível induzido e autorrelato de personalidade (N=300)}
     \label{tab:manipulacao}
     \centering
     \begin{tabular}{lccc}
@@ -275,25 +273,24 @@ agente no BFI-44, por traço.
 \end{table}
 
 \begin{figure}[htb]
-    \caption{Checagem de manipulação por traço}
+    \caption{Experimento A: checagem de manipulação por traço}
     \label{fig:manipulacao}
     \centering
     \includegraphics[width=0.8\textwidth]{../resultados/figuras/fig4_manipulacao.png}
     \legend{Fonte: dados da pesquisa.}
 \end{figure}
 
-Todos os 5 traços foram incorporados de forma forte e estatisticamente
-significativa (0,813 a 0,929), uma faixa mais alta e mais uniforme do
-que no estudo piloto com BFI-10 (0,410 a 0,838, Tabela
-\ref{tab:manipulacao-piloto}), consistente com a expectativa de que um
-instrumento de autorrelato com mais itens por traço produz uma checagem
-de manipulação menos sensível ao ruído de um item isolado (seção
-\ref{sec:exp-a-b}).
+Todos os cinco traços foram incorporados de forma forte e
+estatisticamente significativa ($\rho$ de 0,813 a 0,929; Tabela
+\ref{tab:manipulacao} e Figura \ref{fig:manipulacao}), uma faixa mais
+alta e mais uniforme do que no estudo piloto com BFI-10 (0,410 a 0,838,
+Tabela \ref{tab:manipulacao-piloto}).
 
 \subsection{Correlação entre os traços autorrelatados}
 \label{sec:resultados-intercorrelacao}
 
-O modelo produziu pouca correlação entre os traços autorrelatados. A
+O \texttt{llama3.1:8b} produziu pouca correlação entre os traços
+autorrelatados. A
 correlação média, em módulo, entre os escores de autorrelato dos 10 pares
 de traços foi de 0,110; a maior foi entre Extroversão e Amabilidade
 ($\rho$ = 0,281), e 4 dos 10 pares tiveram correlação significativa. Como
@@ -306,15 +303,18 @@ outro foi de 0,231 (Amabilidade induzida e Consciência autorrelatada).
 Abertura à Experiência foi o traço menos afetado pelos demais: nenhum
 outro nível induzido teve correlação significativa com a Abertura
 autorrelatada (a maior foi 0,107, com Extroversão; p = 0,063), e incluir
-os outros quatro níveis induzidos acrescenta apenas 0,011 ao R² do
+os outros quatro níveis induzidos acrescenta apenas 0,011 ao $R^2$ do
 autorrelato de Abertura explicado pelo seu próprio nível. Esse resultado
-indica que o efeito de Abertura à Experiência sobre o IPA, reportado a
-seguir, não é um reflexo da indução de outro traço.
+é compatível com um efeito de Abertura à Experiência sobre o IPA,
+reportado a seguir, que não decorre da indução de outro traço.
 
 \subsection{Distribuição do perfil de investidor (IPA)}
 
+A Tabela \ref{tab:distribuicao-ipa} mostra a distribuição do perfil de
+investidor obtido no Experimento A.
+
 \begin{table}[htb]
-    \caption{Distribuição do perfil IPA (N=300)}
+    \caption{Experimento A: distribuição do perfil IPA (N=300)}
     \label{tab:distribuicao-ipa}
     \centering
     \begin{tabular}{lcc}
@@ -329,10 +329,14 @@ seguir, não é um reflexo da indução de outro traço.
     \legend{Fonte: dados da pesquisa. Escore IPA (Q2--Q8): média = 17,58; desvio padrão = 2,72.}
 \end{table}
 
-\subsection{Correlação de Spearman: nível induzido x escore IPA}
+\subsection{Correlação de Spearman: nível induzido \texorpdfstring{$\times$}{x} escore IPA}
+
+A Tabela \ref{tab:spearman-ipa} e as Figuras \ref{fig:spearman} e
+\ref{fig:boxplots} apresentam a correlação entre o nível induzido e o
+escore do IPA, por traço.
 
 \begin{table}[htb]
-    \caption{Correlação de Spearman entre nível induzido e escore IPA (N=300)}
+    \caption{Experimento A: correlação de Spearman entre nível induzido e escore IPA (N=300)}
     \label{tab:spearman-ipa}
     \centering
     \begin{tabular}{lcc}
@@ -350,7 +354,7 @@ seguir, não é um reflexo da indução de outro traço.
 \end{table}
 
 \begin{figure}[htb]
-    \caption{Correlação de Spearman entre nível induzido e escore IPA}
+    \caption{Experimento A: correlação de Spearman entre nível induzido e escore IPA}
     \label{fig:spearman}
     \centering
     \includegraphics[width=0.8\textwidth]{../resultados/figuras/fig1_spearman.png}
@@ -358,19 +362,20 @@ seguir, não é um reflexo da indução de outro traço.
 \end{figure}
 
 \begin{figure}[htb]
-    \caption{Distribuição do escore IPA por nível induzido (\textit{boxplots})}
+    \caption{Experimento A: distribuição do escore IPA por nível induzido (\textit{boxplots})}
     \label{fig:boxplots}
     \centering
-    \includegraphics[width=0.8\textwidth]{../resultados/figuras/fig2_boxplots.png}
+    \includegraphics[width=\textwidth]{../resultados/figuras/fig2_boxplots.png}
     \legend{Fonte: dados da pesquisa.}
 \end{figure}
 
-\subsection{Regressão OLS com os 5 traços simultâneos}
+\subsection{Regressão OLS com os cinco traços simultâneos}
 
-Modelo geral: R² = 0,459; F(5, 294) = 49,85; p $<$ 0,001.
+Os resultados da regressão estão na Tabela \ref{tab:ols} e na Figura
+\ref{fig:ols}. Modelo geral: $R^2=0{,}459$; $F(5, 294)=49{,}85$; $p<0{,}001$.
 
 \begin{table}[htb]
-    \caption{Regressão OLS, variável dependente: escore IPA (Q2--Q8)}
+    \caption{Experimento A: regressão OLS, variável dependente: escore IPA (Q2--Q8)}
     \label{tab:ols}
     \centering
     \begin{tabular}{lcc}
@@ -388,45 +393,44 @@ Modelo geral: R² = 0,459; F(5, 294) = 49,85; p $<$ 0,001.
 \end{table}
 
 \begin{figure}[htb]
-    \caption{Coeficientes da regressão OLS por traço}
+    \caption{Experimento A: coeficientes da regressão OLS por traço}
     \label{fig:ols}
     \centering
     \includegraphics[width=0.8\textwidth]{../resultados/figuras/fig3_ols.png}
     \legend{Fonte: dados da pesquisa.}
 \end{figure}
 
-Controlando pelos demais 4 traços, cada passo de nível (Baixo→Médio ou
-Médio→Alto) em Abertura à Experiência corresponde, em média, a um
-acréscimo de 1,72 pontos no escore IPA, o maior coeficiente entre os 5
-traços, e também o mais preciso (p $<$ 0,001). Extroversão, Consciência e
+Controlando o efeito dos outros quatro traços, cada passo de nível (de
+Baixo para Médio ou de Médio para Alto) em Abertura à Experiência
+corresponde, em média, a um acréscimo de 1,716 ponto no escore IPA, o
+maior coeficiente entre os cinco traços. Extroversão, Consciência e
 Neuroticismo têm coeficientes positivos e estatisticamente significativos
-(1,19, 0,75 e 0,41 pontos por passo de nível, respectivamente), enquanto
-Amabilidade não apresenta efeito distinguível de zero (coeficiente
-0,09, p=0,511). O modelo como um todo explica 45,9\% da variância do
-escore IPA, quase o triplo do R² obtido no estudo piloto com BFI-10
+(1,189, 0,750 e 0,407 ponto por passo de nível, respectivamente),
+enquanto Amabilidade não apresenta efeito distinguível de zero
+(coeficiente de 0,094; $p=0{,}511$). O modelo como um todo explica 45,9\% da variância do
+escore IPA, quase o triplo do $R^2$ obtido no estudo piloto com BFI-10
 (16,9\%, Tabela \ref{tab:ols-piloto}). Quatro dos cinco traços atingem
 significância estatística nesta análise, contra dois no estudo piloto; a
-seção seguinte (Experimento B) reporta um teste de robustez sobre até que
-ponto esses quatro efeitos dependem do desenho de indução simultânea.
+seção seguinte (Experimento B) verifica até que ponto esses quatro
+efeitos dependem do desenho de indução simultânea.
 
 \section{Experimento B: traço dominante}
 \label{sec:resultados-exp-b}
 
-O Experimento B foi conduzido para responder a uma pergunta específica:
-induzir os 5 traços do Big Five ao mesmo tempo no mesmo agente, o
-desenho do Experimento A, poderia estar diluindo ou confundindo o
-sinal de cada traço individual, em comparação a induzir apenas 1 traço
-por vez? Para testar isso de forma controlada, o Experimento B usa o
-mesmo modelo e instrumento do Experimento A, mudando apenas o desenho de
-indução: cada agente tem apenas 1 dos 5 traços sorteado para variar (o
-"traço dominante"), com os outros 4 fixos em "Médio" (seção
-\ref{sec:exp-a-b} descreve o raciocínio metodológico completo; a
-interpretação dos números abaixo está no Capítulo \ref{cap:discussao},
-seção \ref{sec:discussao-exp-b}). A Tabela \ref{tab:manipulacao-exp-b} reporta a
-checagem de manipulação, calculada apenas entre os agentes em que aquele
-traço era o dominante (por isso o N varia por linha, já que a distribuição do
-sorteio do traço dominante não é perfeitamente uniforme entre os 300
-agentes), lado a lado com o valor correspondente do Experimento A.
+O Experimento B foi conduzido para verificar se induzir os cinco traços
+do Big Five ao mesmo tempo no mesmo agente, como no Experimento A, dilui
+ou confunde o sinal de cada traço individual, em comparação com a
+indução de apenas um traço por vez. Para testar isso de forma
+controlada, o Experimento B usa o mesmo modelo e instrumento do
+Experimento A, mudando apenas o desenho de indução: cada agente tem
+apenas um dos cinco traços sorteado para variar (o ``traço dominante''),
+com os outros quatro fixos em ``Médio'' (a seção \ref{sec:exp-a-b}
+descreve o raciocínio metodológico completo; a interpretação dos números
+a seguir está no Capítulo \ref{cap:discussao}, seção
+\ref{sec:discussao-exp-b}). A Tabela \ref{tab:manipulacao-exp-b} reporta
+a checagem de manipulação, calculada apenas entre os agentes em que
+aquele traço era o dominante (por isso o N varia por linha, de 49 a 69),
+lado a lado com o valor correspondente do Experimento A.
 
 \begin{table}[htb]
     \caption{Checagem de manipulação: Experimento A (todos os traços variando) vs. Experimento B (só o traço dominante variando)}
@@ -443,7 +447,7 @@ agentes), lado a lado com o valor correspondente do Experimento A.
         Amabilidade              & 0,813 & 0,837 & 62 & $<$ 0,001 \\
         \bottomrule
     \end{tabular}
-    \legend{Fonte: dados da pesquisa. Coluna "Exp. B" calculada apenas entre os agentes em que o traço da linha era o traço dominante sorteado.}
+    \legend{Fonte: dados da pesquisa. Coluna ``Exp. B'' calculada apenas entre os agentes em que o traço da linha era o traço dominante sorteado.}
 \end{table}
 
 \begin{figure}[htb]
@@ -454,10 +458,8 @@ agentes), lado a lado com o valor correspondente do Experimento A.
     \legend{Fonte: dados da pesquisa.}
 \end{figure}
 
-Na Figura \ref{fig:exp-ab-manipulacao}, a barra azul (Experimento A) e a
-barra laranja (Experimento B) de cada traço têm comprimento
-praticamente igual, terminando todas na faixa entre 0,8 e 0,95. Não há,
-para nenhum dos 5 traços, uma barra visivelmente mais curta que a outra.
+Na Figura \ref{fig:exp-ab-manipulacao}, os valores dos dois experimentos
+são praticamente iguais em todos os traços, entre 0,8 e 0,95.
 
 A Tabela \ref{tab:ipa-exp-b} reporta a correlação entre nível induzido e
 escore do IPA, na mesma estratificação, lado a lado com o Experimento A.
@@ -477,7 +479,7 @@ escore do IPA, na mesma estratificação, lado a lado com o Experimento A.
         Amabilidade              & 0,051  & $-$0,006 & 62 & 0,966 \\
         \bottomrule
     \end{tabular}
-    \legend{Fonte: dados da pesquisa. Coluna "Exp. B" calculada apenas entre os agentes em que o traço da linha era o traço dominante sorteado.}
+    \legend{Fonte: dados da pesquisa. Coluna ``Exp. B'' calculada apenas entre os agentes em que o traço da linha era o traço dominante sorteado.}
 \end{table}
 
 \begin{figure}[htb]
@@ -489,20 +491,17 @@ escore do IPA, na mesma estratificação, lado a lado com o Experimento A.
 \end{figure}
 
 Ao contrário da Figura \ref{fig:exp-ab-manipulacao}, na Figura
-\ref{fig:exp-ab-ipa} as barras pareadas \textbf{não} têm tamanho
-parecido em todos os traços: em Abertura à Experiência, a barra laranja
-(Experimento B) é visivelmente maior que a azul (Experimento A); nos
-outros quatro traços, a barra laranja é menor que a azul, e em
-Neuroticismo e Amabilidade a barra laranja cruza para o lado esquerdo do
-zero (correlação negativa), enquanto a azul permanece do lado direito
-(positiva).
+\ref{fig:exp-ab-ipa} os valores dos dois experimentos não são
+parecidos em todos os traços: em Abertura à Experiência, a correlação é
+maior no Experimento B; nos outros quatro traços, é menor no Experimento
+B, e em Neuroticismo e Amabilidade passa a ser negativa.
 
 A checagem de manipulação (Tabela \ref{tab:manipulacao-exp-b}) é
-comparável entre os dois desenhos em todos os 5 traços, sem nenhuma
-diferença grande na direção de um desenho "confundir" o outro. Já a
-correlação com o escore IPA (Tabela \ref{tab:ipa-exp-b}) mostra um padrão
-diferente por traço: Abertura à Experiência permanece significativa e
-com coeficiente mais alto no Experimento B (0,792 contra 0,530); os
+comparável entre os dois desenhos em todos os cinco traços, sem indício
+de que a indução simultânea enfraqueça a manipulação. Já a correlação
+com o escore IPA (Tabela \ref{tab:ipa-exp-b}) mostra um padrão diferente
+por traço: Abertura à Experiência permanece significativa e com
+correlação mais alta no Experimento B ($\rho=0{,}792$ contra 0,530); os
 outros quatro traços não atingem significância estatística no
 Experimento B, com Neuroticismo e Amabilidade invertendo o sinal
 (positivo no Experimento A, negativo no B). A interpretação desse
@@ -517,13 +516,13 @@ Esta seção reporta as repetições do Experimento A descritas na seção
 \ref{sec:metodo-robustez}. Em todas as tabelas, o escore IPA é o das
 perguntas 2 a 8 e os coeficientes são os da regressão OLS com os cinco
 níveis induzidos, com a mesma notação de significância usada no restante
-do trabalho (* $p<0,05$; ** $p<0,01$; *** $p<0,001$; n.s. para
-$p \geq 0,05$). A faixa de manipulação é o menor e o maior $\rho$ entre
+do trabalho (* $p<0{,}05$; ** $p<0{,}01$; *** $p<0{,}001$; n.s. para
+$p \geq 0{,}05$). A faixa de manipulação é o menor e o maior $\rho$ entre
 nível induzido e autorrelato (BFI-44) entre os cinco traços.
 
 \subsection{Sensibilidade à temperatura}
 
-As três novas rodadas chegaram a 300 agentes cada, com BFI-44 válido em
+As três novas rodadas foram concluídas com 300 agentes cada, com BFI-44 válido em
 todos e IPA válido em 299 (temperaturas 0,0 e 0,3) e 300 (temperatura
 1,0) agentes. A Tabela \ref{tab:robustez-temperatura} compara as quatro
 temperaturas.
@@ -532,15 +531,16 @@ temperaturas.
     \caption{Experimento A em quatro temperaturas (\texttt{llama3.1:8b}, N=300, mesmos perfis)}
     \label{tab:robustez-temperatura}
     \centering
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{lcccc}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \begin{tabular}{>{\raggedright\arraybackslash}p{3.4cm}cccc}
         \toprule
         Indicador & 0,0 & 0,3 & 0,7 (Exp. A) & 1,0 \\
         \midrule
         Perfis IPA: Conservador / Moderado / Arrojado (\%) & 2,0 / 86,6 / 11,4 & 3,7 / 84,9 / 11,4 & 3,7 / 82,3 / 14,0 & 4,0 / 81,0 / 15,0 \\
         Escore IPA: média (desvio padrão) & 17,05 (2,41) & 17,09 (2,47) & 17,58 (2,72) & 17,67 (2,77) \\
         Manipulação: faixa de $\rho$ & 0,873 a 0,946 & 0,859 a 0,938 & 0,813 a 0,929 & 0,809 a 0,920 \\
-        R² da regressão OLS & 0,707 & 0,643 & 0,459 & 0,449 \\
+        $R^2$ da regressão OLS & 0,707 & 0,643 & 0,459 & 0,449 \\
         \midrule
         Coef. Abertura à Experiência & 1,767*** & 1,932*** & 1,716*** & 1,686*** \\
         Coef. Extroversão & 1,595*** & 1,273*** & 1,189*** & 1,253*** \\
@@ -548,17 +548,15 @@ temperaturas.
         Coef. Neuroticismo & 0,419*** & 0,278* & 0,407** & 0,744*** \\
         Coef. Amabilidade & 0,359*** & 0,344** & 0,094 n.s. & 0,246 n.s. \\
         \bottomrule
-    \end{tabular}%
-    }
+    \end{tabular}
     \legend{Fonte: dados da pesquisa.}
 \end{table}
 
 Abertura à Experiência teve o maior coeficiente nas quatro temperaturas
-(de 1,686 a 1,932), sempre com $p<0,001$, e Extroversão o segundo maior
-(de 1,189 a 1,595), também sempre com $p<0,001$. A temperatura altera
-sobretudo o ruído: abaixo de 0,7, a manipulação fica mais fiel e o R²
-sobe (0,643 em 0,3 e 0,707 em 0,0), enquanto em 1,0 o resultado fica
-próximo do obtido em 0,7 (R² = 0,449). Os três traços de efeito menor
+(de 1,686 a 1,932), sempre com $p<0{,}001$, e Extroversão o segundo maior
+(de 1,189 a 1,595), também sempre com $p<0{,}001$. Abaixo de 0,7, a
+manipulação fica mais fiel e o $R^2$ sobe (0,643 em 0,3 e 0,707 em 0,0), enquanto em 1,0 o resultado fica
+próximo do obtido em 0,7 ($R^2=0{,}449$). Os três traços de efeito menor
 oscilam entre temperaturas: o coeficiente de Consciência vai de 0,301
 (1,0) a 0,750 (0,7), o de Neuroticismo vai de 0,278 (0,3) a 0,744 (1,0),
 e Amabilidade só é significativa em 0,0 e 0,3.
@@ -612,7 +610,7 @@ compara os dois sorteios.
         Perfis IPA: C / M / A (\%) & 3,7 / 82,3 / 14,0 & 6,7 / 80,2 / 13,1 \\
         Escore IPA: média (desvio padrão) & 17,58 (2,72) & 17,50 (2,77) \\
         Manipulação: faixa de $\rho$ & 0,813 a 0,929 & 0,823 a 0,928 \\
-        R² da regressão OLS & 0,459 & 0,526 \\
+        $R^2$ da regressão OLS & 0,459 & 0,526 \\
         \midrule
         Coef. Abertura à Experiência & 1,716*** & 2,106*** \\
         Coef. Extroversão & 1,189*** & 1,293*** \\
@@ -632,7 +630,7 @@ efeito.
 
 \subsection{Outros modelos de linguagem}
 
-As rodadas com os três modelos abertos chegaram a 300 agentes cada, com
+As rodadas com os três modelos abertos foram concluídas com 300 agentes cada, com
 os mesmos perfis do Experimento A. A taxa de respostas válidas variou
 entre os modelos: o \texttt{gemma3:12b} teve BFI-44 e IPA válidos nos 300
 agentes; o \texttt{mistral:7b}, BFI-44 válido em 294 e IPA em 300; e o
@@ -644,8 +642,9 @@ válidos. A Tabela \ref{tab:robustez-modelos} reporta os resultados.
     \caption{Experimento A em quatro modelos abertos (temperatura 0,7, mesmos perfis)}
     \label{tab:robustez-modelos}
     \centering
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{lcccc}
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \begin{tabular}{>{\raggedright\arraybackslash}p{3.3cm}>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{2.5cm}}
         \toprule
         Indicador & \texttt{llama3.1:8b} (Exp. A) & \texttt{qwen2.5:7b} & \texttt{mistral:7b} & \texttt{gemma3:12b} \\
         \midrule
@@ -653,7 +652,7 @@ válidos. A Tabela \ref{tab:robustez-modelos} reporta os resultados.
         Perfis IPA: C / M / A (\%) & 3,7 / 82,3 / 14,0 & 4,5 / 51,0 / 44,5 & 0,0 / 8,5 / 91,5 & 24,0 / 59,3 / 16,7 \\
         Escore IPA: média (desvio padrão) & 17,58 (2,72) & 19,48 (4,34) & 22,86 (1,11) & 15,77 (3,89) \\
         Manipulação: faixa de $\rho$ & 0,813 a 0,929 & 0,846 a 0,914 & 0,872 a 0,939 & 0,943 a 0,957 \\
-        R² da regressão OLS & 0,459 & 0,796 & 0,383 & 0,648 \\
+        $R^2$ da regressão OLS & 0,459 & 0,796 & 0,383 & 0,648 \\
         \midrule
         Coef. Abertura à Experiência & 1,716*** & 4,643*** & 0,632*** & 2,622*** \\
         Coef. Extroversão & 1,189*** & 1,551*** & 0,391*** & 2,697*** \\
@@ -661,8 +660,7 @@ válidos. A Tabela \ref{tab:robustez-modelos} reporta os resultados.
         Coef. Neuroticismo & 0,407** & 0,322* & 0,285*** & $-$0,125 n.s. \\
         Coef. Amabilidade & 0,094 n.s. & $-$0,317* & $-$0,287*** & $-$0,193 n.s. \\
         \bottomrule
-    \end{tabular}%
-    }
+    \end{tabular}
     \legend{Fonte: dados da pesquisa. C = Conservador; M = Moderado; A = Arrojado.}
 \end{table}
 
@@ -671,7 +669,7 @@ modelos adicionais, o menor $\rho$ de manipulação entre os cinco traços
 (0,846 a 0,943) ficou acima do menor $\rho$ do \texttt{llama3.1:8b}
 (0,813). Abertura à
 Experiência e Extroversão elevam o escore IPA nos quatro, sempre com
-$p<0,001$, embora o tamanho do efeito varie bastante: no
+$p<0{,}001$, embora o tamanho do efeito varie bastante: no
 \texttt{qwen2.5:7b}, o coeficiente de Abertura é cerca de 2,7 vezes o do
 \texttt{llama3.1:8b} (4,643 contra 1,716), e no \texttt{mistral:7b} é bem
 menor (0,632). Os outros três traços não se repetem: Consciência é
@@ -681,7 +679,7 @@ positivo em três modelos e nulo no \texttt{gemma3:12b}; e Amabilidade,
 nula no \texttt{llama3.1:8b}, é negativa e significativa no
 \texttt{qwen2.5:7b} e no \texttt{mistral:7b}.
 
-O perfil médio de investidor, por sua vez, depende fortemente do modelo.
+A distribuição dos perfis de investidor, por sua vez, depende fortemente do modelo.
 O \texttt{mistral:7b} classificou 91,5\% dos agentes como Arrojado, com
 escore pouco variável (desvio padrão de 1,11), enquanto o
 \texttt{llama3.1:8b} classificou 82,3\% como Moderado e o
@@ -707,7 +705,7 @@ agentes, conforme o modelo.
     \legend{Fonte: dados da pesquisa. Pares: agentes com IPA válido nas duas rodadas.}
 \end{table}
 
-Os dois modelos Nemotron, rodados como piloto exploratório com N=30
+Os dois modelos Nemotron, rodados como teste exploratório com N=30
 (Tabela \ref{tab:robustez-nemotron}), tiveram BFI-44 e IPA válidos nos 30
 agentes. Eles seguiram a indução com fidelidade ainda maior (faixa de
 manipulação de 0,918 a 0,990) e responderam ao IPA de forma muito mais
@@ -720,39 +718,38 @@ negativo ($-$3,356), o que não ocorre no \texttt{llama3.1:8b}. Com N=30,
 esses resultados indicam apenas a direção dos efeitos, não seu tamanho.
 
 \begin{table}[htb]
-    \caption{Piloto com os modelos Nemotron (N=30, mesmos perfis dos 30 primeiros agentes do Experimento A)}
+    \caption{Teste exploratório com os modelos Nemotron (N=30, mesmos perfis dos 30 primeiros agentes do Experimento A)}
     \label{tab:robustez-nemotron}
     \centering
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}{lccc}
+    \footnotesize
+    \begin{tabular}{>{\raggedright\arraybackslash}p{4.2cm}>{\centering\arraybackslash}p{3.0cm}>{\centering\arraybackslash}p{3.0cm}>{\centering\arraybackslash}p{3.0cm}}
         \toprule
         Indicador & \texttt{llama3.1:8b} (30 primeiros, Exp. A) & Nemotron 3.5 Super & Nemotron 3 Ultra \\
         \midrule
         Perfis IPA: C / M / A (\%) & 3,3 / 83,3 / 13,3 & 56,7 / 13,3 / 30,0 & 40,0 / 20,0 / 40,0 \\
         Escore IPA: média (desvio padrão) & 18,00 (2,67) & 15,07 (7,71) & 16,83 (7,27) \\
         Manipulação: faixa de $\rho$ & 0,776 a 0,937 & 0,918 a 0,990 & 0,925 a 0,966 \\
-        R² da regressão OLS & 0,455 & 0,659 & 0,799 \\
+        $R^2$ da regressão OLS & 0,455 & 0,659 & 0,799 \\
         \midrule
         Coef. Abertura à Experiência & 1,637** & 6,096*** & 6,751*** \\
         Coef. Extroversão & 1,322* & 4,035** & 2,060* \\
         Coef. Consciência & 0,106 n.s. & 1,443 n.s. & 1,274 n.s. \\
         Coef. Neuroticismo & $-$0,270 n.s. & $-$0,541 n.s. & $-$1,543 n.s. \\
         Coef. Amabilidade & 0,497 n.s. & $-$0,622 n.s. & $-$3,356** \\
-        Mesmo perfil IPA do \texttt{llama3.1:8b} (\%) & --- & 30,0 & 36,7 \\
+        Mesmo perfil IPA do \texttt{llama3.1:8b} (\%) & -- & 30,0 & 36,7 \\
         \bottomrule
-    \end{tabular}%
-    }
+    \end{tabular}
     \legend{Fonte: dados da pesquisa. C = Conservador; M = Moderado; A = Arrojado.}
 \end{table}
 
 \subsection{Síntese}
 
 A Tabela \ref{tab:robustez-sintese} resume, traço a traço, o sinal e a
-significância do coeficiente OLS nas oito rodadas com N=300: as quatro
+significância do coeficiente OLS nas oito rodadas com 300 agentes gerados: as quatro
 temperaturas, o novo sorteio e os três modelos abertos adicionais.
 
 \begin{table}[htb]
-    \caption{Sinal e significância do coeficiente OLS de cada traço nas oito rodadas com N=300}
+    \caption{Sinal e significância do coeficiente OLS de cada traço nas oito rodadas com 300 agentes gerados}
     \label{tab:robustez-sintese}
     \centering
     \resizebox{\textwidth}{!}{%
@@ -770,24 +767,21 @@ temperaturas, o novo sorteio e os três modelos abertos adicionais.
         \bottomrule
     \end{tabular}%
     }
-    \legend{Fonte: dados da pesquisa (Tabelas \ref{tab:robustez-temperatura}, \ref{tab:robustez-seed} e \ref{tab:robustez-modelos}). A coluna 0,7 corresponde ao Experimento A.}
+    \legend{Fonte: dados da pesquisa (Tabelas \ref{tab:robustez-temperatura}, \ref{tab:robustez-seed} e \ref{tab:robustez-modelos}). A coluna 0,7 corresponde ao Experimento A. Os sinais $+$ e $-$ indicam se o coeficiente OLS é positivo ou negativo; * $p<0{,}05$; ** $p<0{,}01$; *** $p<0{,}001$; n.s.: não significativo ($p\geq0{,}05$).}
 \end{table}
 
+\begin{figure}[htb]
+    \caption{Coeficientes OLS de cada traço nas oito rodadas com 300 agentes gerados}
+    \label{fig:robustez-coeficientes}
+    \centering
+    \includegraphics[width=\textwidth]{../resultados/figuras/fig11_robustez_coeficientes.png}
+    \legend{Fonte: dados da pesquisa (Tabelas \ref{tab:robustez-temperatura}, \ref{tab:robustez-seed} e \ref{tab:robustez-modelos}). As cinco primeiras linhas usam o \texttt{llama3.1:8b}; a linha tracejada separa as rodadas com outros modelos. Círculos preenchidos: $p<0{,}05$.}
+\end{figure}
+
 Abertura à Experiência e Extroversão são positivas e significativas com
-$p<0,001$ nas oito rodadas. Consciência e Neuroticismo são significativos
+$p<0{,}001$ nas oito rodadas (Figura \ref{fig:robustez-coeficientes}). Consciência e Neuroticismo são significativos
 na maior parte das rodadas, mas perdem a significância com o novo sorteio
 e em parte dos modelos, e Consciência chega a inverter o sinal no
 \texttt{qwen2.5:7b}. Amabilidade, sem efeito no Experimento A, aparece
 com sinais opostos em diferentes rodadas. A interpretação desse padrão é
 feita no Capítulo \ref{cap:discussao}.
-
-\section{Comparação entre os modelos de linguagem testados na seleção do modelo}
-\label{sec:comparacao-modelos-resultados}
-
-A comparação entre os 4 modelos de linguagem testados (\texttt{llama3.2:1b},
-\texttt{llama3.2:3b}, \texttt{gemma3:4b} e \texttt{llama3.1:8b}), incluindo
-critérios, tabela completa (Tabela \ref{tab:comparacao-modelos}) e a decisão pelo
-\texttt{llama3.1:8b}, está reportada no Capítulo \ref{cap:metodologia},
-seção \ref{sec:selecao-modelo}, junto com a justificativa metodológica da
-escolha. Essa comparação foi conduzida com o BFI-10 (estudo piloto),
-etapa anterior aos Experimentos A e B.

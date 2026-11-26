@@ -259,7 +259,7 @@ def gerar_latex(R):
         f"Distribuição dos níveis induzidos por traço (Experimento A e piloto, N={n})",
         "lccccc", ["Traço", "Baixo", "Médio", "Alto", "$\\chi^2$", "p-valor"], linhas,
         f"{fonte} Teste qui-quadrado de aderência à distribuição uniforme ({n // 3} agentes por nível), 2 graus de liberdade. "
-        "O piloto usou o mesmo sorteio (\\textit{seed} 123).")
+        "O piloto usou o mesmo sorteio (semente 123).")
 
     linhas = []
     for p in sorted(a["pares"], key=lambda p: -abs(p["rho"])):

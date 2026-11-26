@@ -17,6 +17,9 @@
 
 % Quadros (ABNT: informação textual, diferente de Tabela, que é numérica).
 % Numeração por capítulo, como figuras e tabelas, e lista própria.
+\usepackage{array}
+% Espaço entre a legenda (acima) e o corpo de tabelas e quadros
+\setlength{\belowcaptionskip}{6pt}
 \usepackage{newfloat}
 \DeclareFloatingEnvironment[fileext=loq, listname={Lista de Quadros}, name=Quadro, within=chapter]{quadro}
 
@@ -30,11 +33,23 @@
     fontupper=\ttfamily\footnotesize,
     before upper={\setlength{\parindent}{0pt}\setlength{\parskip}{0.5em}\raggedright}
 }
+% Figuras, quadros e tabelas aparecem na ordem do texto: o texto que vem
+% depois de um float só continua depois dele, para que nenhum float fique
+% no meio de um parágrafo.
+\usepackage{placeins}
+\usepackage{etoolbox}
+\AfterEndEnvironment{figure}{\FloatBarrier}
+\AfterEndEnvironment{table}{\FloatBarrier}
+\AfterEndEnvironment{quadro}{\FloatBarrier}
+
+% Diagramas (TikZ já é carregado pelo tcolorbox)
+\usetikzlibrary{arrows.meta,positioning,calc}
+\definecolor{azulfig}{HTML}{2E75B6}
+\definecolor{azulescuro}{HTML}{1F3864}
+
 % Trecho variável dentro de um prompt (preenchido pelo código para cada agente)
 \newcommand{\campo}[1]{\textit{\{#1\}}}
 
-% Marcador visual de pendência (não deve aparecer na versão final)
-\newcommand{\FIXME}[1]{\textbf{\textcolor{red}{[PENDENTE: #1]}}}
 
 % ---------------------------------------------------------------------------
 % Configurações de aparência do PDF
@@ -42,7 +57,7 @@
 \hypersetup{
     pdftitle={Traços de Personalidade Big Five e Perfil de Investidor: uma Simulação com Agentes de Inteligência Artificial},
     pdfauthor={Mariana Ferreira Ferrarez Ribeiro},
-    pdfkeywords={Big Five}{Personalidade}{Perfil de Investidor}{Inteligência Artificial}{LLM}{Finanças Comportamentais},
+    pdfkeywords={Big Five, Perfil de investidor, Inteligência artificial, Modelos de linguagem, Finanças comportamentais},
     colorlinks=true,
     linkcolor=black,
     citecolor=black,
@@ -66,7 +81,7 @@
 \author{Mariana Ferreira Ferrarez Ribeiro}{\input{pretextual/agradecimentos}}
 
 % orientador é obrigatório
-\advisor[Prof.]{Leandro Guimarães Marques Alvim,~D.Sc.}{DCC~-~UFRRJ}{}
+\advisor[Prof.]{Leandro Guimarães Marques \mbox{Alvim},~D.Sc.}{DCC~-~UFRRJ}{}
 
 % banca (máx. 3 membros; orientador já é adicionado automaticamente)
 \banca[Prof.]{Filipe Braida do Carmo,~D.Sc.}{DCC~-~UFRRJ}
@@ -110,44 +125,47 @@
 \maketablespage
 
 % Abreviaturas e siglas (ordem alfabética)
-% O pacote acronym é carregado com [printonlyused] pela classe
-% (projetofinal-dcc.cls), que só lista uma sigla se \ac{} for usado no
-% corpo do texto. A monografia escreve as siglas direto na prosa (ex.
-% "IPA"), não via \ac{IPA}, então a lista sairia vazia por padrão.
-% \acused{} NÃO resolve isso (testado e confirmado: só marca a sigla como
-% "já introduzida" para fins de \ac{} subsequente, não ativa o \write no
-% .aux que o printonlyused verifica -- ver acronym.sty, comandos
-% \acused/\AC@logged). A forma robusta e independente de número de
-% passadas é desligar \AC@printonlyused localmente só dentro deste bloco.
+% A classe carrega acronym com [printonlyused]; desligado aqui para listar todas as siglas.
 \makeatletter
 \AC@printonlyusedfalse
 \makeatother
 \makeabrevpage{
   \begin{acronym}[ANBIMA]
-    \acro{ABNT}{Associação Brasileira de Normas Técnicas}
+    \acro{AAII}{American Association of Individual Investors}
     \acro{ANBIMA}{Associação Brasileira das Entidades dos Mercados Financeiro e de Capitais}
+    \acro{API}{Application Programming Interface (Interface de Programação de Aplicações)}
     \acro{BFI}{Big Five Inventory}
-    \acro{CPU}{Central Processing Unit}
+    \acro{CDB}{Certificado de Depósito Bancário}
+    \acro{CDI}{Certificado de Depósito Interbancário}
+    \acro{CPU}{Central Processing Unit (Unidade Central de Processamento)}
     \acro{CRT}{Cognitive Reflection Test}
-    \acro{GPU}{Graphics Processing Unit}
+    \acro{CSV}{Comma-Separated Values}
+    \acro{GPU}{Graphics Processing Unit (Unidade de Processamento Gráfico)}
     \acro{IA}{Inteligência Artificial}
+    \acro{IC}{Intervalo de Confiança}
+    \acro{IOSCO}{International Organization of Securities Commissions}
     \acro{IPA}{Índice de Perfil do Investidor}
     \acro{LLM}{Large Language Model (Modelo de Linguagem de Grande Escala)}
+    \acro{NEOPIR}[NEO-PI-R]{Revised NEO Personality Inventory}
     \acro{OLS}{Ordinary Least Squares (Mínimos Quadrados Ordinários)}
+    \acro{PIB}{Produto Interno Bruto}
     \acro{RQ}{Research Question (Questão de Pesquisa)}
-    \acro{TCC}{Trabalho de Conclusão de Curso}
     \acro{UFRRJ}{Universidade Federal Rural do Rio de Janeiro}
+    \acro{UFSC}{Universidade Federal de Santa Catarina}
   \end{acronym}
 }
 
 % Símbolos (ordem alfabética; notação estatística usada no trabalho)
 \makesymbolspage{
   \begin{acronym}[XXXX]
+    \acro{alpha}[$\alpha$]{Nível de significância}
+    \acro{chi2}[$\chi^2$]{Estatística do teste qui-quadrado}
     \acro{F}{Estatística F do teste de significância global da regressão OLS}
     \acro{N}{Tamanho da amostra}
     \acro{p}{Valor-p (nível descritivo de significância estatística)}
     \acro{R2}[$R^2$]{Coeficiente de determinação da regressão OLS}
     \acro{rho}[$\rho$]{Coeficiente de correlação de Spearman}
+    \acro{V}{V de Cramér (medida de associação entre variáveis categóricas)}
   \end{acronym}
 }
 \makeatletter
@@ -174,11 +192,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % B I B L I O G R A F I A
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\phantomsection
 \makebibspage{referencias}
 
-% Sem apêndices nem anexos: a pedido do orientador, os instrumentos (BFI-10,
-% BFI-44, IPA), a regra de pontuação do IPA e os prompts ficam no Cap. 3, e a
-% verificação do sorteio no Cap. 4. Os antigos postextual/apendices.tex e
-% postextual/anexos.tex podem ser recuperados pelo histórico do git.
+% Sem apêndices nem anexos.
 
 \end{document}

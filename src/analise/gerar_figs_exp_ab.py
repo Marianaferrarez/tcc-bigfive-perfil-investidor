@@ -12,6 +12,7 @@ import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import matplotlib.ticker
 import numpy as np
 from scipy import stats
 
@@ -29,6 +30,14 @@ df_b = df_b[df_b['ipa_perfil'].isin(['Conservador', 'Moderado', 'Arrojado'])].co
 for df in (df_a, df_b):
     q1 = df['ipa_q1_atribuida'].map({'a': 4, 'b': 3, 'c': 2, 'd': 1})
     df['ipa_score_sem_q1'] = df['ipa_score'] - q1
+
+
+def num(x):
+    # Vírgula decimal e sinal de menos tipográfico, como no texto da monografia.
+    return f'{x:+.3f}'.replace('-', '−').replace('.', ',')
+
+
+virgula = matplotlib.ticker.FuncFormatter(lambda x, _: f'{x:g}'.replace('-', '−').replace('.', ','))
 
 
 def sig(p):
@@ -52,22 +61,22 @@ def montar_grafico(coluna_alvo, titulo, arquivo, xlim):
 
     fig, ax = plt.subplots(figsize=(9, 5.2))
     barras_a = ax.barh(y + altura / 2, rho_a, height=altura, color='#2E75B6', alpha=0.9,
-                        label='Experimento A (5 traços juntos, N=300)')
+                        label='Experimento A (cinco traços juntos, N = 300)')
     barras_b = ax.barh(y - altura / 2, rho_b, height=altura, color='#F5B041', alpha=0.9,
-                        label='Experimento B (traço isolado, N por traço abaixo)')
+                        label='Experimento B (traço isolado, N por traço indicado)')
 
     for bar, r, p in zip(barras_a, rho_a, p_a):
         ax.text(r + 0.02 if r >= 0 else r - 0.02, bar.get_y() + bar.get_height() / 2,
-                 f'{r:+.3f} {sig(p)}', va='center', ha='left' if r >= 0 else 'right', fontsize=9)
+                 f'{num(r)} {sig(p)}', va='center', ha='left' if r >= 0 else 'right', fontsize=9)
     for bar, r, p, n in zip(barras_b, rho_b, p_b, n_b):
         ax.text(r + 0.02 if r >= 0 else r - 0.02, bar.get_y() + bar.get_height() / 2,
-                 f'{r:+.3f} {sig(p)}  (N={n})', va='center', ha='left' if r >= 0 else 'right', fontsize=9)
+                 f'{num(r)} {sig(p)}  (N = {n})', va='center', ha='left' if r >= 0 else 'right', fontsize=9)
 
     ax.set_yticks(y); ax.set_yticklabels(nomes_curtos, fontsize=11)
     ax.axvline(0, color='black', linewidth=0.8)
     ax.set_xlim(*xlim)
     ax.set_xlabel('Correlação de Spearman (ρ)', fontsize=11)
-    ax.set_title(titulo, fontsize=12, fontweight='bold', color='#1F3864')
+    ax.xaxis.set_major_formatter(virgula)
     ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.12), ncol=1, fontsize=9, frameon=True)
     ax.invert_yaxis()
     ax.spines['top'].set_visible(False); ax.spines['right'].set_visible(False)
@@ -87,5 +96,5 @@ montar_grafico(
     'ipa_score_sem_q1',
     'Correlação com o escore IPA: 5 traços juntos (A) vs. traço isolado (B)\nllama3.1:8b, BFI-44',
     'fig9_exp_ab_ipa.png',
-    (-0.3, 1.05),
+    (-0.5, 1.05),
 )

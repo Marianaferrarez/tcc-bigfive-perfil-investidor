@@ -3,6 +3,8 @@
 Trabalho de Conclusão de Curso (Bacharelado em Ciência da Computação, DCC/UFRRJ, 2026)
 de **Mariana Ferreira Ferrarez Ribeiro**, orientado pelo Prof. Leandro Guimarães Marques Alvim.
 
+Repositório público: https://github.com/Marianaferrarez/tcc-bigfive-perfil-investidor
+
 O trabalho investiga se traços de personalidade do modelo Big Five, induzidos por
 instrução (*prompt*) em agentes baseados em modelos de linguagem de grande escala (LLMs),
 predizem o perfil de investidor desses agentes, medido por um questionário de
@@ -73,6 +75,7 @@ python src/analise/analise_temperatura_modelos.py  # robustez e generalização
 python src/analise/verificar_sorteio_seed456.py    # sorteio da rodada com semente 456
 python src/analise/regen_figs.py                   # figuras do Experimento A
 python src/analise/gerar_figs_exp_ab.py            # figuras Experimento A × B
+python src/analise/gerar_fig_robustez.py           # figura de síntese da robustez
 ```
 
 **Geração de agentes** (exige um modelo servido pelo [Ollama](https://ollama.com) em
